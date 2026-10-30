@@ -1,5 +1,5 @@
 [
-  {"id":1,"name":"Yuvan","race":"Tortle","class":"Druida 'Circulo de la tierra'","level":2,"status":"Activo","player":"Manuel","image":""},
+  {"id":1,"name":"Yuvan","race":"Tortle","class":"Druida 'Circulo de la tierra'","level":2,"status":"Activo","player":"Manuel","image":"assets/images/Yuvan.jpeg"},
   {"id":2,"name":"Balasar","race":"Draconido","class":"Barbaro","level":2,"status":"Activo","player":"Jose Luis","image":"assets/images/Balasar.jpeg"},
   {"id":3,"name":"Bombo","race":"Goblin","class":"Bardo","level":2,"status":"Activo","player":"Derick","image":""}
 ]

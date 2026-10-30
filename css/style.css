@@ -165,9 +165,22 @@ button { font: inherit; }
 
 .metric-inline { display: flex; align-items: baseline; gap: 7px; color: var(--muted); }
 .metric-inline strong { color: var(--gold-bright); font-size: 1.6rem; }
-.characters-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
 .character-card { overflow: hidden; min-height: 235px; }
-.character-portrait { height: 118px; display: grid; place-items: center; border-bottom: 1px solid var(--line); background: radial-gradient(circle at 50% 35%, #2c4768, #101b2b 67%); background-size: cover; background-position: center; }
+.character-portrait {
+    height: 260px;
+    display: grid;
+    place-items: center;
+    border-bottom: 1px solid var(--line);
+    background-color: #101b2b;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
 .character-portrait span { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; color: #101725; background: linear-gradient(180deg, var(--gold-bright), #b3832c); font-weight: 900; font-size: 1.25rem; border: 2px solid #f4d780; }
 .character-body { padding: 17px; }
 .character-body h3 { margin: 0 0 5px; color: var(--gold-bright); }
