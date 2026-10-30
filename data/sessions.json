@@ -1,36 +1,17 @@
-body {
-    margin: 0;
-    background: #111827;
-    color: white;
-    font-family: Segoe UI, sans-serif;
-}
-
-header {
-    padding: 20px;
-    background: #1f2937;
-}
-
-h1 {
-    margin: 0;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-}
-
-.hero {
-    padding: 40px;
-}
-
-.card {
-    background: #1f2937;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 600px;
-}
+[
+  {
+    "id": 1,
+    "title": "Las Ruinas Perdidas",
+    "date": "2026-11-15",
+    "time": "18:00",
+    "status": "open",
+    "slots": 6,
+    "players": [
+      "Aventurero 1",
+      "Aventurero 2",
+      "Aventurero 3"
+    ],
+    "level": "1-4",
+    "description": "Extrañas luces han sido observadas en las antiguas ruinas del norte. El gremio busca voluntarios."
+  }
+]
