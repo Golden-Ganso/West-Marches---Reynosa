@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>West Marches Reynosa</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
     <header>
@@ -27,101 +24,68 @@
     <main>
 
         <section class="hero">
-
             <h2>Próxima Expedición</h2>
 
-            <div class="card">
-                <h3>Las Ruinas Perdidas</h3>
-
-                <p><strong>Fecha:</strong> 15 Nov 2026</p>
-
-                <p><strong>Cupos:</strong> 3 / 6 Aventureros</p>
-
-                <p>
-                    Extrañas luces han sido observadas en las antiguas ruinas
-                    del norte. El gremio busca voluntarios.
-                </p>
-
-                <a href="#" class="button">
-                    Ver Detalles
-                </a>
-
+            <div class="card expedition-card" id="next-session">
+                <p>Cargando próxima expedición...</p>
             </div>
-
         </section>
 
         <section class="dashboard">
 
             <div class="card">
-
-                <h3>Últimos Descubrimientos</h3>
-
-                <ul>
-                    <li>Valle Gris descubierto.</li>
-                    <li>Torre abandonada cartografiada.</li>
-                    <li>Antigua cripta localizada.</li>
-                </ul>
-
-            </div>
-
-            <div class="card">
-
                 <h3>Estado del Mundo</h3>
-
-                <p>Mundo Explorado</p>
+                <p>Exploración conocida</p>
 
                 <div class="progress-container">
-                    <div class="progress-bar"></div>
+                    <div class="progress-bar" id="world-progress"></div>
                 </div>
 
-                <p>37% descubierto</p>
-
+                <p id="world-percentage">Cargando...</p>
             </div>
 
             <div class="card">
-
                 <h3>Aventureros Activos</h3>
+                <h2 id="active-characters">0</h2>
 
-                <h2>12</h2>
+                <p>Personajes actualmente registrados en la campaña.</p>
 
-                <p>
-                    Héroes registrados actualmente en el gremio.
-                </p>
-
+                <a href="#" class="button">Ver Aventureros</a>
             </div>
 
             <div class="card">
-
                 <h3>Últimas Crónicas</h3>
 
-                <ul>
-                    <li>Expedición #21 - Éxito.</li>
-                    <li>Expedición #20 - Una baja.</li>
-                    <li>Expedición #19 - Nueva ruta descubierta.</li>
+                <ul id="chronicles-list">
+                    <li>Cargando...</li>
                 </ul>
-
             </div>
 
             <div class="card">
-
                 <h3>Tablón de Rumores</h3>
 
-                <ul>
-                    <li>Se escuchan voces bajo las minas.</li>
-                    <li>Mercader desaparecido al este.</li>
-                    <li>Ruinas recién descubiertas.</li>
+                <ul id="rumors-list">
+                    <li>Cargando...</li>
                 </ul>
-
             </div>
 
             <div class="card">
+                <h3>Estadísticas de la Campaña</h3>
 
-                <h3>Estadísticas Globales</h3>
+                <p>
+                    <strong>Expediciones completadas:</strong>
+                    <span id="expedition-count">0</span>
+                </p>
 
-                <p><strong>Expediciones:</strong> 21</p>
-                <p><strong>Zonas Descubiertas:</strong> 18</p>
-                <p><strong>Artefactos Hallados:</strong> 42</p>
+                <p>
+                    <strong>Lugares descubiertos:</strong>
+                    <span id="location-count">0</span>
+                </p>
 
+                <p>
+                    <strong>Artefactos encontrados:</strong>
+                    <span id="artifact-count">0</span>
+                </p>
             </div>
 
         </section>
@@ -132,6 +96,7 @@
         Portal Oficial de la Campaña West Marches Reynosa
     </footer>
 
-</body>
+    <script src="js/app.js"></script>
 
+</body>
 </html>
