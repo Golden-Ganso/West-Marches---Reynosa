@@ -1,3 +1,175 @@
+/* ===== GENERAL ===== */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: #111827;
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(
+        180deg,
+        #0b1220 0%,
+        #11213b 100%
+    );
+    color: #f5e6c8;
+    min-height: 100vh;
+}
+
+/* ===== ENCABEZADO ===== */
+
+header {
+    background: rgba(10, 15, 25, 0.95);
+    border-bottom: 2px solid #bfa15a;
+    padding: 20px 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+header h1 {
+    margin: 0;
+    color: #e7c06b;
+    letter-spacing: 2px;
+}
+
+/* ===== MENÚ ===== */
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f5e6c8;
+    margin-right: 20px;
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    border-color: #d4af5c;
+    background: rgba(212,175,92,0.15);
+    color: #ffd87d;
+}
+
+/* ===== CONTENIDO ===== */
+
+main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    color: #ffd87d;
+    border-left: 4px solid #d4af5c;
+    padding-left: 12px;
+}
+
+/* ===== TARJETAS ===== */
+
+.card {
+    background: rgba(20, 28, 45, 0.95);
+    border: 1px solid #8f7440;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 15px;
+    transition: transform 0.25s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #e0b765;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #ffd87d;
+}
+
+/* ===== GRID DASHBOARD ===== */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* ===== BARRA DE PROGRESO ===== */
+
+.progress-container {
+    background: #111;
+    border: 1px solid #555;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 25px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 37%;
+    background: linear-gradient(
+        90deg,
+        #b88a2f,
+        #ffd87d
+    );
+}
+
+/* ===== BOTONES ===== */
+
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    background: linear-gradient(
+        180deg,
+        #ffd87d,
+        #c79d47
+    );
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    filter: brightness(1.1);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #8f7440;
+    color: #aaaaaa;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
 }
