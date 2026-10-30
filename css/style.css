@@ -228,3 +228,202 @@ button { font: inherit; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .site-footer { flex-direction: column; padding: 24px 16px; }
 }
+
+/* ========================================
+   CRONICAS
+   ======================================== */
+
+.chronicle-item {
+    overflow: hidden;
+    padding: 0;
+}
+
+.chronicle-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--line);
+
+    background: #080f19;
+}
+
+.chronicle-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+.chronicle-content {
+    padding: 18px;
+}
+
+.chronicle-content h3 {
+    margin-top: 0;
+}
+
+.chronicle-summary {
+    white-space: pre-line;
+
+    line-height: 1.65;
+
+    color: var(--muted);
+}
+
+
+/* MOVIL */
+
+@media (max-width: 640px) {
+
+    .chronicle-image {
+        height: 180px;
+    }
+
+}
+
+/* ========================================
+   VISTA PREVIA DE CRONICAS
+   ======================================== */
+
+.chronicle-preview {
+    display: -webkit-box;
+
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    line-height: 1.6;
+
+    color: var(--muted);
+}
+
+.chronicle-preview-image {
+    height: 180px;
+}
+
+.chronicle-link {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    color: var(--gold-bright);
+
+    font-weight: bold;
+    font-size: 0.85rem;
+
+    text-decoration: none;
+}
+
+.chronicle-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ========================================
+   PAGINA COMPLETA DE CRONICAS
+   ======================================== */
+
+.chronicles-page {
+    display: grid;
+    gap: 28px;
+}
+
+
+.chronicle-full {
+    overflow: hidden;
+}
+
+
+.chronicle-full-image {
+    width: 100%;
+    height: 380px;
+
+    background: #080f19;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.chronicle-full-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+
+.chronicle-full-content {
+    padding: 28px;
+}
+
+
+.chronicle-full-content h2 {
+    margin-top: 0;
+
+    color: var(--gold-bright);
+}
+
+
+.chronicle-metadata {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px 25px;
+
+    margin: 18px 0 25px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #39465b;
+
+    color: var(--muted);
+
+    font-size: 0.85rem;
+}
+
+
+.chronicle-metadata strong {
+    color: var(--cream);
+}
+
+
+.chronicle-text {
+    white-space: pre-line;
+
+    max-width: 900px;
+
+    color: #ddd3bf;
+
+    line-height: 1.8;
+
+    font-size: 0.95rem;
+}
+
+
+@media (max-width: 640px) {
+
+    .chronicle-full-image {
+        height: 220px;
+    }
+
+
+    .chronicle-full-content {
+        padding: 20px;
+    }
+
+
+    .chronicle-metadata {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}

@@ -5,7 +5,7 @@
     "date": "2026-11-01",
     "time": "16:00",
     "status": "open",
-    "slots": 8,
+    "slots": 9,
     "players": ["DM: Miguel", "Manuel", "Jose Luis", "Derick", "Alejandro", "Gris"],
     "level": "NA",
     "description": "El caso de un asesino serial ha sido reabierto, ¿Podrán encontrar al culpable de tan atroces actos antes de que él los encuentre a ustedes?"

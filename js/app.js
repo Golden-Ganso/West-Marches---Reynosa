@@ -139,14 +139,69 @@ function renderCharacters(characters) {
 }
 
 function renderChronicles(chronicles) {
+
   const container = document.getElementById("chronicles-list");
-  const latest = [...chronicles].sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date)).slice(0, 4);
-  container.innerHTML = latest.length ? latest.map(item => `
-    <article class="feed-item">
-      <h3>${escapeHtml(item.title || "Crónica")}</h3>
-      <p>${escapeHtml(item.summary || "Sin resumen.")}</p>
-      <p class="feed-meta">${formatDate(item.date)}${item.session ? ` · Expedición #${escapeHtml(String(item.session))}` : ""}</p>
-    </article>`).join("") : `<p>No hay crónicas registradas.</p>`;
+
+  const latest = [...chronicles]
+    .sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date))
+    .slice(0, 3);
+
+  if (!latest.length) {
+    container.innerHTML = "<p>No hay crónicas registradas.</p>";
+    return;
+  }
+
+  container.innerHTML = latest.map(item => {
+
+    const image = item.image
+      ? `
+        <div class="chronicle-image chronicle-preview-image">
+          <img
+            src="${encodeURI(item.image)}"
+            alt="Ilustración de ${escapeHtml(item.title || "la expedición")}"
+            loading="lazy"
+          >
+        </div>
+      `
+      : "";
+
+    const summary = item.summary || "Sin resumen.";
+
+    return `
+      <article class="feed-item chronicle-item">
+
+        ${image}
+
+        <div class="chronicle-content">
+
+          <h3>
+            ${escapeHtml(item.title || "Crónica")}
+          </h3>
+
+          <p class="chronicle-preview">
+            ${escapeHtml(summary)}
+          </p>
+
+          <p class="feed-meta">
+            ${formatDate(item.date)}
+            ${item.session
+              ? ` · Expedición #${escapeHtml(String(item.session))}`
+              : ""}
+          </p>
+
+          <a
+            href="cronicas.html#cronica-${item.id}"
+            class="chronicle-link"
+          >
+            Leer crónica completa
+          </a>
+
+        </div>
+
+      </article>
+    `;
+
+  }).join("");
 }
 
 function renderRumors(rumors) {
