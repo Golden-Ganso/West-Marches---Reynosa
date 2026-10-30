@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Luces entre las ruinas",
+    "text": "Viajeros afirman haber visto luces durante la noche en unas ruinas al norte.",
+    "status": "Sin investigar"
+  },
+  {
+    "id": 2,
+    "title": "El mercader perdido",
+    "text": "Un comerciante que viajaba hacia el este no llegó a su destino.",
+    "status": "Sin investigar"
+  }
+]
