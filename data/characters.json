@@ -1,6 +1,5 @@
 [
-  {"id":1,"name":"Aventurero 1","race":"Humano","class":"Guerrero","level":3,"status":"Activo","player":"Jugador 1","image":""},
-  {"id":2,"name":"Aventurero 2","race":"Elfo","class":"Explorador","level":4,"status":"Activo","player":"Jugador 2","image":""},
-  {"id":3,"name":"Aventurero 3","race":"Enano","class":"Clérigo","level":3,"status":"Activo","player":"Jugador 3","image":""},
-  {"id":4,"name":"Aventurero 4","race":"Mediano","class":"Pícaro","level":2,"status":"Activo","player":"Jugador 4","image":""}
+  {"id":1,"name":"Yuvan","race":"Tortle","class":"Druida 'Circulo de la tierra'","level":2,"status":"Activo","player":"Manuel","image":""},
+  {"id":2,"name":"Balasar","race":"Draconido","class":"Barbaro","level":2,"status":"Activo","player":"Jose Luis","image":"assets/images/Balasar.jpeg"},
+  {"id":3,"name":"Bombo","race":"Goblin","class":"Bardo","level":2,"status":"Activo","player":"Derick","image":""}
 ]

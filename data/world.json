@@ -1,11 +1,12 @@
 {
-  "exploration": 5,
-  "discoveredLocations": 1,
-  "completedExpeditions": 0,
+  "exploration": 1,
+  "discoveredLocations": 3,
+  "completedExpeditions": 2,
   "artifactsFound": 0,
   "latestDiscoveries": [
     "El asentamiento inicial ha sido establecido.",
-    "Se identificó una ruta potencial hacia las ruinas del norte.",
-    "Los primeros rumores comienzan a circular entre los viajeros."
+    "Las cantera de los dientes rojos fue liberada del control Kobold",
+    "La fortaleza del bosque seco fue liberada del control No muerto",
+    "Se celebro La Noche del Primer Emperador en la colonia de Nueva Pyra, alguien robo documentos importantes durante la celebración."
   ]
 }
