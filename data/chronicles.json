@@ -1,9 +1,4 @@
 [
-  {
-    "id": 1,
-    "session": 1,
-    "title": "El primer llamado",
-    "date": "2026-10-25",
-    "summary": "Un grupo de aventureros respondió al llamado y comenzó la exploración de las tierras desconocidas."
-  }
+  {"id":1,"session":1,"title":"El primer llamado","date":"2026-10-25","summary":"Un grupo de aventureros respondió al llamado y comenzó la exploración de las tierras desconocidas."},
+  {"id":2,"session":2,"title":"Rastros más allá del camino","date":"2026-10-28","summary":"Exploradores localizaron marcas antiguas que apuntan hacia rutas que no aparecen en los mapas actuales."}
 ]

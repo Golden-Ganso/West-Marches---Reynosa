@@ -6,12 +6,30 @@
     "time": "18:00",
     "status": "open",
     "slots": 6,
-    "players": [
-      "Aventurero 1",
-      "Aventurero 2",
-      "Aventurero 3"
-    ],
+    "players": ["Aventurero 1", "Aventurero 2", "Aventurero 3"],
     "level": "1-4",
     "description": "Extrañas luces han sido observadas en las antiguas ruinas del norte. El gremio busca voluntarios."
+  },
+  {
+    "id": 2,
+    "title": "El Camino del Roble",
+    "date": "2026-11-22",
+    "time": "17:00",
+    "status": "open",
+    "slots": 5,
+    "players": ["Aventurero 2", "Aventurero 4"],
+    "level": "2-5",
+    "description": "Una vieja senda comercial volvió a aparecer en los mapas. La compañía investigará si sigue siendo transitable."
+  },
+  {
+    "id": 3,
+    "title": "La Cripta del Vigía",
+    "date": "2026-11-29",
+    "time": "18:30",
+    "status": "open",
+    "slots": 4,
+    "players": ["Aventurero 1", "Aventurero 2", "Aventurero 3", "Aventurero 4"],
+    "level": "3-5",
+    "description": "Una inscripción recuperada menciona una cripta sellada y a un antiguo guardián que nunca abandonó su puesto."
   }
 ]

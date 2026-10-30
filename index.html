@@ -1,102 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>West Marches Reynosa</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de campaña West Marches Reynosa">
+  <title>West Marches Reynosa</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header class="site-header" id="inicio">
+    <div class="brand">
+      <p class="brand-kicker">Portal de campaña</p>
+      <h1>West Marches Reynosa</h1>
+    </div>
 
-    <header>
-        <h1>WEST MARCHES REYNOSA</h1>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a class="nav-active" href="#inicio">Inicio</a>
+      <a href="#expediciones">Expediciones</a>
+      <a href="#calendario">Calendario</a>
+      <a href="#aventureros">Aventureros</a>
+      <a href="#cronicas">Crónicas</a>
+      <a href="#mundo">Mundo</a>
+      <a href="#rumores">Rumores</a>
+    </nav>
+  </header>
 
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Expediciones</a>
-            <a href="#">Aventureros</a>
-            <a href="#">Crónicas</a>
-            <a href="#">Mapa</a>
-            <a href="#">Rumores</a>
-        </nav>
-    </header>
+  <main class="page-shell">
+    <section class="section-block" id="expediciones">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Tablón del gremio</p>
+          <h2>Próximas expediciones</h2>
+        </div>
+        <p class="section-help">Sesiones abiertas y próximas partidas.</p>
+      </div>
+      <div id="expeditions-grid" class="expeditions-grid" aria-live="polite">
+        <div class="card loading-card">Cargando expediciones...</div>
+      </div>
+    </section>
 
-    <main>
+    <section class="section-block two-column" id="calendario">
+      <div>
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">Agenda</p>
+            <h2>Calendario</h2>
+          </div>
+        </div>
+        <div class="calendar card">
+          <div class="calendar-toolbar">
+            <button type="button" id="calendar-prev" class="icon-button" aria-label="Mes anterior">&lsaquo;</button>
+            <h3 id="calendar-title">Calendario</h3>
+            <button type="button" id="calendar-next" class="icon-button" aria-label="Mes siguiente">&rsaquo;</button>
+          </div>
+          <div class="calendar-weekdays" aria-hidden="true">
+            <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+          </div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+          <div id="calendar-selected" class="calendar-selected">Selecciona un día con expedición.</div>
+        </div>
+      </div>
 
-        <section class="hero">
-            <h2>Próxima Expedición</h2>
+      <aside class="card notice-card">
+        <p class="section-kicker">Cómo leerlo</p>
+        <h3>Fechas del gremio</h3>
+        <p>Los días dorados tienen al menos una expedición programada. Selecciona el día para ver la sesión.</p>
+        <div class="legend-row"><span class="legend-dot open"></span> Inscripciones abiertas</div>
+        <div class="legend-row"><span class="legend-dot full"></span> Expedición completa</div>
+        <div class="legend-row"><span class="legend-dot closed"></span> Finalizada o cerrada</div>
+      </aside>
+    </section>
 
-            <div class="card expedition-card" id="next-session">
-                <p>Cargando próxima expedición...</p>
-            </div>
-        </section>
+    <section class="section-block" id="aventureros">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Compañía</p>
+          <h2>Aventureros destacados</h2>
+        </div>
+        <div class="metric-inline"><strong id="active-characters">0</strong><span>activos</span></div>
+      </div>
+      <div id="characters-grid" class="characters-grid" aria-live="polite"></div>
+    </section>
 
-        <section class="dashboard">
+    <section class="section-block dashboard" id="mundo">
+      <article class="card world-card">
+        <p class="section-kicker">Progreso compartido</p>
+        <h2>Estado del mundo</h2>
+        <div class="progress-header">
+          <span>Exploración conocida</span>
+          <strong id="world-percentage">0%</strong>
+        </div>
+        <div class="progress-container" aria-label="Porcentaje de exploración">
+          <div class="progress-bar" id="world-progress"></div>
+        </div>
+        <ul id="discoveries-list" class="simple-list"></ul>
+      </article>
 
-            <div class="card">
-                <h3>Estado del Mundo</h3>
-                <p>Exploración conocida</p>
+      <article class="card stats-card">
+        <p class="section-kicker">Registro</p>
+        <h2>Estadísticas</h2>
+        <div class="stats-grid">
+          <div><strong id="expedition-count">0</strong><span>Expediciones completadas</span></div>
+          <div><strong id="location-count">0</strong><span>Lugares descubiertos</span></div>
+          <div><strong id="artifact-count">0</strong><span>Artefactos encontrados</span></div>
+          <div><strong id="character-count">0</strong><span>Aventureros registrados</span></div>
+        </div>
+      </article>
+    </section>
 
-                <div class="progress-container">
-                    <div class="progress-bar" id="world-progress"></div>
-                </div>
+    <section class="section-block content-grid">
+      <article class="card" id="cronicas">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">Archivo</p>
+            <h2>Crónicas recientes</h2>
+          </div>
+        </div>
+        <div id="chronicles-list" class="feed-list"></div>
+      </article>
 
-                <p id="world-percentage">Cargando...</p>
-            </div>
+      <article class="card" id="rumores">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-kicker">Taberna</p>
+            <h2>Tablón de rumores</h2>
+          </div>
+        </div>
+        <div id="rumors-list" class="feed-list"></div>
+      </article>
+    </section>
+  </main>
 
-            <div class="card">
-                <h3>Aventureros Activos</h3>
-                <h2 id="active-characters">0</h2>
+  <footer class="site-footer">
+    <strong>West Marches Reynosa</strong>
+    <span>El mundo cambia con cada expedición.</span>
+  </footer>
 
-                <p>Personajes actualmente registrados en la campaña.</p>
-
-                <a href="#" class="button">Ver Aventureros</a>
-            </div>
-
-            <div class="card">
-                <h3>Últimas Crónicas</h3>
-
-                <ul id="chronicles-list">
-                    <li>Cargando...</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Tablón de Rumores</h3>
-
-                <ul id="rumors-list">
-                    <li>Cargando...</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Estadísticas de la Campaña</h3>
-
-                <p>
-                    <strong>Expediciones completadas:</strong>
-                    <span id="expedition-count">0</span>
-                </p>
-
-                <p>
-                    <strong>Lugares descubiertos:</strong>
-                    <span id="location-count">0</span>
-                </p>
-
-                <p>
-                    <strong>Artefactos encontrados:</strong>
-                    <span id="artifact-count">0</span>
-                </p>
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-        Portal Oficial de la Campaña West Marches Reynosa
-    </footer>
-
-    <script src="js/app.js"></script>
-
+  <script src="js/app.js"></script>
 </body>
 </html>
