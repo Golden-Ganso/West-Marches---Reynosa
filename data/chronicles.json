@@ -2,12 +2,12 @@
   {
     "id": 1,
     "session": 1,
-    "title": "El primer llamado",
-    "date": "2026-10-25",
+    "title": "Silencio en el Rio del norte",
+    "date": "2026-09-26",
     "author": "DM",
-    "participants": [],
+    "participants": ["Bombo", "Balasar", "Yuvan"],
     "image": "",
-    "summary": "Un grupo de aventureros respondió al llamado y comenzó la exploración de las tierras desconocidas."
+    "summary": "Un grupo de aventureros fue enviado a buscar a un grupo de constructores de la Casa Arellanis que fueron a construir un puente en el rio Norte.\n\nEncontraron el campamento abandonado y siguieron las huellas que indicaban que los trabajadores fueron llevados al otro lado del rio.\n\nTras seguir el rastro encontraron una cantera que exploraron y terminaron enfrentando una banda de Kobolds la cual fue eliminada y algunos de los trabajadores rescatados, de regreso a la colonia no tuvieron incovenientes. Relan Arellanis recompenso al grupo y les dio acceso a su biblioteca personal."
   },
   {
     "id": 2,
@@ -16,7 +16,9 @@
     "date": "2026-10-03",
     "author": "Balasar",
     "participants": [
-      "Balasar", "Yuvan", "Bombo"
+      "Balasar",
+      "Yuvan",
+      "Bombo"
     ],
     "image": "assets/images/cronicas/Reporte Balasar - 02.png",
     "summary": "Fecha: 29 Fluviaris\n\nAl amanecer del día, Balasar pide una orden de trabajo a Brock y, sin esperar mucho, recibe un encargo de la familia Pyra.\n\nAntes de salir de la colonia se obtiene información interesante por parte de los soldados acerca de un ataque a los granjeros del oeste por una bestia aún desconocida.\n\nDespués de 3 días viajando al noroeste, llegamos a una fortaleza que parecía abandonada. En el interior encontramos a 4 zombis. Los combatimos y derrotamos.\n\nSe encontró una puerta grande y detallada en su interior. En palabras del señor Tortuga, era una hermosa sala élfica.\n\nAl retirarnos dejamos un letrero de peligro afuera de dicha fortaleza como advertencia.\n\nRegresamos rumbo a la colonia para reportar y entregar el informe del encargo encomendado, sin ningún contratiempo ni problema."
