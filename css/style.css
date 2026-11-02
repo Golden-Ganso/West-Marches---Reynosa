@@ -427,3 +427,36 @@ button { font: inherit; }
     }
 
 }
+
+/* ===== FASE A: PERFILES, BESTIARIO Y FACCIONES ===== */
+.character-profiles { display: grid; gap: 26px; }
+.character-profile { overflow: hidden; }
+.profile-header { display: grid; grid-template-columns: 260px 1fr; min-height: 300px; }
+.profile-portrait { min-height: 300px; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 30%, #2b4769, #0f1a2a 70%); border-right: 1px solid var(--line); }
+.profile-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.profile-portrait span { width: 90px; height: 90px; border-radius: 50%; display: grid; place-items: center; color: #101725; background: linear-gradient(180deg,var(--gold-bright),#b3832c); font-size: 2rem; font-weight: 900; border: 2px solid #f4d780; }
+.profile-summary { padding: 28px; }
+.profile-summary h2 { margin: 0 0 10px; color: var(--gold-bright); }
+.profile-summary p { color: var(--muted); }
+.profile-summary p strong { color: var(--cream); }
+.profile-stat { display: inline-flex; align-items: baseline; gap: 8px; margin-top: 14px; padding: 10px 14px; border: 1px solid #39465b; border-radius: 9px; background: rgba(3,8,15,.3); }
+.profile-stat strong { color: var(--gold-bright); font-size: 1.5rem; }.profile-stat span { color: var(--muted); font-size: .8rem; }
+.profile-history { padding: 24px 28px 28px; border-top: 1px solid var(--line); }.profile-history h3 { margin-top: 0; color: var(--gold-bright); }
+.history-entry { position: relative; margin: 0 0 14px; padding: 16px 18px 16px 22px; border-left: 3px solid var(--gold-dark); border-radius: 0 9px 9px 0; background: rgba(4,9,16,.25); }
+.history-entry h4 { margin: 5px 0 8px; color: #ecd18a; }.history-entry p:last-child { margin-bottom: 0; color: var(--muted); line-height: 1.55; }.muted-text { color: var(--muted); }
+
+.lore-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.lore-card { overflow: hidden; }.lore-image { height: 250px; overflow: hidden; background: #0a1321; border-bottom: 1px solid var(--line); }.lore-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.lore-placeholder { width: 100%; height: 100%; display: grid; place-items: center; color: var(--gold-bright); font-size: 4rem; font-weight: 900; background: radial-gradient(circle,#253f60,#0b1524 70%); }
+.rumor-card .lore-placeholder { color: #8f98a7; filter: grayscale(1); }.lore-content { padding: 22px; }.lore-content h2 { margin: 4px 0 12px; color: var(--gold-bright); }.lore-content > p { color: var(--muted); line-height: 1.6; }
+.lore-type, .relationship-badge { padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: #e4d4aa; font-size: .72rem; font-weight: 800; }
+.relationship-friendly { color: #8fd29a; border-color: #52885b; }.relationship-hostile { color: #e1877e; border-color: #914d47; }.relationship-neutral { color: #e4d4aa; }
+.lore-details { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin: 18px 0 0; }.lore-details div { padding: 10px; border: 1px solid #354156; border-radius: 8px; background: rgba(4,9,16,.22); }.lore-details dt { color: var(--muted); font-size: .72rem; }.lore-details dd { margin: 4px 0 0; color: var(--cream); font-size: .85rem; }
+.lore-notes { margin-top: 16px !important; padding-top: 14px; border-top: 1px solid #354156; }.lore-notes strong { color: var(--cream); }
+
+@media (max-width: 760px) {
+  .profile-header { grid-template-columns: 1fr; }.profile-portrait { min-height: 380px; border-right: 0; border-bottom: 1px solid var(--line); }.lore-grid { grid-template-columns: 1fr; }.lore-image { height: 220px; }
+}
+@media (max-width: 480px) {
+  .profile-portrait { min-height: 300px; }.profile-summary,.profile-history { padding: 20px; }.lore-details { grid-template-columns: 1fr; }
+}

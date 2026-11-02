@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     campaignSessions = sessions;
     setInitialCalendarMonth(sessions);
     renderExpeditions(sessions);
+    renderRecentExpeditions(sessions);
     renderCharacters(characters);
     renderChronicles(chronicles);
     renderRumors(rumors);
@@ -61,48 +62,61 @@ function getSessionState(session) {
 function renderExpeditions(sessions) {
   const container = document.getElementById("expeditions-grid");
   const visible = [...sessions]
-    .filter(session => getSessionState(session) !== "completed")
+    .filter(session => ["open", "full"].includes(getSessionState(session)))
     .sort((a, b) => parseLocalDate(a.date) - parseLocalDate(b.date))
     .slice(0, 6);
 
-  if (!visible.length) {
-    container.innerHTML = `<div class="card loading-card">No hay próximas expediciones programadas.</div>`;
-    return;
-  }
-
-  container.innerHTML = visible.map(session => {
-    const players = Array.isArray(session.players) ? session.players : [];
-    const slots = Math.max(1, Number(session.slots || 1));
-    const occupied = players.length;
-    const percentage = Math.min(100, Math.round((occupied / slots) * 100));
-    const state = getSessionState(session);
-    const stateClass = state === "completed" ? "closed" : state;
-    const playersText = players.length ? players.join(", ") : "Todavía no hay aventureros inscritos.";
-
-    return `
-      <article class="card expedition-card">
-        <div class="card-topline">
-          <div>
-            <p class="section-kicker">Expedición #${escapeHtml(String(session.id ?? "?"))}</p>
-            <h3>${escapeHtml(session.title || "Expedición sin título")}</h3>
-          </div>
-          <span class="status-badge status-${stateClass}">${STATE_LABELS[state] || state}</span>
-        </div>
-        <p class="expedition-description">${escapeHtml(session.description || "Sin descripción.")}</p>
-        <div class="meta-list">
-          <div><span>Fecha</span><strong>${formatDate(session.date, { day: "numeric", month: "short", year: "numeric" })}</strong></div>
-          <div><span>Hora</span><strong>${escapeHtml(session.time || "Por definir")}</strong></div>
-          <div><span>Nivel</span><strong>${escapeHtml(session.level || "Abierto")}</strong></div>
-          <div><span>Cupos libres</span><strong>${Math.max(0, slots - occupied)}</strong></div>
-        </div>
-        <div class="slots-row">
-          <div class="slots-bar"><div class="slots-fill" style="width:${percentage}%"></div></div>
-          <span class="slots-text">${occupied} / ${slots}</span>
-        </div>
-        <div class="players-preview"><strong>Inscritos:</strong> ${escapeHtml(playersText)}</div>
-      </article>`;
-  }).join("");
+  container.innerHTML = visible.length
+    ? visible.map(session => buildSessionCard(session)).join("")
+    : `<div class="card loading-card">No hay próximas expediciones programadas.</div>`;
 }
+
+function renderRecentExpeditions(sessions) {
+  const container = document.getElementById("recent-expeditions-grid");
+  if (!container) return;
+
+  const now = new Date();
+  const recent = [...sessions]
+    .filter(session => {
+      if (getSessionState(session) !== "completed") return false;
+      const date = parseLocalDate(session.date);
+      return date.getFullYear() === now.getFullYear() && date.getMonth() === now.getMonth();
+    })
+    .sort((a, b) => parseLocalDate(b.date) - parseLocalDate(a.date));
+
+  container.innerHTML = recent.length
+    ? recent.map(session => buildSessionCard(session)).join("")
+    : `<div class="card loading-card">No hay expediciones finalizadas este mes.</div>`;
+}
+
+function buildSessionCard(session) {
+  const players = Array.isArray(session.players) ? session.players : [];
+  const slots = Math.max(1, Number(session.slots || 1));
+  const occupied = players.length;
+  const percentage = Math.min(100, Math.round((occupied / slots) * 100));
+  const state = getSessionState(session);
+  const stateClass = state === "completed" ? "closed" : state;
+  const playersText = players.length ? players.join(", ") : "Sin aventureros registrados.";
+
+  return `
+    <article class="card expedition-card">
+      <div class="card-topline">
+        <div><p class="section-kicker">Expedición #${escapeHtml(String(session.id ?? "?"))}</p>
+        <h3>${escapeHtml(session.title || "Expedición sin título")}</h3></div>
+        <span class="status-badge status-${stateClass}">${STATE_LABELS[state] || state}</span>
+      </div>
+      <p class="expedition-description">${escapeHtml(session.description || "Sin descripción.")}</p>
+      <div class="meta-list">
+        <div><span>Fecha</span><strong>${formatDate(session.date, { day: "numeric", month: "short", year: "numeric" })}</strong></div>
+        <div><span>Hora</span><strong>${escapeHtml(session.time || "Por definir")}</strong></div>
+        <div><span>Nivel</span><strong>${escapeHtml(session.level || "Abierto")}</strong></div>
+        <div><span>Participantes</span><strong>${occupied}</strong></div>
+      </div>
+      <div class="slots-row"><div class="slots-bar"><div class="slots-fill" style="width:${percentage}%"></div></div><span class="slots-text">${occupied} / ${slots}</span></div>
+      <div class="players-preview"><strong>Participantes:</strong> ${escapeHtml(playersText)}</div>
+    </article>`;
+}
+
 
 function renderCharacters(characters) {
   const active = characters.filter(character => String(character.status).toLowerCase() === "activo");

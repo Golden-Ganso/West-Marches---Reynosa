@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aventureros de West Marches Reynosa">
+  <title>Aventureros | West Marches Reynosa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><p class="brand-kicker">Registro de aventureros</p><h1>West Marches Reynosa</h1></div>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="expediciones.html">Expediciones</a>
+      <a href="index.html#calendario">Calendario</a>
+      <a class="nav-active" href="aventureros.html">Aventureros</a>
+      <a href="cronicas.html">Crónicas</a>
+      <a href="bestiario.html">Bestiario</a>
+      <a href="facciones.html">Facciones</a>
+      <a href="index.html#mundo">Mundo</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="section-block">
+      <div class="section-heading">
+        <div><p class="section-kicker">Compañía</p><h2>Aventureros</h2></div>
+        <p class="section-help">Ficha e historial individual de cada personaje.</p>
+      </div>
+      <div id="characters-page" class="character-profiles">
+        <div class="card loading-card">Cargando aventureros...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><strong>West Marches Reynosa</strong><span>Las historias de cada aventurero quedan registradas.</span></footer>
+  <script src="js/characters.js"></script>
+</body>
+</html>

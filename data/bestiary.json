@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Zombi",
+    "type": "No muerto",
+    "status": "Descubierto",
+    "firstSeen": 2,
+    "danger": 1,
+    "image": "",
+    "description": "Cadáveres reanimados encontrados durante una expedición.",
+    "notes": "Se encontraron varios individuos dentro de una fortaleza abandonada.",
+    "locations": ["Fortaleza abandonada"]
+  },
+  {
+    "id": 2,
+    "name": "Criatura desconocida del oeste",
+    "type": "Desconocido",
+    "status": "Rumor",
+    "firstSeen": null,
+    "danger": null,
+    "image": "",
+    "description": "Una criatura aún no identificada habría atacado a granjeros del oeste.",
+    "notes": "La información proviene de soldados de la colonia.",
+    "locations": ["Granjas del oeste"]
+  }
+]

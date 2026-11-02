@@ -13,39 +13,43 @@
       <p class="brand-kicker">Portal de campaña</p>
       <h1>West Marches Reynosa</h1>
     </div>
-
     <nav class="main-nav" aria-label="Navegación principal">
-      <a class="nav-active" href="#inicio">Inicio</a>
-      <a href="#expediciones">Expediciones</a>
+      <a class="nav-active" href="index.html">Inicio</a>
+      <a href="expediciones.html">Expediciones</a>
       <a href="#calendario">Calendario</a>
-      <a href="#aventureros">Aventureros</a>
-      <a href="#cronicas">Crónicas</a>
+      <a href="aventureros.html">Aventureros</a>
+      <a href="cronicas.html">Crónicas</a>
+      <a href="bestiario.html">Bestiario</a>
+      <a href="facciones.html">Facciones</a>
       <a href="#mundo">Mundo</a>
-      <a href="#rumores">Rumores</a>
     </nav>
   </header>
 
   <main class="page-shell">
     <section class="section-block" id="expediciones">
       <div class="section-heading">
-        <div>
-          <p class="section-kicker">Tablón del gremio</p>
-          <h2>Próximas expediciones</h2>
-        </div>
-        <p class="section-help">Sesiones abiertas y próximas partidas.</p>
+        <div><p class="section-kicker">Tablón del gremio</p><h2>Próximas expediciones</h2></div>
+        <a href="expediciones.html" class="chronicle-link">Ver todas las expediciones</a>
       </div>
       <div id="expeditions-grid" class="expeditions-grid" aria-live="polite">
         <div class="card loading-card">Cargando expediciones...</div>
       </div>
     </section>
 
+    <section class="section-block" id="expediciones-recientes">
+      <div class="section-heading">
+        <div><p class="section-kicker">Archivo reciente</p><h2>Expediciones del mes</h2></div>
+        <a href="expediciones.html" class="chronicle-link">Ver historial completo</a>
+      </div>
+      <div id="recent-expeditions-grid" class="expeditions-grid">
+        <div class="card loading-card">Cargando historial reciente...</div>
+      </div>
+    </section>
+
     <section class="section-block two-column" id="calendario">
       <div>
         <div class="section-heading compact">
-          <div>
-            <p class="section-kicker">Agenda</p>
-            <h2>Calendario</h2>
-          </div>
+          <div><p class="section-kicker">Agenda</p><h2>Calendario</h2></div>
         </div>
         <div class="calendar card">
           <div class="calendar-toolbar">
@@ -53,18 +57,15 @@
             <h3 id="calendar-title">Calendario</h3>
             <button type="button" id="calendar-next" class="icon-button" aria-label="Mes siguiente">&rsaquo;</button>
           </div>
-          <div class="calendar-weekdays" aria-hidden="true">
-            <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
-          </div>
+          <div class="calendar-weekdays" aria-hidden="true"><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span></div>
           <div id="calendar-grid" class="calendar-grid"></div>
           <div id="calendar-selected" class="calendar-selected">Selecciona un día con expedición.</div>
         </div>
       </div>
-
       <aside class="card notice-card">
         <p class="section-kicker">Cómo leerlo</p>
         <h3>Fechas del gremio</h3>
-        <p>Los días dorados tienen al menos una expedición programada. Selecciona el día para ver la sesión.</p>
+        <p>Los días marcados tienen al menos una expedición programada. Selecciona el día para ver la sesión.</p>
         <div class="legend-row"><span class="legend-dot open"></span> Inscripciones abiertas</div>
         <div class="legend-row"><span class="legend-dot full"></span> Expedición completa</div>
         <div class="legend-row"><span class="legend-dot closed"></span> Finalizada o cerrada</div>
@@ -73,32 +74,22 @@
 
     <section class="section-block" id="aventureros">
       <div class="section-heading">
-        <div>
-          <p class="section-kicker">Compañía</p>
-          <h2>Aventureros destacados</h2>
-        </div>
+        <div><p class="section-kicker">Compañía</p><h2>Aventureros destacados</h2></div>
         <div class="metric-inline"><strong id="active-characters">0</strong><span>activos</span></div>
       </div>
       <div id="characters-grid" class="characters-grid" aria-live="polite"></div>
+      <p><a href="aventureros.html" class="chronicle-link">Ver fichas e historiales de aventureros</a></p>
     </section>
 
     <section class="section-block dashboard" id="mundo">
       <article class="card world-card">
-        <p class="section-kicker">Progreso compartido</p>
-        <h2>Estado del mundo</h2>
-        <div class="progress-header">
-          <span>Exploración conocida</span>
-          <strong id="world-percentage">0%</strong>
-        </div>
-        <div class="progress-container" aria-label="Porcentaje de exploración">
-          <div class="progress-bar" id="world-progress"></div>
-        </div>
+        <p class="section-kicker">Progreso compartido</p><h2>Estado del mundo</h2>
+        <div class="progress-header"><span>Exploración conocida</span><strong id="world-percentage">0%</strong></div>
+        <div class="progress-container" aria-label="Porcentaje de exploración"><div class="progress-bar" id="world-progress"></div></div>
         <ul id="discoveries-list" class="simple-list"></ul>
       </article>
-
       <article class="card stats-card">
-        <p class="section-kicker">Registro</p>
-        <h2>Estadísticas</h2>
+        <p class="section-kicker">Registro</p><h2>Estadísticas</h2>
         <div class="stats-grid">
           <div><strong id="expedition-count">0</strong><span>Expediciones completadas</span></div>
           <div><strong id="location-count">0</strong><span>Lugares descubiertos</span></div>
@@ -110,32 +101,31 @@
 
     <section class="section-block content-grid">
       <article class="card" id="cronicas">
-        <div class="section-heading compact">
-          <div>
-            <p class="section-kicker">Archivo</p>
-            <h2>Crónicas recientes</h2>
-          </div>
-        </div>
+        <div class="section-heading compact"><div><p class="section-kicker">Archivo</p><h2>Crónicas recientes</h2></div></div>
         <div id="chronicles-list" class="feed-list"></div>
+        <p><a href="cronicas.html" class="chronicle-link">Abrir archivo de crónicas</a></p>
       </article>
-
       <article class="card" id="rumores">
-        <div class="section-heading compact">
-          <div>
-            <p class="section-kicker">Taberna</p>
-            <h2>Tablón de rumores</h2>
-          </div>
-        </div>
+        <div class="section-heading compact"><div><p class="section-kicker">Taberna</p><h2>Tablón de rumores</h2></div></div>
         <div id="rumors-list" class="feed-list"></div>
+      </article>
+    </section>
+
+    <section class="section-block content-grid">
+      <article class="card world-card">
+        <p class="section-kicker">Archivo de criaturas</p><h2>Bestiario</h2>
+        <p>Consulta criaturas descubiertas, rumores y amenazas registradas por los aventureros.</p>
+        <a href="bestiario.html" class="chronicle-link">Abrir bestiario</a>
+      </article>
+      <article class="card world-card">
+        <p class="section-kicker">Poderes del mundo</p><h2>Facciones</h2>
+        <p>Consulta las organizaciones conocidas y la relación actual de la compañía con ellas.</p>
+        <a href="facciones.html" class="chronicle-link">Ver facciones</a>
       </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <strong>West Marches Reynosa</strong>
-    <span>El mundo cambia con cada expedición.</span>
-  </footer>
-
+  <footer class="site-footer"><strong>West Marches Reynosa</strong><span>El mundo cambia con cada expedición.</span></footer>
   <script src="js/app.js"></script>
 </body>
 </html>

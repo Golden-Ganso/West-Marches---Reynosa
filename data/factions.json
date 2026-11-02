@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "name": "Familia Pyra",
+    "status": "Conocida",
+    "relationship": "Neutral",
+    "image": "",
+    "description": "Una familia que contrata aventureros para distintos encargos.",
+    "firstContact": 2,
+    "notes": "Balasar recibió uno de sus encargos por medio de Brock."
+  }
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expediciones de West Marches Reynosa">
+  <title>Expediciones | West Marches Reynosa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <p class="brand-kicker">Registro del gremio</p>
+      <h1>West Marches Reynosa</h1>
+    </div>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a class="nav-active" href="expediciones.html">Expediciones</a>
+      <a href="index.html#calendario">Calendario</a>
+      <a href="aventureros.html">Aventureros</a>
+      <a href="cronicas.html">Crónicas</a>
+      <a href="bestiario.html">Bestiario</a>
+      <a href="facciones.html">Facciones</a>
+      <a href="index.html#mundo">Mundo</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="section-block">
+      <div class="section-heading">
+        <div><p class="section-kicker">Próximas salidas</p><h2>Expediciones activas</h2></div>
+        <p class="section-help">Sesiones abiertas o completas que todavía no han ocurrido.</p>
+      </div>
+      <div id="active-expeditions" class="expeditions-grid">
+        <div class="card loading-card">Cargando expediciones...</div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <div><p class="section-kicker">Archivo histórico</p><h2>Expediciones finalizadas</h2></div>
+        <p class="section-help">Registro permanente de las sesiones anteriores.</p>
+      </div>
+      <div id="completed-expeditions" class="expeditions-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><strong>West Marches Reynosa</strong><span>El mundo cambia con cada expedición.</span></footer>
+  <script src="js/expeditions.js"></script>
+</body>
+</html>
