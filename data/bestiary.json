@@ -9,10 +9,24 @@
     "image": "",
     "description": "Cadáveres reanimados encontrados durante una expedición.",
     "notes": "Se encontraron varios individuos dentro de una fortaleza abandonada.",
-    "locations": ["Fortaleza abandonada"]
+    "locations": ["Fortaleza abandonada del Bosque Seco"]
   },
-  {
+
+    {
     "id": 2,
+    "name": "Kobolds",
+    "type": "Humanoide",
+    "status": "Descubierto",
+    "firstSeen": 1,
+    "danger": 1,
+    "image": "",
+    "description": "Pequeño humanoide reptiliano de negro corazón famoso por sus astutas trampas y emboscadas, donde aplica su ingenio para compensar su escaso poderío físico.",
+    "notes": "Se encontraron y eliminaron de La cantera de Los Dientes Rojos",
+    "locations": ["Cantera de Los Dientes Rojos"]
+  },
+  
+  {
+    "id": 3,
     "name": "Criatura desconocida del oeste",
     "type": "Desconocido",
     "status": "Rumor",

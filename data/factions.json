@@ -1,12 +1,45 @@
 [
   {
     "id": 1,
-    "name": "Familia Pyra",
+    "name": "Casa Pyra",
     "status": "Conocida",
     "relationship": "Neutral",
     "image": "",
-    "description": "Una familia que contrata aventureros para distintos encargos.",
+    "description": "Familia conectada a la sangre Imperial, incluso sus miembros mas lejanosa la cabeza de la casa son de alto estus entre la sociedad del imperio.",
     "firstContact": 2,
     "notes": "Balasar recibió uno de sus encargos por medio de Brock."
+  },
+
+  {
+    "id": 2,
+    "name": "Casa Arellanis",
+    "status": "Conocida",
+    "relationship": "Neutral",
+    "image": "",
+    "description": "Familia con area de influencia en el ganado, la agricultura y el transporte en Nueva Pyra.",
+    "firstContact": 1,
+    "notes": "Los aventureros ayudaron a rescatar a sus trabajadores de los Kobolds de Los Dientes Rojos."
+  },
+
+  {
+    "id": 3,
+    "name": "Casa DaVinci",
+    "status": "Conocida",
+    "relationship": "Neutral",
+    "image": "",
+    "description": "Familia con area de influencia en Comercio, Hospedaje, Expediciones y Contratos de trabajo.",
+    "firstContact": 1,
+    "notes": "Contactaron con Brok DaVinci."
+  },
+
+  {
+    "id": 4,
+    "name": "Casa Ignitus",
+    "status": "Conocida",
+    "relationship": "Neutral",
+    "image": "",
+    "description": "Casa con influencia en la Seguridad, Guarnicios y cumplimiento de la ley en Nueva Pyra.",
+    "firstContact": 1,
+    "notes": "Conocidos en rumores"
   }
 ]

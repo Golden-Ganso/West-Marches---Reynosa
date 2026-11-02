@@ -1,5 +1,20 @@
 [
-  {"id":1,"title":"Ataque de criatura desconocida","text":"La guardia de Nueva Pyra esta alerta debido a ataques nocturnos de una criatura desconocida, ya lleva un saldo de 5 colonos devorados.","status":"Sin investigar"},
-  {"id":2,"title":"Robos de mercancias en el puerto","text":"Los mercaderes estan furiosos pues una banda de ladrones ha estado hurtando valiosas mercancias cada inicio de mes cuando llegan nuevos barcos a la colonia.","status":"Sin investigar"},
-  {"id":3,"title":"Peleas clandestinas","text":"Se rumora que alguien hace combates y apuestas ilegales en los tuneles de Nueva Pyra, la guardia de la ciudad niega tal información.","status":"Sin investigar"}
+  {
+    "id": 1,
+    "title": "Ataque de criatura desconocida",
+    "text": "La guardia de Nueva Pyra esta alerta debido a ataques nocturnos de una criatura desconocida, ya lleva un saldo de 5 colonos devorados.",
+    "status": "Sin investigar"
+  },
+  {
+    "id": 2,
+    "title": "Robos de mercancias en el puerto",
+    "text": "Los mercaderes estan furiosos pues una banda de ladrones ha estado hurtando valiosas mercancias cada inicio de mes cuando llegan nuevos barcos a la colonia.",
+    "status": "Sin investigar"
+  },
+  {
+    "id": 3,
+    "title": "Peleas clandestinas",
+    "text": "Se rumora que alguien hace combates y apuestas ilegales en los tuneles de Nueva Pyra, la guardia de la ciudad niega tal información.",
+    "status": "Sin investigar"
+  }
 ]

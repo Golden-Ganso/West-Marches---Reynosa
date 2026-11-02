@@ -1,5 +1,56 @@
 [
-  {"id":1,"name":"Yuvan","race":"Tortle","class":"Druida 'Circulo de la tierra'","level":2,"status":"Activo","player":"Manuel","image":"assets/images/Yuvan.jpeg","history": [{"session": 2,"date": "2026-10-03","title": "Fortaleza abandonada","note": "Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica."}]},
-  {"id":2,"name":"Balasar","race":"Draconido","class":"Barbaro","level":2,"status":"Activo","player":"Jose Luis","image":"assets/images/Balasar.jpeg","history": [{"session": 2,"date": "2026-10-03","title": "Fortaleza abandonada","note": "Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica."}]},
-  {"id":3,"name":"Bombo","race":"Goblin","class":"Bardo","level":2,"status":"Activo","player":"Derick","image":""}
+  {
+    "id": 1,
+    "name": "Yuvan",
+    "race": "Tortle",
+    "class": "Druida 'Círculo de la Tierra'",
+    "level": 2,
+    "status": "Activo",
+    "player": "Manuel",
+    "image": "assets/images/Yuvan.jpeg",
+    "history": [
+      {
+        "session": 2,
+        "date": "2026-10-03",
+        "title": "Fortaleza abandonada del bosque seco",
+        "note": "Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Balasar",
+    "race": "Dracónido",
+    "class": "Bárbaro",
+    "level": 2,
+    "status": "Activo",
+    "player": "Jose Luis",
+    "image": "assets/images/Balasar.jpeg",
+    "history": [
+      {
+        "session": 2,
+        "date": "2026-10-03",
+        "title": "Fortaleza abandonada del bosque seco",
+        "note": "Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Bombo",
+    "race": "Goblin",
+    "class": "Bardo",
+    "level": 2,
+    "status": "Activo",
+    "player": "Derick",
+    "image": "",
+    "history": [
+      {
+        "session": 2,
+        "date": "2026-10-03",
+        "title": "Fortaleza abandonada del bosque seco",
+        "note": "Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica."
+      }
+    ]
+  }
 ]
