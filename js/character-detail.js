@@ -43,8 +43,10 @@ function renderCharacterDetail(character, sessions, chronicles, bestiary, factio
     .filter(item => chronicleHasCharacter(item, character))
     .sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date));
 
-  const relatedBestiary = bestiary.filter(creature => relatedSessions.some(session => Number(session.id) === Number(creature.firstSeen)));
-  const relatedFactions = factions.filter(faction => relatedSessions.some(session => Number(session.id) === Number(faction.firstContact)));
+    const relatedBestiary = bestiary.filter(creature => {
+  const characterIds =Array.isArray(creature.characterIds)? creature.characterIds.map(Number): [];return characterIds.includes(Number(character.id));});
+    const relatedFactions = factions.filter(faction => {
+  const characterIds = Array.isArray(faction.characterIds)? faction.characterIds.map(Number): [];return characterIds.includes(Number(character.id));});
   const history = Array.isArray(character.history) ? [...character.history].sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date)) : [];
   const achievements = Array.isArray(character.achievements) ? character.achievements : [];
 

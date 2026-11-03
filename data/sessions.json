@@ -7,6 +7,7 @@
     "status": "completed",
     "slots": 7,
     "players": ["DM: Miguel", "Manuel", "Jose Luis", "Derick", "Alejandro", "Gris", "Isidro"],
+    "characterIds": [1,2,3],
     "level": "NA",
     "description": "El caso de un asesino serial ha sido reabierto, ¿Podrán encontrar al culpable de tan atroces actos antes de que él los encuentre a ustedes?"
   },
@@ -17,7 +18,8 @@
     "time": "15:00",
     "status": "open",
     "slots": 6,
-    "players": ["DM: Miguel"],
+    "players": ["DM: Miguel", "Derick"],
+    "characterIds": [3],
     "level": "2-3",
     "description": "Después de haber sido explorada por primera vez, la Fortaleza del Bosque Seco debe ser ocupada nuevamente por Nueva Pyra. Un pequeño destacamento viajará hasta sus ruinas para levantar un campamento, asegurar las cámaras y establecer un puesto de vigilancia."
   },
@@ -28,7 +30,8 @@
     "time": "15:00",
     "status": "open",
     "slots": 6,
-    "players": ["DM: Miguel"],
+    "players": ["DM: Miguel", "Derick"],
+    "characterIds": [3],
     "level": "2-4",
     "description": "Una criatura desconocida está cazando animales y habitantes de las granjas del sur. Los ataques ocurren durante la noche y los cuerpos desaparecen hacia la costa. La guardia consiguió herir a la criatura, pero no logró identificarla ni abatirla."
   }

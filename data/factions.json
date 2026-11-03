@@ -7,6 +7,7 @@
     "image": "",
     "description": "Familia conectada a la sangre Imperial, incluso sus miembros mas lejanosa la cabeza de la casa son de alto estus entre la sociedad del imperio.",
     "firstContact": 2,
+    "characterIds": [1,2,3],
     "notes": "Balasar recibió uno de sus encargos por medio de Brock."
   },
 
@@ -18,6 +19,7 @@
     "image": "",
     "description": "Familia con area de influencia en el ganado, la agricultura y el transporte en Nueva Pyra.",
     "firstContact": 1,
+    "characterIds": [1,2,3],
     "notes": "Los aventureros ayudaron a rescatar a sus trabajadores de los Kobolds de Los Dientes Rojos."
   },
 
@@ -29,6 +31,7 @@
     "image": "",
     "description": "Familia con area de influencia en Comercio, Hospedaje, Expediciones y Contratos de trabajo.",
     "firstContact": 1,
+    "characterIds": [1,2,3],
     "notes": "Contactaron con Brok DaVinci."
   },
 
@@ -40,6 +43,7 @@
     "image": "",
     "description": "Casa con influencia en la Seguridad, Guarnicios y cumplimiento de la ley en Nueva Pyra.",
     "firstContact": 1,
+    "characterIds": [1,2,3],
     "notes": "Conocidos en rumores"
   }
 ]

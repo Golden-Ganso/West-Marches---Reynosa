@@ -5,6 +5,7 @@
     "title": "Silencio en el Rio del norte",
     "date": "2026-09-26",
     "author": "DM",
+    "characterIds": [1,2,3],
     "participants": ["Bombo", "Balasar", "Yuvan"],
     "image": "",
     "summary": "Un grupo de aventureros fue enviado a buscar a un grupo de constructores de la Casa Arellanis que fueron a construir un puente en el rio Norte.\n\nEncontraron el campamento abandonado y siguieron las huellas que indicaban que los trabajadores fueron llevados al otro lado del rio.\n\nTras seguir el rastro encontraron una cantera que exploraron y terminaron enfrentando una banda de Kobolds la cual fue eliminada y algunos de los trabajadores rescatados, de regreso a la colonia no tuvieron incovenientes. Relan Arellanis recompenso al grupo y les dio acceso a su biblioteca personal."
@@ -15,6 +16,7 @@
     "title": "Reporte de misión de Balasar",
     "date": "2026-10-03",
     "author": "Balasar",
+    "characterIds": [1,2,3],
     "participants": [
       "Balasar",
       "Yuvan",
