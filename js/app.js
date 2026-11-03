@@ -114,6 +114,13 @@ function buildSessionCard(session) {
       </div>
       <div class="slots-row"><div class="slots-bar"><div class="slots-fill" style="width:${percentage}%"></div></div><span class="slots-text">${occupied} / ${slots}</span></div>
       <div class="players-preview"><strong>Participantes:</strong> ${escapeHtml(playersText)}</div>
+      <a
+  href="expedicion.html?id=${encodeURIComponent(session.id)}"
+  class="chronicle-link"
+>
+  Ver expedición
+</a>
+
     </article>`;
 }
 
