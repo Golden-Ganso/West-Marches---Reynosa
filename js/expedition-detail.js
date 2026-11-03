@@ -7,32 +7,61 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!Number.isInteger(sessionId) || sessionId <= 0) throw new Error("ID de expedición inválido");
 
     const responses = await Promise.all([
-      fetch("data/sessions.json"),
-      fetch("data/characters.json"),
-      fetch("data/chronicles.json"),
-      fetch("data/bestiary.json"),
-      fetch("data/factions.json")
-    ]);
+  fetch("data/sessions.json"),
+  fetch("data/characters.json"),
+  fetch("data/chronicles.json"),
+  fetch("data/bestiary.json"),
+  fetch("data/factions.json"),
+  fetch("data/locations.json")
+]);
     if (responses.some(response => !response.ok)) throw new Error("No fue posible cargar los datos");
 
-    const [sessions, characters, chronicles, bestiary, factions] = await Promise.all(responses.map(r => r.json()));
+    const [
+  sessions,
+  characters,
+  chronicles,
+  bestiary,
+  factions,
+  locations
+] = await Promise.all(
+  responses.map(r => r.json())
+);
     const session = sessions.find(item => Number(item.id) === sessionId);
     if (!session) throw new Error("Expedición no encontrada");
 
-    renderExpedition(session, characters, chronicles, bestiary, factions);
+    renderExpedition(
+  session,
+  characters,
+  chronicles,
+  bestiary,
+  factions,
+  locations
+);
   } catch (error) {
     console.error(error);
     document.getElementById("expedition-detail").innerHTML = `<div class="card loading-card">No fue posible cargar la expedición.</div>`;
   }
 });
 
-function renderExpedition(session, characters, chronicles, bestiary, factions) {
+function renderExpedition(
+  session,
+  characters,
+  chronicles,
+  bestiary,
+  factions,
+  locations
+) {
   const characterIds = Array.isArray(session.characterIds) ? session.characterIds.map(Number) : [];
   const creatureIds = Array.isArray(session.creatureIds) ? session.creatureIds.map(Number) : [];
   const factionIds = Array.isArray(session.factionIds) ? session.factionIds.map(Number) : [];
+  const locationIds =
+  Array.isArray(session.locationIds)
+    ? session.locationIds.map(Number)
+    : [];
   const participants = characters.filter(character => characterIds.includes(Number(character.id)));
   const creatures = bestiary.filter(creature => creatureIds.includes(Number(creature.id)));
   const relatedFactions = factions.filter(faction => factionIds.includes(Number(faction.id)));
+  const relatedLocations = locations.filter(location =>locationIds.includes(Number(location.id)));
   const relatedChronicles = chronicles.filter(item => Number(item.session) === Number(session.id));
   const discoveries = Array.isArray(session.discoveries) ? session.discoveries : [];
   const state = getSessionState(session);
@@ -66,6 +95,81 @@ function renderExpedition(session, characters, chronicles, bestiary, factions) {
       <article class="card detail-panel"><p class="section-kicker">Hallazgos</p><h2>Descubrimientos</h2>${discoveries.length ? `<ul class="simple-list">${discoveries.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : `<p class="muted-text">No hay descubrimientos registrados.</p>`}</article>
       <article class="card detail-panel"><p class="section-kicker">Observaciones</p><h2>Notas</h2><p>${escapeHtml(session.notes || "No hay notas adicionales.")}</p></article>
     </section>
+
+    <section class="section-block">
+
+  <div class="section-heading">
+
+    <div>
+      <p class="section-kicker">
+        Exploración
+      </p>
+
+      <h2>
+        Lugares visitados
+      </h2>
+    </div>
+
+    <a
+      href="mapa.html"
+      class="chronicle-link"
+    >
+      Abrir mapa
+    </a>
+
+  </div>
+
+
+  <div class="campaign-detail-grid">
+
+    ${
+      relatedLocations.length
+
+        ? relatedLocations
+            .map(location => `
+
+              <article class="card detail-panel">
+
+                <p class="section-kicker">
+                  ${escapeHtml(
+                    location.type || "Lugar"
+                  )}
+                </p>
+
+                <h3>
+                  ${escapeHtml(location.name)}
+                </h3>
+
+                <p>
+                  ${escapeHtml(
+                    location.description ||
+                    "Sin descripción."
+                  )}
+                </p>
+
+                <a
+                  href="lugar.html?id=${encodeURIComponent(location.id)}"
+                  class="chronicle-link"
+                >
+                  Ver lugar
+                </a>
+
+              </article>
+
+            `)
+            .join("")
+
+        : `
+            <div class="card loading-card">
+              No hay lugares vinculados
+              a esta expedición.
+            </div>
+          `
+    }
+
+  </div>
+
+</section>
 
     <section class="section-block expedition-detail-columns">
       <article class="card detail-panel"><p class="section-kicker">Encuentros</p><h2>Criaturas</h2>${creatures.length ? creatures.map(item => `<div class="detail-list-item"><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.type || "Desconocido")}</span><a class="chronicle-link" href="bestiario.html">Abrir bestiario</a></div>`).join("") : `<p class="muted-text">No hay criaturas vinculadas.</p>`}</article>
