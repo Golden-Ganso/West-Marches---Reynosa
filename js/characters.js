@@ -24,26 +24,102 @@ function renderCharactersPage(characters, sessions) {
       ? `<img src="${encodeURI(character.image)}" alt="Retrato de ${escapeHtml(character.name)}" loading="lazy">`
       : `<span>${escapeHtml(initials)}</span>`;
 
-    return `<article class="card character-profile" id="personaje-${character.id}">
-      <div class="profile-header">
-        <div class="profile-portrait">${portrait}</div>
-        <div class="profile-summary">
-          <p class="section-kicker">${escapeHtml(character.status || "Sin estado")}</p>
-          <h2>${escapeHtml(character.name || "Sin nombre")}</h2>
-          <p><strong>${escapeHtml(character.race || "Raza desconocida")}</strong> · ${escapeHtml(character.class || "Clase desconocida")} · Nivel ${Number(character.level || 1)}</p>
-          <p>Jugador: ${escapeHtml(character.player || "Sin registrar")}</p>
-          <div class="profile-stat"><strong>${sessionCount}</strong><span>expediciones registradas</span></div>
+    return `
+  <article
+    class="card character-profile"
+    id="personaje-${character.id}"
+  >
+
+    <div class="profile-header">
+
+      <div class="profile-portrait">
+        ${portrait}
+      </div>
+
+      <div class="profile-summary">
+
+        <p class="section-kicker">
+          ${escapeHtml(character.status || "Sin estado")}
+        </p>
+
+        <h2>
+          ${escapeHtml(character.name || "Sin nombre")}
+        </h2>
+
+        <p>
+          <strong>
+            ${escapeHtml(character.race || "Raza desconocida")}
+          </strong>
+          · ${escapeHtml(character.class || "Clase desconocida")}
+          · Nivel ${Number(character.level || 1)}
+        </p>
+
+        <p>
+          Jugador:
+          ${escapeHtml(character.player || "Sin registrar")}
+        </p>
+
+        <div class="profile-stat">
+          <strong>${sessionCount}</strong>
+          <span>expediciones registradas</span>
         </div>
+
+        <p>
+          <a
+            href="personaje.html?id=${encodeURIComponent(character.id)}"
+            class="chronicle-link"
+          >
+            Ver ficha completa
+          </a>
+        </p>
+
       </div>
-      <div class="profile-history">
-        <h3>Historial</h3>
-        ${history.length ? history.map(item => `<div class="history-entry">
-          <p class="section-kicker">Expedición #${escapeHtml(item.session ?? "?")} · ${formatDate(item.date)}</p>
-          <h4>${escapeHtml(item.title || "Registro de expedición")}</h4>
-          <p>${escapeHtml(item.note || "Sin notas.")}</p>
-        </div>`).join("") : `<p class="muted-text">Todavía no hay eventos registrados para este personaje.</p>`}
-      </div>
-    </article>`;
+
+    </div>
+
+    <div class="profile-history">
+
+      <h3>Historial reciente</h3>
+
+      ${
+        history.length
+
+          ? history
+              .slice(0, 2)
+              .map(item => `
+                <div class="history-entry">
+
+                  <p class="section-kicker">
+                    Expedición #${escapeHtml(item.session ?? "?")}
+                    · ${formatDate(item.date)}
+                  </p>
+
+                  <h4>
+                    ${escapeHtml(
+                      item.title || "Registro de expedición"
+                    )}
+                  </h4>
+
+                  <p>
+                    ${escapeHtml(item.note || "Sin notas.")}
+                  </p>
+
+                </div>
+              `)
+              .join("")
+
+          : `
+              <p class="muted-text">
+                Todavía no hay eventos registrados
+                para este personaje.
+              </p>
+            `
+      }
+
+    </div>
+
+  </article>
+`;
   }).join("");
 }
 
