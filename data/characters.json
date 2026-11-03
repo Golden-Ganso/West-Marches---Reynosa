@@ -52,5 +52,16 @@
         "note": "Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica."
       }
     ]
-  }
+    },
+
+    {
+    "id": 4,
+    "name": "Adrian Voss",
+    "race": "Humano (Alt)",
+    "class": "Hechicero",
+    "level": 1,
+    "status": "Activo",
+    "player": "Alejandro",
+    "image": "assets/images/Adrian Voss.jpeg"
+    }
 ]
