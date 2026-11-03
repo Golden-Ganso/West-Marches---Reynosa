@@ -11,9 +11,9 @@
     "mapY": 70,
     "description": "Asentamiento principal y punto de partida de las expediciones.",
     "discoveries": [],
-    "characterIds": [],
+    "characterIds": [1,2,3],
     "creatureIds": [],
-    "factionIds": [],
+    "factionIds": [1,2,3,4],
     "notes": ""
   },
   {
@@ -27,17 +27,9 @@
     "mapX": 35,
     "mapY": 42,
     "description": "Una antigua fortaleza descubierta en el Bosque Seco.",
-    "discoveries": [
-      "Antigua sala élfica"
-    ],
-    "characterIds": [
-      1,
-      2,
-      3
-    ],
-    "creatureIds": [
-      1
-    ],
+    "discoveries": ["Antigua sala élfica"],
+    "characterIds": [1,2,3],
+    "creatureIds": [1],
     "factionIds": [],
     "notes": "Los aventureros dejaron una advertencia de peligro antes de abandonar el lugar."
   },
@@ -46,15 +38,15 @@
     "name": "Cantera de los Dientes Rojos",
     "type": "Cantera",
     "status": "Explorada",
-    "danger": 2,
+    "danger": 1,
     "discoveredIn": 1,
     "image": "",
     "mapX": 68,
     "mapY": 35,
     "description": "",
     "discoveries": [],
-    "characterIds": [],
-    "creatureIds": [],
+    "characterIds": [1,2,3],
+    "creatureIds": [2],
     "factionIds": [],
     "notes": ""
   }
