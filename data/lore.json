@@ -42,25 +42,7 @@
   },
 
   {
-    "id": 3,
-    "title": "Fragmento élfico sin traducir",
-    "type": "Pergamino",
-    "category": "Historia",
-    "author": "Desconocido",
-    "status": "Descubierto",
-    "knowledge": "unknown",
-    "image": "",
-    "foundInSession": 2,
-    "foundAtLocation": 2,
-    "characterIds": [1, 2, 3],
-    "factionIds": [],
-    "tags": ["Elfos", "Guerra Antigua", "Magia"],
-    "summary": "Un fragmento escrito en una variante antigua de escritura élfica.",
-    "content": "El contenido todavía no ha sido traducido."
-  },
-
-  {
-  "id": 4,
+  "id": 3,
   "title": "Diario desgastado de un explorador",
   "type": "Diario",
   "category": "Exploración",
@@ -85,7 +67,7 @@
 },
 
 {
-  "id": 5,
+  "id": 4,
   "title": "Leandro I derrota a las fuerzas combinadas de la Liga de Elaria",
   "type": "Periódico",
   "category": "Historia",
