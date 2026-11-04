@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "title": "Crónicas de la Familia Pyra",
+    "type": "Libro",
+    "category": "Facciones",
+    "author": "Desconocido",
+    "status": "Descubierto",
+    "knowledge": "partial",
+    "image": "",
+    "foundInSession": 2,
+    "foundAtLocation": 2,
+    "characterIds": [1, 2, 3],
+    "factionIds": [1],
+    "tags": ["Familia Pyra", "Historia", "Nueva Pyra"],
+    "summary": "Un volumen relacionado con acontecimientos y miembros de la Familia Pyra.",
+    "content": "La primera parte del volumen permanece legible.\n\nAquí puedes escribir tantos párrafos como necesites usando \\n\\n para separar bloques de texto.\n\nAlgunas páginas permanecen dañadas o todavía no han sido interpretadas."
+  },
+  {
+    "id": 2,
+    "title": "Fragmento élfico sin traducir",
+    "type": "Pergamino",
+    "category": "Historia",
+    "author": "Desconocido",
+    "status": "Descubierto",
+    "knowledge": "unknown",
+    "image": "",
+    "foundInSession": 2,
+    "foundAtLocation": 2,
+    "characterIds": [1, 2, 3],
+    "factionIds": [],
+    "tags": ["Elfos", "Guerra Antigua", "Magia"],
+    "summary": "Un fragmento escrito en una variante antigua de escritura élfica.",
+    "content": "El contenido todavía no ha sido traducido."
+  }
+]

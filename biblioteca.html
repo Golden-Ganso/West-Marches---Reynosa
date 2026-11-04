@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biblioteca y archivo de conocimiento de West Marches Reynosa">
+  <title>Biblioteca | West Marches Reynosa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><p class="brand-kicker">Archivo de conocimiento</p><h1>West Marches Reynosa</h1></div>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="expediciones.html">Expediciones</a>
+      <a href="index.html#calendario">Calendario</a>
+      <a href="aventureros.html">Aventureros</a>
+      <a href="cronicas.html">Crónicas</a>
+      <a href="mapa.html">Mapa</a>
+      <a class="nav-active" href="biblioteca.html">Biblioteca</a>
+      <a href="bestiario.html">Bestiario</a>
+      <a href="facciones.html">Facciones</a>
+      <a href="index.html#mundo">Mundo</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="section-block">
+      <div class="section-heading">
+        <div><p class="section-kicker">Conocimiento recuperado</p><h2>Biblioteca</h2></div>
+        <p class="section-help">Libros, pergaminos, cartas, informes e inscripciones descubiertos durante la campaña.</p>
+      </div>
+
+      <div class="card library-controls">
+        <label class="library-search">
+          <span>Buscar en el archivo</span>
+          <input id="library-search" type="search" placeholder="Título, autor, categoría o etiqueta..." autocomplete="off">
+        </label>
+        <div id="library-filters" class="library-filters" aria-label="Filtros de biblioteca"></div>
+      </div>
+
+      <div class="library-count" id="library-count" aria-live="polite"></div>
+      <div id="library-grid" class="library-grid">
+        <div class="card loading-card">Cargando biblioteca...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><strong>West Marches Reynosa</strong><span>Todo conocimiento recuperado deja una huella.</span></footer>
+  <script src="js/library.js"></script>
+</body>
+</html>
