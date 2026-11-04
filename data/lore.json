@@ -11,7 +11,7 @@
   "foundInSession": null,
   "foundAtLocation": null,
   "characterIds": [],
-  "factionIds": [],
+  "factionIds": [2],
   "tags": [
     "Magia",
     "Energía interna",
@@ -39,5 +39,76 @@
     "tags": ["Elfos", "Guerra Antigua", "Magia"],
     "summary": "Un fragmento escrito en una variante antigua de escritura élfica.",
     "content": "El contenido todavía no ha sido traducido."
-  }
+  },
+
+  {
+    "id": 3,
+    "title": "Fragmento élfico sin traducir",
+    "type": "Pergamino",
+    "category": "Historia",
+    "author": "Desconocido",
+    "status": "Descubierto",
+    "knowledge": "unknown",
+    "image": "",
+    "foundInSession": 2,
+    "foundAtLocation": 2,
+    "characterIds": [1, 2, 3],
+    "factionIds": [],
+    "tags": ["Elfos", "Guerra Antigua", "Magia"],
+    "summary": "Un fragmento escrito en una variante antigua de escritura élfica.",
+    "content": "El contenido todavía no ha sido traducido."
+  },
+
+  {
+  "id": 4,
+  "title": "Diario desgastado de un explorador",
+  "type": "Diario",
+  "category": "Exploración",
+  "author": "Desconocido",
+  "status": "Descubierto",
+  "knowledge": "complete",
+  "image": "",
+  "foundInSession": null,
+  "foundAtLocation": null,
+  "characterIds": [],
+  "factionIds": [],
+  "tags": [
+    "Exploradores",
+    "Río del Norte",
+    "Subsuelo",
+    "Calabozo antiguo",
+    "Lago subterráneo",
+    "Arañas"
+  ],
+  "summary": "Diario severamente deteriorado perteneciente a un explorador desconocido. Describe el descubrimiento de una entrada oculta cerca de la unión de las corrientes provenientes de las montañas y una expedición perdida dentro de un enorme complejo subterráneo.",
+  "content": "Brotal 23, Mes del Brote\n\nSeguimos el río corriente arriba hasta alcanzar el lugar donde se unen varias de las corrientes que descienden de las montañas y terminan alimentando las aguas cercanas a la colonia.\n\nEntre los matorrales encontramos algo extraño.\n\nVarias rocas derruidas ocultaban un estrecho pasadizo que descendía bajo tierra. Al principio pensamos que se trataba de los restos de alguna estatua antigua, quizá destruida hacía mucho tiempo.\n\nEstábamos equivocados.\n\nLas piedras forman una entrada.\n\nY lo que existe detrás parece ser mucho más grande de lo que imaginábamos.\n\nDecidimos descender.\n\nBrotal 25, Mes del Brote\n\nComo era de esperarse, estas cámaras oscuras están habitadas.\n\nHemos encontrado toda clase de criaturas en los túneles. Hasta ahora hemos conseguido combatirlas y mantenerlas alejadas, pero por cada criatura que abatimos parece existir otra escondida en la siguiente cámara.\n\nHoy perdimos a Rogers.\n\nEl pícaro siempre encontraba algo de qué reírse incluso en los peores momentos. Estaba intentando abrir una entrada conectada de alguna manera con el techo cuando una horda de arañas cayó sobre su cabeza.\n\nNo pudimos salvarlo.\n\nEn la confusión abandonamos varias marcas del camino y finalmente perdimos la ruta de regreso a la entrada.\n\nCreemos que si continuamos explorando podremos encontrar otra salida.\n\nNo tenemos otra opción.\n\nBrotal 27, Mes del Brote\n\nCuando me uní a los exploradores jamás pensé que aquella ridícula frase de «sigue tu instinto cuando estés perdido» llegaría a convertirse en un consejo verdaderamente útil.\n\nLlevamos días recorriendo estas cámaras.\n\nYa no creo que estemos explorando unas simples cuevas.\n\nEsto es algún tipo de complejo subterráneo. Un calabozo, quizá, aunque nunca he visto uno de semejante escala. Hay cámaras, corredores y pasadizos que parecen extenderse en todas direcciones. Cuanto más avanzamos, menos sentido parece tener regresar.\n\nHoy volví a encontrar agua filtrándose desde el techo.\n\nCreo que procede del río.\n\nSi consigo seguirla quizá pueda orientarnos hacia la superficie.\n\nQuiero creerlo.\n\nFecha desconocida\n\nLlevamos demasiados días aquí abajo.\n\nEl esfuerzo constante de explorar y combatir está terminando con nosotros. Los suministros son escasos y cada encuentro cuesta más que el anterior.\n\nEste lugar está lleno de criaturas.\n\nAlgunas parecen haber sido encerradas deliberadamente.\n\nOtras cazan libremente por los corredores.\n\nY hay otras que simplemente permanecen ocultas en la oscuridad esperando que pasemos frente a ellas.\n\nPerdimos a Dommel.\n\nSin el clérigo, cada herida importa.\n\nCada corte tarda demasiado en cerrar.\n\nCada combate nos acerca un poco más al final.\n\nNo creo que vayamos a conseguirlo.\n\nEstamos siguiendo el sonido del agua. El eco viaja a través de las paredes y cada vez se escucha con mayor claridad.\n\nSi realmente es el río, todavía existe una posibilidad.\n\nFecha desconocida\n\nSolamente quedo yo.\n\nNo sé cuándo perdí a los demás.\n\nAlgunos murieron.\n\nOtros simplemente desaparecieron durante la marcha.\n\nPero finalmente encontré la fuente del sonido.\n\nEra agua.\n\nSolo que nunca fue el río.\n\nFrente a mí se extiende un lago subterráneo enorme. No alcanzo a distinguir la pared opuesta desde la orilla. Parte del agua desaparece por grietas y aberturas que conducen hacia cavernas todavía más profundas.\n\nEse era el sonido que seguíamos.\n\nTodo este tiempo avanzamos en la dirección equivocada.\n\nProbablemente estoy más lejos de la superficie que nunca.\n\nYa no tengo comida.\n\nMis herramientas están rotas. Mi arma apenas puede utilizarse y parte de mi equipo comienza a deshacerse por la humedad.\n\nVoy a dejar estas notas junto a la orilla.\n\nSi alguien consigue llegar hasta aquí, quizá pueda...\n\nEl resto de la frase queda oculto bajo una gran mancha de tinta. Sobre el papel hay además restos secos de otro líquido oscuro y rojizo."
+},
+
+{
+  "id": 5,
+  "title": "Leandro I derrota a las fuerzas combinadas de la Liga de Elaria",
+  "type": "Periódico",
+  "category": "Historia",
+  "author": "Prensa Imperial",
+  "status": "Descubierto",
+  "knowledge": "complete",
+  "image": "",
+  "foundInSession": null,
+  "foundAtLocation": null,
+  "characterIds": [],
+  "factionIds": [],
+  "tags": [
+    "Imperio",
+    "Leandro I",
+    "Liga de Elaria",
+    "Fénix",
+    "Fortaleza de Galasar",
+    "Dragones Rojos",
+    "Pyra",
+    "La Noche del Primer Emperador"
+  ],
+  "summary": "Artículo propagandístico de la antigua prensa imperial que relata dos victorias atribuidas al emperador Leandro I contra las fuerzas de la Liga de Elaria, incluyendo la defensa de la Fortaleza de Galasar y una posterior batalla en el desierto.",
+  "content": "¡Victoria para el Imperio!\n\nHoy el Imperio celebra.\n\nSu Majestad Imperial Leandro I, bendecido una vez más por el Fénix, ha obtenido una magnífica victoria contra las fuerzas combinadas de la autodenominada Liga de Elaria.\n\nEl cobarde ataque ocurrió durante los festejos de La Noche del Primer Emperador, cuando ejércitos procedentes de distintas ciudades-estado intentaron aprovechar las celebraciones para atacar la estratégica Fortaleza de Galasar, próxima a la frontera imperial.\n\nLos enemigos del Imperio esperaban encontrar nuestras defensas desprevenidas.\n\nEncontraron al Emperador.\n\nLA DEFENSA DE GALASAR\n\nAl recibir noticias del asedio, Leandro I se desplazó inmediatamente al frente acompañado por fuerzas imperiales y sus tropas de honor.\n\nBajo el mando directo de Su Majestad, los defensores de Galasar abandonaron las posiciones pasivas y lanzaron una ofensiva contra los sitiadores.\n\nLa línea enemiga no resistió.\n\nLas fuerzas de la Liga fueron expulsadas de las inmediaciones de la fortaleza y obligadas a retirarse precipitadamente hacia las tierras desérticas.\n\nPero la misericordia nunca debe confundirse con debilidad.\n\nEl Emperador ordenó perseguirlas.\n\nLA BATALLA DEL DESIERTO\n\nDurante la persecución, refuerzos procedentes de otra de las ciudades de la Liga intentaron emboscar al ejército imperial.\n\nLas fuerzas de Su Majestad quedaron superadas aproximadamente en proporción de dos a uno.\n\nLos enemigos pensaron que finalmente habían atrapado al Fénix.\n\nEntonces llegaron los Dragones Rojos.\n\nUna carga frontal de aquellos valientes guerreros golpeó el centro de la formación enemiga y quebró sus líneas antes de que pudieran reorganizarse.\n\nLeandro I aprovechó inmediatamente la apertura.\n\nLas fuerzas imperiales avanzaron.\n\nLa emboscada se convirtió en retirada.\n\nY la retirada, en victoria.\n\nEL FÉNIX PREVALECE\n\nUna vez más, las ciudades rebeldes han aprendido una verdad que deberían haber comprendido hace mucho tiempo:\n\nEl Imperio permanece unido.\n\nEl Fénix permanece vigilante.\n\nY mientras Leandro I porte su llama, ningún enemigo decidirá cuándo termina nuestra historia.\n\nLos preparativos para las celebraciones de la victoria ya han comenzado en la capital, Pyra.\n\nQue las campanas sean escuchadas en cada ciudad.\n\nQue los estandartes sean levantados.\n\nY que nuestros enemigos recuerden Galasar.\n\n¡Gloria al Fénix!\n\n¡Gloria al Imperio!\n\n¡Gloria a Leandro I!"
+}
+
 ]
