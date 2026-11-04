@@ -1,21 +1,28 @@
 [
   {
-    "id": 1,
-    "title": "Crónicas de la Familia Pyra",
-    "type": "Libro",
-    "category": "Facciones",
-    "author": "Desconocido",
-    "status": "Descubierto",
-    "knowledge": "partial",
-    "image": "",
-    "foundInSession": 2,
-    "foundAtLocation": 2,
-    "characterIds": [1, 2, 3],
-    "factionIds": [1],
-    "tags": ["Familia Pyra", "Historia", "Nueva Pyra"],
-    "summary": "Un volumen relacionado con acontecimientos y miembros de la Familia Pyra.",
-    "content": "La primera parte del volumen permanece legible.\n\nAquí puedes escribir tantos párrafos como necesites usando \\n\\n para separar bloques de texto.\n\nAlgunas páginas permanecen dañadas o todavía no han sido interpretadas."
+  "id": 1,
+  "title": "Sobre el origen de la magia",
+  "type": "Libro",
+  "category": "Magia",
+  "author": "Rolan Artemis",
+  "status": "Descubierto",
+  "knowledge": "complete",
+  "image": "",
+  "foundInSession": null,
+  "foundAtLocation": null,
+  "characterIds": [],
+  "factionIds": [],
+  "tags": [
+    "Magia",
+    "Energía interna",
+    "Elaria",
+    "Núcleo del mundo",
+    "Investigación mágica"
+  ],
+  "summary": "Tratado del erudito Rolan Artemis acerca de la teoría de la energía interna, según la cual todos los seres vivos mantienen una conexión energética con las profundidades y el núcleo de Elaria.",
+  "content": "I. De la energía interna\n\nEntre las numerosas leyendas que pretenden explicar el origen de la magia en Elaria, pocas han despertado tanto mi interés como aquella que los antiguos tratados denominan la energía interna.\n\nSegún esta teoría, todos los seres vivos se encuentran unidos al mundo mediante una finísima corriente de energía. Invisible para nuestros sentidos ordinarios, dicha corriente atravesaría cada criatura hasta alcanzar, de algún modo todavía desconocido, las profundidades y finalmente el propio núcleo del mundo.\n\nDe ser cierta esta afirmación, aquello que llamamos magia no sería una fuerza externa que el hechicero invoca, sino la manifestación de una conexión que siempre ha estado presente.\n\nLos antiguos sostienen además que dicha conexión puede fortalecerse. Un individuo que ejercita constantemente sus capacidades mágicas parece desarrollar una afinidad cada vez mayor con esta energía, mientras que una criatura que abandona durante años semejante práctica puede ver debilitada su capacidad para manipularla.\n\nQuizá, entonces, el estudio de la magia no consista únicamente en aprender a conjurar.\n\nQuizá consista también en aprender a escuchar.\n\nII. De la forma de los seres vivos\n\nExiste otra consecuencia de esta teoría que considero todavía más fascinante.\n\nLa energía que constituye a un elfo como yo no parece expresarse de la misma manera que aquella presente en un humano, un enano o cualquier otra criatura.\n\nCada forma de vida podría poseer una configuración particular de dicha energía, una suerte de estructura invisible sobre la cual descansa el cuerpo físico.\n\nEsta posibilidad explicaría algunos fenómenos propios de la magia de transmutación e ilusión.\n\nUn conjuro como Disfrazarse, por ejemplo, no necesitaría crear una nueva existencia. Bastaría con alterar temporalmente la manera en que esa estructura energética se manifiesta ante el mundo.\n\nLos estudiosos de las distintas escuelas han adoptado interpretaciones sorprendentemente diferentes sobre este principio. Algunos aseguran que manipulamos directamente la energía; otros sostienen que únicamente engañamos la percepción de quienes la contemplan.\n\nComo suele ocurrir entre eruditos, todos parecen estar absolutamente convencidos de tener razón.\n\nIII. De aquello que yace bajo nosotros\n\nDurante años consideré la energía interna poco más que una elegante explicación nacida de la necesidad de nuestros antepasados de comprender aquello que todavía no podían medir.\n\nMis investigaciones recientes me obligan a reconsiderar esa postura.\n\nDiversos experimentos realizados sobre corrientes mágicas subterráneas han revelado concentraciones de energía cuya magnitud supera cuanto esperaba encontrar.\n\nNo se trata de pequeños depósitos.\n\nNo se trata de residuos provenientes de antiguos conjuros.\n\nExiste bajo nuestros pies una fuente extraordinariamente extensa de energía.\n\nTodavía desconozco su naturaleza y sería irresponsable presentar conclusiones antes de disponer de pruebas suficientes. Sin embargo, las mediciones parecen reforzar una incómoda posibilidad:\n\nQuizá las antiguas leyendas nunca hablaron en sentido figurado.\n\nSi existe realmente una conexión entre los seres vivos y las profundidades de Elaria, entonces descubrir la naturaleza de esa fuente podría obligarnos a reconsiderar no solamente el origen de la magia, sino también nuestra propia relación con el mundo.\n\nHe decidido continuar mis estudios.\n\nY esta vez pienso descender personalmente.\n\nRolan Artemis"
   },
+
   {
     "id": 2,
     "title": "Fragmento élfico sin traducir",
