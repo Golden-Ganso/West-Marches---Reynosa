@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "type": "expedition",
+    "date": "2026-11-05",
+    "title": "Próxima expedición",
+    "text": "La Segunda Guardia se prepara para regresar a la Fortaleza del Bosque Seco y asegurar el puesto para Nueva Pyra.",
+    "link": "expedicion.html?id=5"
+  },
+  {
+    "id": 2,
+    "type": "expedition",
+    "date": "2026-11-05",
+    "title": "Nueva misión disponible",
+    "text": "La Sombra de Nueva Pyra investigará los ataques nocturnos ocurridos en las granjas del sur.",
+    "link": "expedicion.html?id=6"
+  },
+  {
+    "id": 3,
+    "type": "location",
+    "date": "2026-11-05",
+    "title": "Mapa actualizado",
+    "text": "La Fortaleza del Bosque Seco y la Cantera de los Dientes Rojos ya forman parte del atlas de exploración.",
+    "link": "mapa.html"
+  },
+  {
+    "id": 4,
+    "type": "library",
+    "date": "2026-11-05",
+    "title": "Biblioteca disponible",
+    "text": "El archivo de conocimiento ya reúne libros, diarios, pergaminos y documentos recuperados durante la campaña.",
+    "link": "biblioteca.html"
+  },
+  {
+    "id": 5,
+    "type": "world",
+    "date": "2026-11-05",
+    "title": "El mundo sigue creciendo",
+    "text": "Nuevos aventureros, expediciones y descubrimientos continúan ampliando el registro de Nueva Pyra.",
+    "link": "aventureros.html"
+  }
+]

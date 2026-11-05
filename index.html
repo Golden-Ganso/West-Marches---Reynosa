@@ -28,6 +28,26 @@
   </header>
 
   <main class="page-shell">
+    <!-- ACTIVIDAD RECIENTE: colocar dentro de <main class="page-shell">, antes de Próximas expediciones -->
+<section class="recent-activity card" id="recent-activity" aria-label="Actividad reciente">
+  <div class="activity-side">
+    <p class="section-kicker">Actividad reciente</p>
+    <div class="activity-controls">
+      <button type="button" id="activity-prev" class="activity-button" aria-label="Actividad anterior">&lsaquo;</button>
+      <span id="activity-counter">1 / 5</span>
+      <button type="button" id="activity-next" class="activity-button" aria-label="Actividad siguiente">&rsaquo;</button>
+    </div>
+  </div>
+
+  <div class="activity-content" id="activity-content" aria-live="polite">
+    <span id="activity-type" class="activity-type activity-world">Actividad</span>
+    <div class="activity-copy">
+      <h2 id="activity-title">Cargando actividad...</h2>
+      <p id="activity-text"></p>
+    </div>
+    <a id="activity-link" class="chronicle-link" href="#">Ver detalles</a>
+  </div>
+</section>
     <section class="section-block" id="expediciones">
       <div class="section-heading">
         <div><p class="section-kicker">Tablón del gremio</p><h2>Próximas expediciones</h2></div>
@@ -129,5 +149,6 @@
 
   <footer class="site-footer"><strong>West Marches Reynosa</strong><span>El mundo cambia con cada expedición.</span></footer>
   <script src="js/app.js"></script>
+  <script src="js/activity.js"></script>
 </body>
 </html>

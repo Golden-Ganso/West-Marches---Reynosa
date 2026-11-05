@@ -706,3 +706,125 @@ button { font: inherit; }
 .library-controls{padding:20px;margin-bottom:18px}.library-search{display:grid;gap:7px}.library-search span{color:var(--muted);font-size:.78rem;font-weight:800}.library-search input{width:100%;padding:12px 14px;border:1px solid #3b485d;border-radius:8px;background:#0a1423;color:var(--cream);outline:none}.library-search input:focus{border-color:var(--gold);box-shadow:0 0 0 2px rgba(224,182,79,.12)}.library-filters{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.library-filter{padding:8px 11px;border:1px solid #3b485d;border-radius:999px;background:#0b1525;color:var(--muted);cursor:pointer}.library-filter:hover,.library-filter.active{border-color:var(--gold);color:var(--gold-bright);background:rgba(224,182,79,.08)}.library-count{margin:0 0 12px;color:var(--muted);font-size:.82rem}.library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.library-card{overflow:hidden}.library-card-image{height:180px;overflow:hidden;background:#0a1321;border-bottom:1px solid var(--line)}.library-card-image img{width:100%;height:100%;object-fit:cover;display:block}.library-placeholder{width:100%;height:100%;display:grid;place-items:center;color:var(--gold-bright);font-size:3.7rem;font-weight:900;background:radial-gradient(circle,#2a4565,#0b1524 70%)}.library-card-content{padding:18px}.library-card-content h2{margin:4px 0 10px;color:var(--gold-bright);font-size:1.15rem}.library-summary{color:var(--muted);line-height:1.55;font-size:.86rem}.knowledge-badge{padding:5px 8px;border:1px solid #596170;border-radius:999px;color:#d8cfbd;font-size:.67rem;font-weight:800}.knowledge-complete{color:#8fd29a;border-color:#52885b}.knowledge-translated{color:#7db7e8;border-color:#486f91}.knowledge-partial{color:#efc66c;border-color:#8a6b2b}.knowledge-unknown{color:#a9afb9}.library-tags{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0}.library-tags span{padding:4px 7px;border-radius:999px;background:rgba(224,182,79,.08);border:1px solid rgba(224,182,79,.25);color:#d9c99f;font-size:.68rem}
 .lore-document-hero{display:grid;grid-template-columns:minmax(260px,360px) 1fr;overflow:hidden;margin-top:18px}.lore-document-image{min-height:430px;overflow:hidden;background:#0b1525}.lore-document-image img{width:100%;height:100%;object-fit:cover;display:block}.lore-document-placeholder{width:100%;height:100%;display:grid;place-items:center;color:var(--gold-bright);font-size:5rem;font-weight:900;background:radial-gradient(circle,#2b486b,#0b1524 68%)}.lore-document-summary{padding:32px;align-self:center}.lore-document-summary h2{margin:0 0 13px;color:var(--gold-bright);font-size:clamp(2rem,4vw,3rem)}.lore-document-summary>p{color:var(--muted);line-height:1.65}.lore-document-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:20px}.lore-document-meta div{padding:10px;border:1px solid #38465b;border-radius:8px;background:rgba(3,8,15,.25)}.lore-document-meta span{display:block;color:var(--muted);font-size:.7rem}.lore-document-meta strong{display:block;margin-top:4px;color:var(--cream);font-size:.84rem}.lore-reading{padding:28px}.lore-reading-text{max-width:900px;white-space:pre-line;color:#ddd3bf;line-height:1.9;font-size:.96rem}
 @media(max-width:980px){.library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.lore-document-hero{grid-template-columns:1fr}.lore-document-image{min-height:320px}}@media(max-width:600px){.library-grid{grid-template-columns:1fr}.lore-document-summary,.lore-reading{padding:20px}.lore-document-meta{grid-template-columns:1fr}}
+
+/* ===== ACTIVIDAD RECIENTE ===== */
+.recent-activity {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  min-height: 112px;
+  margin-bottom: 34px;
+  overflow: hidden;
+  border-color: rgba(224, 182, 79, .34);
+}
+
+.activity-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px;
+  border-right: 1px solid #354156;
+  background: rgba(4, 9, 16, .24);
+}
+
+.activity-side .section-kicker { margin: 0; }
+
+.activity-controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: .76rem;
+}
+
+.activity-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #435169;
+  border-radius: 7px;
+  background: #0a1423;
+  color: var(--gold-bright);
+  cursor: pointer;
+}
+
+.activity-button:hover,
+.activity-button:focus-visible {
+  border-color: var(--gold);
+  background: #15243a;
+}
+
+.activity-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 17px;
+  padding: 18px 22px;
+}
+
+.activity-fade { animation: activityFade .32s ease; }
+
+@keyframes activityFade {
+  from { opacity: .2; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.activity-type {
+  align-self: start;
+  padding: 5px 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.activity-expedition { color: #e5bb59; }
+.activity-location { color: #76b8e7; }
+.activity-character { color: #83cc8f; }
+.activity-bestiary { color: #dd7a70; }
+.activity-faction { color: #d69ee8; }
+.activity-library { color: #b9a1e7; }
+.activity-world { color: #c5ccd6; }
+
+.activity-copy h2 {
+  margin: 0 0 5px;
+  color: var(--gold-bright);
+  font-size: 1rem;
+}
+
+.activity-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+.activity-content > .chronicle-link {
+  margin: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .recent-activity { grid-template-columns: 1fr; }
+  .activity-side {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-right: 0;
+    border-bottom: 1px solid #354156;
+  }
+  .activity-content {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 15px;
+  }
+  .activity-type { justify-self: start; }
+  .activity-content > .chronicle-link { justify-self: start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .activity-fade { animation: none; }
+}
