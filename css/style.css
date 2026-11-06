@@ -828,3 +828,15 @@ button { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .activity-fade { animation: none; }
 }
+
+.character-background {
+    white-space: pre-line;
+
+    max-width: 900px;
+
+    color: #ddd3bf;
+
+    line-height: 1.8;
+
+    font-size: 0.95rem;
+}

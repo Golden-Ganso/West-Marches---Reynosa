@@ -80,13 +80,17 @@
     },
 
     {
-    "id": 4,
-    "name": "Adrian Voss",
-    "race": "Humano (Alt)",
-    "class": "Hechicero",
-    "level": 1,
-    "status": "Activo",
-    "player": "Alejandro",
-    "image": "assets/images/Adrian Voss.jpeg"
-    }
+  "id": 4,
+  "name": "Adrian Voss",
+  "race": "Humano (Alt)",
+  "class": "Hechicero",
+  "level": 1,
+  "status": "Activo",
+  "player": "Alejandro",
+  "image": "assets/images/Adrian Voss.jpeg",
+  "bio": "Un joven que abandonó su hogar para descubrir el origen de unas extrañas capacidades mágicas, voces recurrentes y conocimientos que nunca aprendió.",
+  "background": "Adrián Voss tiene 25 años y creció en un pequeño pueblo junto a su familia, dedicada al oficio de la herrería. Su vida siempre fue relativamente tranquila. Tiene a sus padres, una hermana mayor y un hermano menor, con quienes mantiene una relación cercana.\n\nDesde pequeño aprendió el trabajo familiar y nunca tuvo grandes aspiraciones de convertirse en aventurero ni de dedicarse a la magia. Sin embargo, con el paso del tiempo comenzaron a sucederle cosas extrañas.\n\nTodo empezó con sueños recurrentes en los que escuchaba voces hablando en un idioma desconocido. Al principio no les dio importancia, pero con el tiempo comenzó a reconocer palabras que nunca había estudiado. Entre ellas estaba el Habla Profunda, un idioma que, inexplicablemente, podía comprender.\n\nPoco después comenzaron a manifestarse habilidades mágicas que nunca había aprendido ni practicado. En ocasiones experimentaba sensaciones extrañas, como si pudiera percibir pensamientos ajenos o como si algo dentro de su mente estuviera despertando.\n\nAl no encontrar explicaciones en su pueblo, decidió investigar por su cuenta. Buscó libros, preguntó a viajeros y trató de encontrar información sobre el origen de sus habilidades, pero ninguna respuesta parecía encajar por completo.\n\nFinalmente comprendió que necesitaba abandonar su hogar para encontrar respuestas. Se despidió de su familia y emprendió un viaje por distintas ciudades, visitando bibliotecas, buscando estudiosos de la magia y recopilando cualquier información que pudiera ayudarlo a comprender qué le estaba sucediendo.\n\nA pesar de marcharse, mantiene contacto con su familia mediante cartas, que suelen tardar entre una y dos semanas en llegar. Siempre lleva consigo un cristal que su familia le regaló y que convirtió en collar, además de una pequeña pieza de metal donde están grabados los nombres de sus padres y hermanos.\n\nAdrián no busca fama, riquezas ni convertirse en un gran hechicero. Su principal motivación es descubrir de dónde provienen sus poderes, por qué conoce un idioma que nunca aprendió y qué es aquello que parece estar despertando dentro de él.\n\nSu viaje no comenzó por el deseo de encontrar aventuras. Comenzó porque necesitaba encontrar respuestas.",
+  "history": [],
+  "achievements": []
+}
 ]

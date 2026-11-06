@@ -73,6 +73,40 @@ function renderCharacterDetail(character, sessions, chronicles, bestiary, factio
         </div>
       </div>
     </section>
+    
+    <section class="section-block character-detail-section">
+
+  <div class="section-heading">
+
+    <div>
+      <p class="section-kicker">
+        Antes de las expediciones
+      </p>
+
+      <h2>
+        Trasfondo
+      </h2>
+    </div>
+
+  </div>
+
+  <article class="card detail-panel">
+
+    <div class="character-background">
+
+      ${
+        character.background
+
+          ? escapeHtml(character.background)
+
+          : "Este aventurero todavía no tiene un trasfondo registrado."
+      }
+
+    </div>
+
+  </article>
+
+</section>
 
     <section class="section-block character-detail-section">
       <div class="section-heading"><div><p class="section-kicker">Bitácora personal</p><h2>Historial</h2></div></div>
