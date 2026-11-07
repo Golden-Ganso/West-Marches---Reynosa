@@ -11,40 +11,30 @@
   <header class="site-header">
     <div class="brand"><p class="brand-kicker">Atlas de exploración</p><h1>West Marches Reynosa</h1></div>
     <nav class="main-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="expediciones.html">Expediciones</a>
-      <a href="index.html#calendario">Calendario</a>
-      <a href="aventureros.html">Aventureros</a>
-      <a href="cronicas.html">Crónicas</a>
-      <a class="nav-active" href="mapa.html">Mapa</a>
-      <a href="biblioteca.html">Biblioteca</a>
-      <a href="bestiario.html">Bestiario</a>
-      <a href="facciones.html">Facciones</a>
-      <a href="index.html#mundo">Mundo</a>
+      <a href="index.html">Inicio</a><a href="expediciones.html">Expediciones</a><a href="index.html#calendario">Calendario</a><a href="aventureros.html">Aventureros</a><a href="cronicas.html">Crónicas</a><a class="nav-active" href="mapa.html">Mapa</a><a href="biblioteca.html">Biblioteca</a><a href="bestiario.html">Bestiario</a><a href="facciones.html">Facciones</a><a href="index.html#mundo">Mundo</a>
     </nav>
   </header>
-
   <main class="page-shell">
     <section class="section-block">
-      <div class="section-heading">
-        <div><p class="section-kicker">Territorio conocido</p><h2>Mapa del mundo</h2></div>
-        <p class="section-help">Selecciona un marcador para consultar el lugar.</p>
-      </div>
+      <div class="section-heading"><div><p class="section-kicker">Territorio conocido</p><h2>Mapa del mundo</h2></div><p class="section-help">Usa los controles para ampliar el mapa. Arrastra para desplazarte cuando esté ampliado.</p></div>
       <div class="map-layout">
         <div class="card world-map-frame">
-          <div id="world-map" class="world-map" role="application" aria-label="Mapa de lugares conocidos">
-            <div class="map-empty-state">Agrega <strong>assets/maps/world-map.jpg</strong> cuando tengas el mapa definitivo.</div>
+          <div class="map-toolbar" aria-label="Controles del mapa">
+            <button type="button" id="map-zoom-out" class="map-tool-button" aria-label="Alejar mapa">−</button>
+            <span id="map-zoom-label" class="map-zoom-label">100%</span>
+            <button type="button" id="map-zoom-in" class="map-tool-button" aria-label="Acercar mapa">+</button>
+            <button type="button" id="map-reset" class="map-reset-button">Reiniciar</button>
+          </div>
+          <div id="map-viewport" class="map-viewport">
+            <div id="world-map" class="world-map" role="application" aria-label="Mapa de lugares conocidos">
+              <div class="map-empty-state">Agrega <strong>assets/images/maps/world-map.png</strong> cuando tengas el mapa definitivo.</div>
+            </div>
           </div>
         </div>
-        <aside id="map-place-panel" class="card map-place-panel">
-          <p class="section-kicker">Atlas</p>
-          <h2>Selecciona un lugar</h2>
-          <p>Los marcadores se colocan usando las coordenadas <strong>mapX</strong> y <strong>mapY</strong> de <strong>locations.json</strong>.</p>
-        </aside>
+        <aside id="map-place-panel" class="card map-place-panel"><p class="section-kicker">Atlas</p><h2>Selecciona un lugar</h2><p>Selecciona un marcador para consultar los datos registrados de ese lugar.</p></aside>
       </div>
     </section>
   </main>
-
   <footer class="site-footer"><strong>West Marches Reynosa</strong><span>El mapa crece con cada expedición.</span></footer>
   <script src="js/map.js"></script>
 </body>
