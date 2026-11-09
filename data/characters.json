@@ -144,7 +144,7 @@
   "id": 6,
   "name": "Schießpulver Schwarzwolle / Pulfa",
   "pronunciation": "Shís-pul-fap Shvarts-vol-le",
-  "race": "",
+  "race": "Satiro",
   "class": "Clérigo",
   "level": 2,
   "status": "Activo",
@@ -160,7 +160,13 @@
       "note": "Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos."
     }
   ],
-  "achievements": []
+  "achievements": [
+    {
+  "name": "Bombeado",
+  "description": "💣 Fuiste troleado por el goblin Bombo.",
+  "date": "2026-11-07"
+    }
+  ]
 }
 
 
