@@ -1,12 +1,12 @@
 [
-  {
-    "id": 1,
-    "type": "expedition",
-    "date": "2026-11-05",
-    "title": "Próxima expedición",
-    "text": "La Segunda Guardia se prepara para regresar a la Fortaleza del Bosque Seco y asegurar el puesto para Nueva Pyra.",
-    "link": "expedicion.html?id=5"
-  },
+ {
+  "id": 1,
+  "type": "expedition",
+  "date": "2026-11-08",
+  "title": "La Segunda Guardia ha regresado",
+  "text": "La Fortaleza del Bosque Seco resistió un ataque de numerosos no muertos. La expedición regresó con bajas y noticias de una nueva amenaza.",
+  "link": "expedicion.html?id=5"
+},
   {
     "id": 2,
     "type": "expedition",
@@ -31,12 +31,12 @@
     "text": "El archivo de conocimiento ya reúne libros, diarios, pergaminos y documentos recuperados durante la campaña.",
     "link": "biblioteca.html"
   },
-  {
-    "id": 5,
-    "type": "world",
-    "date": "2026-11-05",
-    "title": "El mundo sigue creciendo",
-    "text": "Nuevos aventureros, expediciones y descubrimientos continúan ampliando el registro de Nueva Pyra.",
-    "link": "aventureros.html"
-  }
+{
+  "id": 2,
+  "type": "bestiary",
+  "date": "2026-11-08",
+  "title": "Bestiario actualizado",
+  "text": "Esqueletos reanimados, un ogro zombi y una entidad desconocida han sido añadidos al registro.",
+  "link": "bestiario.html"
+}
 ]

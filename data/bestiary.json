@@ -39,5 +39,53 @@
     "description": "Una criatura aún no identificada habría atacado a granjeros del oeste.",
     "notes": "La información proviene de soldados de la colonia.",
     "locations": ["Granjas del oeste"]
-  }
+  },
+
+  {
+  "id": 4,
+  "name": "Esqueleto Reanimado",
+  "type": "No muerto",
+  "status": "Descubierto",
+  "firstSeen": 5,
+  "danger": 1,
+  "characterIds": [1,2,3,4],
+  "image": "",
+  "description": "Restos humanoides reanimados encontrados durante el ataque nocturno contra la Fortaleza del Bosque Seco. Atacaron en gran número y parecían actuar bajo las órdenes de otra entidad.",
+  "notes": "Los esqueletos demostraron cierto grado de coordinación durante el combate. Algunos continuaron luchando mientras la entidad desconocida parecía desplazarse o manifestarse a través de ellos.",
+  "locations": [
+    "Fortaleza del Bosque Seco"
+  ]
+},
+{
+  "id": 5,
+  "name": "Ogro Zombi",
+  "type": "No muerto",
+  "status": "Descubierto",
+  "firstSeen": 5,
+  "danger": 3,
+  "characterIds": [1,2,3,4],
+  "image": "",
+  "description": "Un enorme ogro reanimado que participó en el ataque contra la Fortaleza del Bosque Seco. Su cuerpo soportó una cantidad considerable de daño antes de ser neutralizado.",
+  "notes": "Durante el enfrentamiento, el cuerpo del ogro cayó sobre uno de los aventureros y le provocó heridas extremadamente graves, incluyendo la pérdida de ambas piernas.",
+  "locations": [
+    "Fortaleza del Bosque Seco"
+  ]
+},
+{
+  "id": 6,
+  "name": "Controlador Desconocido",
+  "type": "Desconocido",
+  "status": "Avistamiento",
+  "firstSeen": 5,
+  "danger": 5,
+  "characterIds": [1,2,3,4],
+  "image": "",
+  "description": "Una entidad desconocida relacionada con el ataque a la Fortaleza del Bosque Seco. Parece ser capaz de controlar a varios no muertos y manifestarse o actuar a través de los cuerpos de los esqueletos bajo su mando.",
+  "notes": "La entidad exigió que los expedicionarios abandonaran la fortaleza y dejaran atrás los cuerpos que se encontraban en ella, afirmando que le pertenecían. No se conoce su apariencia real ni su ubicación. Una pista obtenida durante la expedición indica que podría encontrarse en algún lugar del bosque cercano.",
+  "locations": [
+    "Fortaleza del Bosque Seco",
+    "Bosque cercano a la fortaleza"
+  ]
+}
+
 ]

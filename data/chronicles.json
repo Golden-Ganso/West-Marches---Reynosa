@@ -24,5 +24,18 @@
     ],
     "image": "assets/images/cronicas/Reporte Balasar - 02.png",
     "summary": "Fecha: 29 Fluviaris\n\nAl amanecer del día, Balasar pide una orden de trabajo a Brock y, sin esperar mucho, recibe un encargo de la familia Pyra.\n\nAntes de salir de la colonia se obtiene información interesante por parte de los soldados acerca de un ataque a los granjeros del oeste por una bestia aún desconocida.\n\nDespués de 3 días viajando al noroeste, llegamos a una fortaleza que parecía abandonada. En el interior encontramos a 4 zombis. Los combatimos y derrotamos.\n\nSe encontró una puerta grande y detallada en su interior. En palabras del señor Tortuga, era una hermosa sala élfica.\n\nAl retirarnos dejamos un letrero de peligro afuera de dicha fortaleza como advertencia.\n\nRegresamos rumbo a la colonia para reportar y entregar el informe del encargo encomendado, sin ningún contratiempo ni problema."
-  }
+  },
+
+  {
+  "id": 3,
+  "session": 5,
+  "title": "Reporte de expedición #5: La Segunda Guardia",
+  "date": "2026-11-08",
+  "author": "Adrián Voss",
+  "characterIds": [1,2,3,4,5,6],
+  "participants": ["Adrián Voss", "Balasar", "Bombo","Pulfa", "Yuvan", "Zamaryth"],
+  "image": "",
+  "summary": "8 de Solaria, año 759 DF\n\nSe nos convocó a primera hora de la mañana a asistir al Centro de Exploradores para verificar nuestra identidad, debido a los sucesos de la noche anterior durante el evento festivo del Día del Primer Emperador. Por encomienda del actual gobernante, Gregorio Pyra, y el jefe de exploradores, Brock, se nos dio la misión de custodiar el destacamento que va rumbo a la Fortaleza del Bosque Seco.\n\nEl viaje rumbo a la fortaleza tomó tres días. Para llegar no tuvimos ningún incidente o dificultad en nuestro camino. Al arribar a la fortaleza, todos empezamos a ayudar en diferentes tareas y áreas: clasificando e identificando fallecidos, levantando barricadas y muros improvisados, ¿orinar los alrededores? (cualquier duda en este punto, pedir más información al compañero Yuvan) y poniendo alarmas por cualquier ser que pase el perímetro.\n\nAl llegar la noche y prepararnos para descansar, las alarmas sonaron y pudimos observar que estábamos rodeados por una gran cantidad de esqueletos y por el esqueleto o zombi de un ogro. Estos seres estaban siendo comandados por una entidad que podía poseer los cuerpos de sus esqueletos.\n\nNo sabemos dónde está el ser que los comanda. Tenemos la pista, por nuestra clériga, de que estaba por el bosque, pero desconocemos la dirección o ubicación exacta. Este ser quería que abandonáramos la fortaleza y todos los cuerpos de la misma, ya que, según sus palabras, eran suyos.\n\nAl no aceptar, tuvimos una batalla feroz por la protección del lugar. Registramos un total de tres bajas: el guardia Paco, el guardia Hugo y la devota Miriam, además de un daño severo al mago, quien perdió sus dos piernas.\n\nAl terminar esta noche, durante el día le dimos el debido entierro a los fallecidos. Que el Fénix y Avarien los guíen al otro mundo y al más allá.\n\nDespués exploramos la habitación élfica y descubrimos que dentro de ella estaban los cuerpos de los familiares de la primera expedición que no lograron escapar del fuego, así como una pintura élfica algo peculiar.\n\nTambién descubrimos una llave que nos dio acceso a otra habitación y a un cofre con diferentes objetos.\n\nCon eso terminamos el reporte.\n\nFin del reporte.\n\nAdrián Voss"
+}
+
 ]

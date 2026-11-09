@@ -16,5 +16,12 @@
     "title": "Peleas clandestinas",
     "text": "Se rumora que alguien hace combates y apuestas ilegales en los tuneles de Nueva Pyra, la guardia de la ciudad niega tal información.",
     "status": "Sin investigar"
-  }
+  },
+
+  {
+  "id": 4,
+  "title": "El amo de los muertos",
+  "text": "Durante la defensa de la Fortaleza del Bosque Seco, una entidad desconocida afirmó que los cadáveres del lugar le pertenecían. Los testimonios indican que podría encontrarse en algún lugar del bosque cercano.",
+  "status": "Sin investigar"
+}
 ]
