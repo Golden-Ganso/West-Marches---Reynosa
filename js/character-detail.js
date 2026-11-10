@@ -1,52 +1,35 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const characterId = Number(new URLSearchParams(window.location.search).get("id"));
-    if (!Number.isInteger(characterId) || characterId <= 0) {
-      throw new Error("ID de personaje inválido");
-    }
+    if (!Number.isInteger(characterId) || characterId <= 0) throw new Error("ID de personaje inválido");
 
     const responses = await Promise.all([
-      fetch("data/characters.json"),
-      fetch("data/sessions.json"),
-      fetch("data/chronicles.json"),
-      fetch("data/bestiary.json"),
-      fetch("data/factions.json")
+      fetch(`/api/data?entity=characters&id=${encodeURIComponent(characterId)}`, { cache: "no-store" }),
+      fetch("/api/data?entity=sessions", { cache: "no-store" }),
+      fetch("/api/data?entity=chronicles", { cache: "no-store" }),
+      fetch("/api/data?entity=creatures", { cache: "no-store" }),
+      fetch("/api/data?entity=factions", { cache: "no-store" })
     ]);
 
-    if (responses.some(response => !response.ok)) {
-      throw new Error("No fue posible cargar los datos de la ficha");
-    }
+    if (responses.some(response => !response.ok)) throw new Error("No fue posible cargar los datos de la ficha");
 
-    const [characters, sessions, chronicles, bestiary, factions] = await Promise.all(
-      responses.map(response => response.json())
-    );
-
-    const character = characters.find(item => Number(item.id) === characterId);
-    if (!character) throw new Error("Personaje no encontrado");
+    const [character, sessions, chronicles, bestiary, factions] = await Promise.all(responses.map(response => response.json()));
+    if (!character || !character.id) throw new Error("Personaje no encontrado");
 
     renderCharacterDetail(character, sessions, chronicles, bestiary, factions);
   } catch (error) {
     console.error(error);
-    document.getElementById("character-detail").innerHTML = `
-      <div class="card loading-card">No fue posible cargar la ficha del personaje.</div>
-    `;
+    const container = document.getElementById("character-detail");
+    if (container) container.innerHTML = `<div class="card loading-card">No fue posible cargar la ficha del personaje.</div>`;
   }
 });
 
 function renderCharacterDetail(character, sessions, chronicles, bestiary, factions) {
-  const relatedSessions = sessions
-    .filter(session => sessionHasCharacter(session, character))
-    .sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date));
-
-  const completedSessions = relatedSessions.filter(session => session.status === "completed");
-  const relatedChronicles = chronicles
-    .filter(item => chronicleHasCharacter(item, character))
-    .sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date));
-
-    const relatedBestiary = bestiary.filter(creature => {
-  const characterIds =Array.isArray(creature.characterIds)? creature.characterIds.map(Number): [];return characterIds.includes(Number(character.id));});
-    const relatedFactions = factions.filter(faction => {
-  const characterIds = Array.isArray(faction.characterIds)? faction.characterIds.map(Number): [];return characterIds.includes(Number(character.id));});
+  const relatedSessions = sessions.filter(session => sessionHasCharacter(session, character)).sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date));
+  const completedSessions = relatedSessions.filter(session => String(session.status).toLowerCase() === "completed");
+  const relatedChronicles = chronicles.filter(item => chronicleHasCharacter(item, character)).sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date));
+  const relatedBestiary = bestiary.filter(creature => (Array.isArray(creature.characterIds) ? creature.characterIds.map(Number) : []).includes(Number(character.id)));
+  const relatedFactions = factions.filter(faction => (Array.isArray(faction.characterIds) ? faction.characterIds.map(Number) : []).includes(Number(character.id)));
   const history = Array.isArray(character.history) ? [...character.history].sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date)) : [];
   const achievements = Array.isArray(character.achievements) ? character.achievements : [];
 
@@ -62,6 +45,7 @@ function renderCharacterDetail(character, sessions, chronicles, bestiary, factio
       <div class="character-detail-summary">
         <p class="section-kicker">${escapeHtml(character.status || "Sin estado")}</p>
         <h2>${escapeHtml(character.name || "Sin nombre")}</h2>
+        ${character.pronunciation ? `<p class="muted-text">Pronunciación: ${escapeHtml(character.pronunciation)}</p>` : ""}
         <p class="character-detail-class">${escapeHtml(character.race || "Raza desconocida")} · ${escapeHtml(character.class || "Clase desconocida")} · Nivel ${Number(character.level || 1)}</p>
         <p>Jugador: <strong>${escapeHtml(character.player || "Sin registrar")}</strong></p>
         ${character.bio ? `<p class="character-bio">${escapeHtml(character.bio)}</p>` : ""}
@@ -73,40 +57,11 @@ function renderCharacterDetail(character, sessions, chronicles, bestiary, factio
         </div>
       </div>
     </section>
-    
+
     <section class="section-block character-detail-section">
-
-  <div class="section-heading">
-
-    <div>
-      <p class="section-kicker">
-        Antes de las expediciones
-      </p>
-
-      <h2>
-        Trasfondo
-      </h2>
-    </div>
-
-  </div>
-
-  <article class="card detail-panel">
-
-    <div class="character-background">
-
-      ${
-        character.background
-
-          ? escapeHtml(character.background)
-
-          : "Este aventurero todavía no tiene un trasfondo registrado."
-      }
-
-    </div>
-
-  </article>
-
-</section>
+      <div class="section-heading"><div><p class="section-kicker">Antes de las expediciones</p><h2>Trasfondo</h2></div></div>
+      <article class="card detail-panel"><div class="character-background">${character.background ? escapeHtml(character.background) : "Este aventurero todavía no tiene un trasfondo registrado."}</div></article>
+    </section>
 
     <section class="section-block character-detail-section">
       <div class="section-heading"><div><p class="section-kicker">Bitácora personal</p><h2>Historial</h2></div></div>
@@ -116,7 +71,7 @@ function renderCharacterDetail(character, sessions, chronicles, bestiary, factio
             <p class="section-kicker">Expedición #${escapeHtml(item.session ?? "?")} · ${formatDate(item.date)}</p>
             <h3>${escapeHtml(item.title || "Registro de expedición")}</h3>
             <p>${escapeHtml(item.note || "Sin notas.")}</p>
-            <a class="chronicle-link" href="expediciones.html">Ver archivo de expediciones</a>
+            <a class="chronicle-link" href="expedicion.html?id=${encodeURIComponent(item.session)}">Ver expedición</a>
           </article>`).join("") : `<p class="muted-text">Todavía no hay eventos narrativos registrados.</p>`}
       </div>
     </section>
@@ -124,33 +79,24 @@ function renderCharacterDetail(character, sessions, chronicles, bestiary, factio
     <section class="section-block character-detail-columns">
       <article class="card detail-panel">
         <p class="section-kicker">Archivo</p><h2>Crónicas relacionadas</h2>
-        ${relatedChronicles.length ? relatedChronicles.map(item => `
-          <div class="detail-list-item">
-            <strong>${escapeHtml(item.title || "Crónica")}</strong>
-            <span>${formatDate(item.date)} · Expedición #${escapeHtml(item.session ?? "?")}</span>
-            <a class="chronicle-link" href="cronicas.html#cronica-${encodeURIComponent(item.id)}">Leer crónica</a>
-          </div>`).join("") : `<p class="muted-text">No hay crónicas relacionadas.</p>`}
+        ${relatedChronicles.length ? relatedChronicles.map(item => `<div class="detail-list-item"><strong>${escapeHtml(item.title || "Crónica")}</strong><span>${formatDate(item.date)} · Expedición #${escapeHtml(item.session ?? "?")}</span><a class="chronicle-link" href="cronicas.html#cronica-${encodeURIComponent(item.id)}">Leer crónica</a></div>`).join("") : `<p class="muted-text">No hay crónicas relacionadas.</p>`}
       </article>
 
       <article class="card detail-panel">
         <p class="section-kicker">Encuentros</p><h2>Criaturas conocidas</h2>
-        ${relatedBestiary.length ? relatedBestiary.map(item => `
-          <div class="detail-list-item"><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.type || "Desconocido")} · Expedición #${escapeHtml(item.firstSeen)}</span></div>`).join("") : `<p class="muted-text">No hay encuentros registrados.</p>`}
+        ${relatedBestiary.length ? relatedBestiary.map(item => `<div class="detail-list-item"><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.type || "Desconocido")} · Expedición #${escapeHtml(item.firstSeen ?? "?")}</span></div>`).join("") : `<p class="muted-text">No hay encuentros registrados.</p>`}
       </article>
 
       <article class="card detail-panel">
         <p class="section-kicker">Relaciones</p><h2>Facciones conocidas</h2>
-        ${relatedFactions.length ? relatedFactions.map(item => `
-          <div class="detail-list-item"><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.relationship || "Desconocida")} · Expedición #${escapeHtml(item.firstContact)}</span></div>`).join("") : `<p class="muted-text">No hay contactos registrados.</p>`}
+        ${relatedFactions.length ? relatedFactions.map(item => `<div class="detail-list-item"><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.relationship || "Desconocida")} · Expedición #${escapeHtml(item.firstContact ?? "?")}</span></div>`).join("") : `<p class="muted-text">No hay contactos registrados.</p>`}
       </article>
 
       <article class="card detail-panel">
         <p class="section-kicker">Méritos</p><h2>Logros</h2>
-        ${achievements.length ? achievements.map(item => `
-          <div class="detail-list-item"><strong>${escapeHtml(item.name || "Logro")}</strong><span>${escapeHtml(item.description || "")}${item.date ? ` · ${formatDate(item.date)}` : ""}</span></div>`).join("") : `<p class="muted-text">Todavía no hay logros registrados.</p>`}
+        ${achievements.length ? achievements.map(item => `<div class="detail-list-item"><strong>${escapeHtml(item.name || "Logro")}</strong><span>${escapeHtml(item.description || "")}${item.date ? ` · ${formatDate(item.date)}` : ""}</span></div>`).join("") : `<p class="muted-text">Todavía no hay logros registrados.</p>`}
       </article>
-    </section>
-  `;
+    </section>`;
 }
 
 function sessionHasCharacter(session, character) {
@@ -165,9 +111,7 @@ function chronicleHasCharacter(chronicle, character) {
   return ids.includes(Number(character.id)) || participants.includes(character.name);
 }
 
-function initials(name) {
-  return String(name || "?").split(/\s+/).slice(0,2).map(part => part.charAt(0)).join("").toUpperCase();
-}
-function parseLocalDate(value) { return new Date(`${value}T12:00:00`); }
-function formatDate(value) { return parseLocalDate(value).toLocaleDateString("es-MX", { day:"numeric", month:"long", year:"numeric" }); }
+function initials(name) { return String(name || "?").split(/\s+/).slice(0,2).map(part => part.charAt(0)).join("").toUpperCase(); }
+function parseLocalDate(value) { return value ? new Date(`${value}T12:00:00`) : new Date(0); }
+function formatDate(value) { return value ? parseLocalDate(value).toLocaleDateString("es-MX", { day:"numeric", month:"long", year:"numeric" }) : "Fecha desconocida"; }
 function escapeHtml(value) { return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;"); }
