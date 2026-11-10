@@ -28,6 +28,8 @@ function renderExpeditionsPage(sessions) {
   document.getElementById("completed-expeditions").innerHTML = completed.length
     ? completed.map(buildSessionCard).join("")
     : `<div class="card loading-card">Todavía no hay expediciones finalizadas.</div>`;
+    initializeRegistrationPanels(document);
+
 }
 
 function getSessionState(session) {
@@ -64,6 +66,7 @@ function buildSessionCard(session) {
 >
   Ver expedición
 </a>
+${registrationPanelHtml(session)}
   </article>`;
 }
 
