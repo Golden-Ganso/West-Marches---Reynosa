@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 function renderCharactersPage(characters) {
   const container =
+    document.getElementById("characters-page") ||
     document.getElementById("characters-list") ||
     document.getElementById("characters-grid") ||
     document.getElementById("adventurers-grid");
