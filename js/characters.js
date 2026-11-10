@@ -1,133 +1,169 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const [charactersResponse, sessionsResponse] = await Promise.all([
-      fetch("data/characters.json"),
-      fetch("data/sessions.json")
-    ]);
-    if (!charactersResponse.ok || !sessionsResponse.ok) throw new Error("No fue posible cargar los datos");
-    const characters = await charactersResponse.json();
-    const sessions = await sessionsResponse.json();
-    renderCharactersPage(characters, sessions);
+    const response = await fetch("/api/data?entity=characters", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error("No fue posible cargar los personajes desde D1");
+    }
+
+    const characters = await response.json();
+
+    if (!Array.isArray(characters)) {
+      throw new Error("La API de personajes devolvió un formato inválido");
+    }
+
+    renderCharactersPage(characters);
   } catch (error) {
-    console.error(error);
-    document.getElementById("characters-page").innerHTML = `<div class="card loading-card">No fue posible cargar los aventureros.</div>`;
+    console.error("Error cargando aventureros:", error);
+
+    const container = document.getElementById("characters-list");
+
+    if (container) {
+      container.innerHTML = `
+        <div class="card loading-card">
+          No fue posible cargar las fichas de aventureros.
+        </div>
+      `;
+    }
   }
 });
 
-function renderCharactersPage(characters, sessions) {
-  const container = document.getElementById("characters-page");
-  container.innerHTML = characters.map(character => {
-    const history = Array.isArray(character.history) ? [...character.history].sort((a,b) => parseLocalDate(b.date) - parseLocalDate(a.date)) : [];
-    const sessionCount = sessions.filter(session => sessionHasCharacter(session, character)).length;
-    const initials = String(character.name || "?").split(/\s+/).slice(0,2).map(p => p[0]).join("").toUpperCase();
-    const portrait = character.image
-      ? `<img src="${encodeURI(character.image)}" alt="Retrato de ${escapeHtml(character.name)}" loading="lazy">`
-      : `<span>${escapeHtml(initials)}</span>`;
+function renderCharactersPage(characters) {
+  const container =
+    document.getElementById("characters-list") ||
+    document.getElementById("characters-grid") ||
+    document.getElementById("adventurers-grid");
 
-    return `
-  <article
-    class="card character-profile"
-    id="personaje-${character.id}"
-  >
+  if (!container) {
+    console.error("No se encontró el contenedor de aventureros en el HTML.");
+    return;
+  }
 
-    <div class="profile-header">
+  const active = [...characters]
+    .filter(character =>
+      String(character.status || "").toLowerCase() === "activo"
+    )
+    .sort((a, b) => {
+      const levelDifference = Number(b.level || 0) - Number(a.level || 0);
 
-      <div class="profile-portrait">
-        ${portrait}
-      </div>
-
-      <div class="profile-summary">
-
-        <p class="section-kicker">
-          ${escapeHtml(character.status || "Sin estado")}
-        </p>
-
-        <h2>
-          ${escapeHtml(character.name || "Sin nombre")}
-        </h2>
-
-        <p>
-          <strong>
-            ${escapeHtml(character.race || "Raza desconocida")}
-          </strong>
-          · ${escapeHtml(character.class || "Clase desconocida")}
-          · Nivel ${Number(character.level || 1)}
-        </p>
-
-        <p>
-          Jugador:
-          ${escapeHtml(character.player || "Sin registrar")}
-        </p>
-
-        <div class="profile-stat">
-          <strong>${sessionCount}</strong>
-          <span>expediciones registradas</span>
-        </div>
-
-        <p>
-          <a
-            href="personaje.html?id=${encodeURIComponent(character.id)}"
-            class="chronicle-link"
-          >
-            Ver ficha completa
-          </a>
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="profile-history">
-
-      <h3>Historial reciente</h3>
-
-      ${
-        history.length
-
-          ? history
-              .slice(0, 2)
-              .map(item => `
-                <div class="history-entry">
-
-                  <p class="section-kicker">
-                    Expedición #${escapeHtml(item.session ?? "?")}
-                    · ${formatDate(item.date)}
-                  </p>
-
-                  <h4>
-                    ${escapeHtml(
-                      item.title || "Registro de expedición"
-                    )}
-                  </h4>
-
-                  <p>
-                    ${escapeHtml(item.note || "Sin notas.")}
-                  </p>
-
-                </div>
-              `)
-              .join("")
-
-          : `
-              <p class="muted-text">
-                Todavía no hay eventos registrados
-                para este personaje.
-              </p>
-            `
+      if (levelDifference !== 0) {
+        return levelDifference;
       }
 
-    </div>
+      return String(a.name || "").localeCompare(
+        String(b.name || ""),
+        "es"
+      );
+    });
 
-  </article>
-`;
-  }).join("");
+  if (!active.length) {
+    container.innerHTML = `
+      <div class="card loading-card">
+        No hay aventureros activos registrados.
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = active
+    .map(buildCharacterCard)
+    .join("");
 }
 
-function sessionHasCharacter(session, character) {
-  const players = Array.isArray(session.players) ? session.players : [];
-  const ids = Array.isArray(session.characterIds) ? session.characterIds : [];
-  return ids.includes(character.id) || players.includes(character.name);
+function buildCharacterCard(character) {
+  const name = character.name || "Sin nombre";
+  const characterClass = character.class || "Clase desconocida";
+  const race = character.race || "Raza desconocida";
+  const player = character.player || "Jugador sin registrar";
+  const level = Math.max(1, Number(character.level || 1));
+  const status = character.status || "Sin estado";
+  const bio = character.bio || "Sin descripción disponible.";
+
+  const portrait = character.image
+    ? `
+      <img
+        src="${encodeURI(character.image)}"
+        alt="Retrato de ${escapeHtml(name)}"
+        loading="lazy"
+      >
+    `
+    : `
+      <span class="character-initials">
+        ${escapeHtml(initials(name))}
+      </span>
+    `;
+
+  return `
+    <a
+      class="character-card-link"
+      href="personaje.html?id=${encodeURIComponent(character.id)}"
+    >
+      <article class="card character-card">
+        <div class="character-portrait">
+          ${portrait}
+        </div>
+
+        <div class="character-body">
+          <div class="card-topline">
+            <div>
+              <p class="section-kicker">
+                ${escapeHtml(status)}
+              </p>
+
+              <h3>
+                ${escapeHtml(name)}
+              </h3>
+            </div>
+
+            <span class="status-badge status-open">
+              Nivel ${level}
+            </span>
+          </div>
+
+          <p class="character-level">
+            ${escapeHtml(race)} · ${escapeHtml(characterClass)}
+          </p>
+
+          <p class="character-player">
+            Jugador: <strong>${escapeHtml(player)}</strong>
+          </p>
+
+          <p class="character-bio-preview">
+            ${escapeHtml(bio)}
+          </p>
+
+          ${character.pronunciation ? `
+            <p class="muted-text">
+              Pronunciación: ${escapeHtml(character.pronunciation)}
+            </p>
+          ` : ""}
+
+          <span class="chronicle-link">
+            Ver ficha
+          </span>
+        </div>
+      </article>
+    </a>
+  `;
 }
-function parseLocalDate(value) { return new Date(`${value}T12:00:00`); }
-function formatDate(value) { return parseLocalDate(value).toLocaleDateString("es-MX", { day:"numeric", month:"long", year:"numeric" }); }
-function escapeHtml(value) { return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;"); }
+
+function initials(name) {
+  return String(name || "?")
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map(part => part.charAt(0))
+    .join("")
+    .toUpperCase();
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
