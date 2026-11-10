@@ -1,11 +1,15 @@
--- Seed generado automáticamente desde data/*.json.
--- Las tablas principales se insertan primero; las relaciones se insertan después.
--- No usar BEGIN/COMMIT aquí: D1 administra las escrituras de forma independiente.
-
--- === CHARACTERS ===
 INSERT OR REPLACE INTO characters(id,name,pronunciation,race,class_name,level,status,player,image,bio,background) VALUES(1,'Yuvan',NULL,'Tortle','Druida ''Círculo de la Tierra''',3,'Activo','Manuel','assets/images/Yuvan.jpeg','Pendiente',NULL);
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(1,2,'2026-10-03','Fortaleza abandonada del bosque seco','Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica.');
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(1,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
+INSERT INTO character_achievements(character_id,name,description,achievement_date) VALUES(1,'Fundador','Miembro fundador de la campaña','2026-09-26');
 INSERT OR REPLACE INTO characters(id,name,pronunciation,race,class_name,level,status,player,image,bio,background) VALUES(2,'Balasar',NULL,'Dracónido','Bárbaro',3,'Activo','Jose Luis','assets/images/Balasar.jpeg','Pendiente',NULL);
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(2,2,'2026-10-03','Fortaleza abandonada del bosque seco','Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica.');
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(2,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
+INSERT INTO character_achievements(character_id,name,description,achievement_date) VALUES(2,'Fundador','Miembro fundador de la campaña','2026-09-26');
 INSERT OR REPLACE INTO characters(id,name,pronunciation,race,class_name,level,status,player,image,bio,background) VALUES(3,'Bombo',NULL,'Goblin','Bardo',3,'Activo','Derick','assets/images/Bombo.jpeg','Pendiente',NULL);
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(3,2,'2026-10-03','Fortaleza abandonada del bosque seco','Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica.');
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(3,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
+INSERT INTO character_achievements(character_id,name,description,achievement_date) VALUES(3,'Fundador','Miembro fundador de la campaña','2026-09-26');
 INSERT OR REPLACE INTO characters(id,name,pronunciation,race,class_name,level,status,player,image,bio,background) VALUES(4,'Adrian Voss',NULL,'Humano (Alt)','Hechicero',3,'Activo','Alejandro','assets/images/Adrian Voss.jpeg','Un joven que abandonó su hogar para descubrir el origen de unas extrañas capacidades mágicas, voces recurrentes y conocimientos que nunca aprendió.','Adrián Voss tiene 25 años y creció en un pequeño pueblo junto a su familia, dedicada al oficio de la herrería. Su vida siempre fue relativamente tranquila. Tiene a sus padres, una hermana mayor y un hermano menor, con quienes mantiene una relación cercana.
 
 Desde pequeño aprendió el trabajo familiar y nunca tuvo grandes aspiraciones de convertirse en aventurero ni de dedicarse a la magia. Sin embargo, con el paso del tiempo comenzaron a sucederle cosas extrañas.
@@ -23,26 +27,106 @@ A pesar de marcharse, mantiene contacto con su familia mediante cartas, que suel
 Adrián no busca fama, riquezas ni convertirse en un gran hechicero. Su principal motivación es descubrir de dónde provienen sus poderes, por qué conoce un idioma que nunca aprendió y qué es aquello que parece estar despertando dentro de él.
 
 Su viaje no comenzó por el deseo de encontrar aventuras. Comenzó porque necesitaba encontrar respuestas.');
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(4,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
 INSERT OR REPLACE INTO characters(id,name,pronunciation,race,class_name,level,status,player,image,bio,background) VALUES(5,'Zamaryth',NULL,'Elfo','Mago',2,'Activo','Roberto','assets/images/Zamaryth.jpeg','','');
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(5,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos. Durante el combate sufrió heridas extremadamente graves cuando el cuerpo de un ogro zombi cayó sobre él, provocándole la pérdida de ambas piernas.');
 INSERT OR REPLACE INTO characters(id,name,pronunciation,race,class_name,level,status,player,image,bio,background) VALUES(6,'Schießpulver Schwarzwolle / Pulfa','Shís-pul-fap Shvarts-vol-le','Satiro','Clérigo',2,'Activo','Dana','','','');
-
--- === SESSIONS ===
+INSERT INTO character_history(character_id,session_id,event_date,title,note) VALUES(6,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
+INSERT INTO character_achievements(character_id,name,description,achievement_date) VALUES(6,'Bombeado','💣 Fuiste troleado por el goblin Bombo.','2026-11-07');
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(1,'La Cantera de los Dientes Rojos','2026-09-26','16:00','completed',6,'1','Una expedicion salio rumbo al rio norte para ubicar trabajadores desaparecidos.','Encontrar trabajadores de la casa Arellanis que no se habian reportado.','success','El grupo enfrento una banda de Kobolds en la cantera y rescato a los trabajadores.','');
+INSERT INTO session_players(session_id,display_name) VALUES(1,'DM:Miguel, Yuvan');
+INSERT INTO session_players(session_id,display_name) VALUES(1,'Balasar');
+INSERT INTO session_players(session_id,display_name) VALUES(1,'Bombo');
+INSERT OR IGNORE INTO session_characters VALUES(1,1);
+INSERT OR IGNORE INTO session_characters VALUES(1,2);
+INSERT OR IGNORE INTO session_characters VALUES(1,3);
+INSERT INTO session_discoveries(session_id,discovery) VALUES(1,'Cantera de Los Dientes Rojos');
+INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(1,2);
+INSERT OR IGNORE INTO session_factions(session_id,faction_id) VALUES(1,2);
+INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(1,3);
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(2,'Fortaleza del Bosque Seco','2026-10-03','16:00','completed',6,'1-2','Una expedición se internó en el bosque seco y descubrió una fortaleza que parecía abandonada.','Explorar la fortaleza y determinar si representa un peligro o un punto de interés para Nueva Pyra.','success','El grupo exploró la fortaleza, combatió contra varios zombis, descubrió una antigua sala élfica y regresó a la colonia sin bajas.','Antes de retirarse, el grupo dejó una advertencia de peligro en el exterior de la fortaleza.');
+INSERT INTO session_players(session_id,display_name) VALUES(2,'DM:Miguel, Yuvan');
+INSERT INTO session_players(session_id,display_name) VALUES(2,'Balasar');
+INSERT INTO session_players(session_id,display_name) VALUES(2,'Bombo');
+INSERT OR IGNORE INTO session_characters VALUES(2,1);
+INSERT OR IGNORE INTO session_characters VALUES(2,2);
+INSERT OR IGNORE INTO session_characters VALUES(2,3);
+INSERT INTO session_discoveries(session_id,discovery) VALUES(2,'Fortaleza abandonada del Bosque Seco');
+INSERT INTO session_discoveries(session_id,discovery) VALUES(2,'Antigua sala élfica');
+INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(2,1);
+INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(2,2);
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(3,'La Noche del Primer Emperador','2026-03-17','','completed',6,'1-2','Se celebra la Noche del Primer Emperador en Nueva Pyra, un festejo anual con muchos eventos divertidos.','El grupo es contratado para hacer apoyo a la guardia de la ciudad debido a l gran cantidad de personas en el evento.','success','El grupo logro detener un robo en la Armeria de Nueva Pyra.','Uno de los ladrones escapo con un libro que parecia importante.');
+INSERT INTO session_players(session_id,display_name) VALUES(3,'DM:Miguel, Yuvan');
+INSERT INTO session_players(session_id,display_name) VALUES(3,'Balasar');
+INSERT INTO session_players(session_id,display_name) VALUES(3,'Bombo, Isidro, Alis');
+INSERT OR IGNORE INTO session_characters VALUES(3,1);
+INSERT OR IGNORE INTO session_characters VALUES(3,2);
+INSERT OR IGNORE INTO session_characters VALUES(3,3);
+INSERT OR IGNORE INTO session_factions(session_id,faction_id) VALUES(3,2);
+INSERT OR IGNORE INTO session_factions(session_id,faction_id) VALUES(3,4);
+INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(3,1);
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(4,'Caso: El Autor - Un asesino serial','2026-11-01','16:00','completed',8,'NA','El caso de un asesino serial ha sido reabierto. ¿Podrán encontrar al culpable de tan atroces actos antes de que él los encuentre a ustedes?','Resolver el caso de El Autor e identificar al responsable de los asesinatos.','success','','One-shot independiente conservado en el registro de sesiones.');
+INSERT INTO session_players(session_id,display_name) VALUES(4,'DM: Miguel');
+INSERT INTO session_players(session_id,display_name) VALUES(4,'Manuel');
+INSERT INTO session_players(session_id,display_name) VALUES(4,'Jose Luis');
+INSERT INTO session_players(session_id,display_name) VALUES(4,'Derick');
+INSERT INTO session_players(session_id,display_name) VALUES(4,'Alejandro');
+INSERT INTO session_players(session_id,display_name) VALUES(4,'Gris');
+INSERT INTO session_players(session_id,display_name) VALUES(4,'Isidro, Alis');
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(5,'La Segunda Guardia','2026-11-07','15:00','completed',7,'2-3','Después de haber sido explorada por primera vez, la Fortaleza del Bosque Seco debe ser ocupada nuevamente por Nueva Pyra. Un pequeño destacamento viajará hasta sus ruinas para levantar un campamento, asegurar las cámaras y establecer un puesto de vigilancia.','Regresar a la Fortaleza del Bosque Seco, asegurar sus instalaciones y establecer un puesto de vigilancia para Nueva Pyra.','success','El grupo combatio con una pequeña armada de esqueletos y un gran Ogro zombi defendiendo la fortaleza, tuvieron algunas bajas pero mantuvieron firme su posicion y en alto el estandarte.','Alguien controlaba la armada de esqueletos, pero no estaba presente y su conexion fue interrumpida por el bardo del grupo.');
+INSERT INTO session_players(session_id,display_name) VALUES(5,'DM: Miguel');
+INSERT INTO session_players(session_id,display_name) VALUES(5,'Derick');
+INSERT INTO session_players(session_id,display_name) VALUES(5,'Alejandro');
+INSERT INTO session_players(session_id,display_name) VALUES(5,'Manuel');
+INSERT INTO session_players(session_id,display_name) VALUES(5,'Jose Luis');
+INSERT INTO session_players(session_id,display_name) VALUES(5,'Dana');
+INSERT INTO session_players(session_id,display_name) VALUES(5,'Roberto');
+INSERT OR IGNORE INTO session_characters VALUES(5,1);
+INSERT OR IGNORE INTO session_characters VALUES(5,2);
+INSERT OR IGNORE INTO session_characters VALUES(5,3);
+INSERT OR IGNORE INTO session_characters VALUES(5,4);
+INSERT OR IGNORE INTO session_characters VALUES(5,5);
+INSERT OR IGNORE INTO session_characters VALUES(5,6);
+INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(5,4);
+INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(5,5);
+INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(5,6);
+INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(5,2);
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(6,'La Sombra de Nueva Pyra','2026-11-14','15:00','open',8,'2-4','Una criatura desconocida está cazando animales y habitantes de las granjas del sur. Los ataques ocurren durante la noche y los cuerpos desaparecen hacia la costa. La guardia consiguió herir a la criatura, pero no logró identificarla ni abatirla.','Investigar los ataques en las granjas del sur, identificar a la criatura responsable y, si es posible, detenerla.','','','');
+INSERT INTO session_players(session_id,display_name) VALUES(6,'DM: Miguel');
+INSERT INTO session_players(session_id,display_name) VALUES(6,'Derick');
+INSERT INTO session_players(session_id,display_name) VALUES(6,'MarcusV');
+INSERT INTO session_players(session_id,display_name) VALUES(6,'Alejandro');
+INSERT INTO session_players(session_id,display_name) VALUES(6,'Manuel');
+INSERT INTO session_players(session_id,display_name) VALUES(6,'Jose Luis');
+INSERT OR IGNORE INTO session_characters VALUES(6,1);
+INSERT OR IGNORE INTO session_characters VALUES(6,2);
+INSERT OR IGNORE INTO session_characters VALUES(6,3);
+INSERT OR IGNORE INTO session_characters VALUES(6,4);
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(7,'Sesion Especial: Creacion de personajes.','2026-11-05','18:00','completed',8,'','Sesion de apoyo para creacion de personajes, Miguel y Manuel daran la clase, se utilizara Discord para crear algunos e ir resolviendo dudas.
 Para unirse al servidor contactar al DM: Jose Miguel.','Sesion especial para ayudar a jugadores nuevo a crear a su primer personaje.','','','');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'DM: Miguel');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'Marcus V');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'Julieta');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'DM: Manuel');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'Caoticka');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'zondeozx');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'Jose Luis');
+INSERT INTO session_players(session_id,display_name) VALUES(7,'Alejandro');
 INSERT OR REPLACE INTO sessions(id,title,session_date,session_time,status,slots,level,description,objective,result,result_summary,notes) VALUES(8,'Diplomacia en el Nuevo Mundo','2026-11-21','15:30','open',7,'1-3','Una colonia perteneciente a las Ligas de Elaria ha sido descubierta apenas tres días al norte de Nueva Pyra. Aunque las viejas rivalidades exigen tratarla como territorio enemigo, Gregorio Pyra ha decidido intentar una solución diplomática antes de iniciar un conflicto en el nuevo continente.','Escoltar al diplomático Edgar Pyra hasta la colonia de Elderan y establecer un acuerdo preliminar entre ambas colonias que permita iniciar relaciones comerciales, cooperación militar, intercambio de información y futuras negociaciones territoriales.','','','');
-
--- === CHRONICLES ===
+INSERT INTO session_players(session_id,display_name) VALUES(8,'DM: Miguel');
+INSERT INTO session_players(session_id,display_name) VALUES(8,'Derick');
+INSERT OR IGNORE INTO session_characters VALUES(8,3);
 INSERT OR REPLACE INTO chronicles(id,session_id,title,chronicle_date,author,image,summary) VALUES(1,1,'Silencio en el Rio del norte','2026-09-26','DM','','Un grupo de aventureros fue enviado a buscar a un grupo de constructores de la Casa Arellanis que fueron a construir un puente en el rio Norte.
 
 Encontraron el campamento abandonado y siguieron las huellas que indicaban que los trabajadores fueron llevados al otro lado del rio.
 
 Tras seguir el rastro encontraron una cantera que exploraron y terminaron enfrentando una banda de Kobolds la cual fue eliminada y algunos de los trabajadores rescatados, de regreso a la colonia no tuvieron incovenientes. Relan Arellanis recompenso al grupo y les dio acceso a su biblioteca personal.');
+INSERT OR IGNORE INTO chronicle_characters VALUES(1,1);
+INSERT OR IGNORE INTO chronicle_characters VALUES(1,2);
+INSERT OR IGNORE INTO chronicle_characters VALUES(1,3);
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(1,'Bombo');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(1,'Balasar');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(1,'Yuvan');
 INSERT OR REPLACE INTO chronicles(id,session_id,title,chronicle_date,author,image,summary) VALUES(2,2,'Reporte de misión de Balasar','2026-10-03','Balasar','assets/images/cronicas/Reporte Balasar - 02.png','Fecha: 29 Fluviaris
 
 Al amanecer del día, Balasar pide una orden de trabajo a Brock y, sin esperar mucho, recibe un encargo de la familia Pyra.
@@ -56,6 +140,12 @@ Se encontró una puerta grande y detallada en su interior. En palabras del seño
 Al retirarnos dejamos un letrero de peligro afuera de dicha fortaleza como advertencia.
 
 Regresamos rumbo a la colonia para reportar y entregar el informe del encargo encomendado, sin ningún contratiempo ni problema.');
+INSERT OR IGNORE INTO chronicle_characters VALUES(2,1);
+INSERT OR IGNORE INTO chronicle_characters VALUES(2,2);
+INSERT OR IGNORE INTO chronicle_characters VALUES(2,3);
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(2,'Balasar');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(2,'Yuvan');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(2,'Bombo');
 INSERT OR REPLACE INTO chronicles(id,session_id,title,chronicle_date,author,image,summary) VALUES(3,5,'Reporte de expedición #5: La Segunda Guardia','2026-11-07','Adrián Voss','','8 de Solaria, año 759 DF
 
 Se nos convocó a primera hora de la mañana a asistir al Centro de Exploradores para verificar nuestra identidad, debido a los sucesos de la noche anterior durante el evento festivo del Día del Primer Emperador. Por encomienda del actual gobernante, Gregorio Pyra, y el jefe de exploradores, Brock, se nos dio la misión de custodiar el destacamento que va rumbo a la Fortaleza del Bosque Seco.
@@ -79,29 +169,110 @@ Con eso terminamos el reporte.
 Fin del reporte.
 
 Adrián Voss');
-
--- === CREATURES ===
+INSERT OR IGNORE INTO chronicle_characters VALUES(3,1);
+INSERT OR IGNORE INTO chronicle_characters VALUES(3,2);
+INSERT OR IGNORE INTO chronicle_characters VALUES(3,3);
+INSERT OR IGNORE INTO chronicle_characters VALUES(3,4);
+INSERT OR IGNORE INTO chronicle_characters VALUES(3,5);
+INSERT OR IGNORE INTO chronicle_characters VALUES(3,6);
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Adrián Voss');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Balasar');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Bombo');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Pulfa');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Yuvan');
+INSERT INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Zamaryth');
 INSERT OR REPLACE INTO creatures(id,name,type,status,first_seen,danger,image,description,notes) VALUES(1,'Zombi','No muerto','Descubierto',2,1,'','Cadáveres reanimados encontrados durante una expedición.','Se encontraron varios individuos dentro de una fortaleza abandonada.');
+INSERT OR IGNORE INTO creature_characters VALUES(1,1);
+INSERT OR IGNORE INTO creature_characters VALUES(1,2);
+INSERT OR IGNORE INTO creature_characters VALUES(1,3);
+INSERT INTO creature_locations_text(creature_id,location_name) VALUES(1,'Fortaleza abandonada del Bosque Seco');
 INSERT OR REPLACE INTO creatures(id,name,type,status,first_seen,danger,image,description,notes) VALUES(2,'Kobolds','Humanoide','Descubierto',1,1,'','Pequeño humanoide reptiliano de negro corazón famoso por sus astutas trampas y emboscadas, donde aplica su ingenio para compensar su escaso poderío físico.','Se encontraron y eliminaron de La cantera de Los Dientes Rojos');
+INSERT OR IGNORE INTO creature_characters VALUES(2,1);
+INSERT OR IGNORE INTO creature_characters VALUES(2,2);
+INSERT OR IGNORE INTO creature_characters VALUES(2,3);
+INSERT INTO creature_locations_text(creature_id,location_name) VALUES(2,'Cantera de Los Dientes Rojos');
 INSERT OR REPLACE INTO creatures(id,name,type,status,first_seen,danger,image,description,notes) VALUES(3,'Criatura desconocida del oeste','Desconocido','Rumor',NULL,NULL,'','Una criatura aún no identificada habría atacado a granjeros del oeste.','La información proviene de soldados de la colonia.');
+INSERT OR IGNORE INTO creature_characters VALUES(3,1);
+INSERT OR IGNORE INTO creature_characters VALUES(3,2);
+INSERT OR IGNORE INTO creature_characters VALUES(3,3);
+INSERT OR IGNORE INTO creature_characters VALUES(3,4);
+INSERT OR IGNORE INTO creature_characters VALUES(3,5);
+INSERT OR IGNORE INTO creature_characters VALUES(3,6);
+INSERT INTO creature_locations_text(creature_id,location_name) VALUES(3,'Granjas del oeste');
 INSERT OR REPLACE INTO creatures(id,name,type,status,first_seen,danger,image,description,notes) VALUES(4,'Esqueleto Reanimado','No muerto','Descubierto',5,1,'','Restos humanoides reanimados encontrados durante el ataque nocturno contra la Fortaleza del Bosque Seco. Atacaron en gran número y parecían actuar bajo las órdenes de otra entidad.','Los esqueletos demostraron cierto grado de coordinación durante el combate. Algunos continuaron luchando mientras la entidad desconocida parecía desplazarse o manifestarse a través de ellos.');
+INSERT OR IGNORE INTO creature_characters VALUES(4,1);
+INSERT OR IGNORE INTO creature_characters VALUES(4,2);
+INSERT OR IGNORE INTO creature_characters VALUES(4,3);
+INSERT OR IGNORE INTO creature_characters VALUES(4,4);
+INSERT OR IGNORE INTO creature_characters VALUES(4,5);
+INSERT OR IGNORE INTO creature_characters VALUES(4,6);
+INSERT INTO creature_locations_text(creature_id,location_name) VALUES(4,'Fortaleza del Bosque Seco');
 INSERT OR REPLACE INTO creatures(id,name,type,status,first_seen,danger,image,description,notes) VALUES(5,'Ogro Zombi','No muerto','Descubierto',5,3,'','Un enorme ogro reanimado que participó en el ataque contra la Fortaleza del Bosque Seco. Su cuerpo soportó una cantidad considerable de daño antes de ser neutralizado.','Durante el enfrentamiento, el cuerpo del ogro cayó sobre uno de los aventureros y le provocó heridas extremadamente graves, incluyendo la pérdida de ambas piernas.');
+INSERT OR IGNORE INTO creature_characters VALUES(5,1);
+INSERT OR IGNORE INTO creature_characters VALUES(5,2);
+INSERT OR IGNORE INTO creature_characters VALUES(5,3);
+INSERT OR IGNORE INTO creature_characters VALUES(5,4);
+INSERT OR IGNORE INTO creature_characters VALUES(5,5);
+INSERT OR IGNORE INTO creature_characters VALUES(5,6);
+INSERT INTO creature_locations_text(creature_id,location_name) VALUES(5,'Fortaleza del Bosque Seco');
 INSERT OR REPLACE INTO creatures(id,name,type,status,first_seen,danger,image,description,notes) VALUES(6,'Controlador Desconocido','Desconocido','Avistamiento',5,5,'','Una entidad desconocida relacionada con el ataque a la Fortaleza del Bosque Seco. Parece ser capaz de controlar a varios no muertos y manifestarse o actuar a través de los cuerpos de los esqueletos bajo su mando.','La entidad exigió que los expedicionarios abandonaran la fortaleza y dejaran atrás los cuerpos que se encontraban en ella, afirmando que le pertenecían. No se conoce su apariencia real ni su ubicación. Una pista obtenida durante la expedición indica que podría encontrarse en algún lugar del bosque cercano.');
-
--- === FACTIONS ===
+INSERT OR IGNORE INTO creature_characters VALUES(6,1);
+INSERT OR IGNORE INTO creature_characters VALUES(6,2);
+INSERT OR IGNORE INTO creature_characters VALUES(6,3);
+INSERT OR IGNORE INTO creature_characters VALUES(6,4);
+INSERT OR IGNORE INTO creature_characters VALUES(6,5);
+INSERT OR IGNORE INTO creature_characters VALUES(6,6);
+INSERT INTO creature_locations_text(creature_id,location_name) VALUES(6,'Fortaleza del Bosque Seco');
+INSERT INTO creature_locations_text(creature_id,location_name) VALUES(6,'Bosque cercano a la fortaleza');
 INSERT OR REPLACE INTO factions(id,name,status,relationship,image,description,first_contact,notes) VALUES(1,'Casa Pyra','Conocida','Neutral','','Familia conectada a la sangre Imperial, incluso sus miembros mas lejanosa la cabeza de la casa son de alto estus entre la sociedad del imperio.',2,'Balasar recibió uno de sus encargos por medio de Brock.
 
 El gobernador Gregorio Pyra encargo a los aventureros ocupar la Fortaleza del Bosque Seco.');
+INSERT OR IGNORE INTO faction_characters VALUES(1,1);
+INSERT OR IGNORE INTO faction_characters VALUES(1,2);
+INSERT OR IGNORE INTO faction_characters VALUES(1,3);
+INSERT OR IGNORE INTO faction_characters VALUES(1,4);
+INSERT OR IGNORE INTO faction_characters VALUES(1,5);
+INSERT OR IGNORE INTO faction_characters VALUES(1,6);
 INSERT OR REPLACE INTO factions(id,name,status,relationship,image,description,first_contact,notes) VALUES(2,'Casa Arellanis','Conocida','Neutral','','Familia con area de influencia en el ganado, la agricultura y el transporte en Nueva Pyra.',1,'Los aventureros ayudaron a rescatar a sus trabajadores de los Kobolds de Los Dientes Rojos.');
+INSERT OR IGNORE INTO faction_characters VALUES(2,1);
+INSERT OR IGNORE INTO faction_characters VALUES(2,2);
+INSERT OR IGNORE INTO faction_characters VALUES(2,3);
 INSERT OR REPLACE INTO factions(id,name,status,relationship,image,description,first_contact,notes) VALUES(3,'Casa DaVinci','Conocida','Neutral','','Familia con area de influencia en Comercio, Hospedaje, Expediciones y Contratos de trabajo.',1,'Contactaron con Brok DaVinci.');
+INSERT OR IGNORE INTO faction_characters VALUES(3,1);
+INSERT OR IGNORE INTO faction_characters VALUES(3,2);
+INSERT OR IGNORE INTO faction_characters VALUES(3,3);
 INSERT OR REPLACE INTO factions(id,name,status,relationship,image,description,first_contact,notes) VALUES(4,'Casa Ignitus','Conocida','Neutral','','Casa con influencia en la Seguridad, Guarnicios y cumplimiento de la ley en Nueva Pyra.',1,'Conocidos en rumores');
-
--- === LOCATIONS ===
+INSERT OR IGNORE INTO faction_characters VALUES(4,1);
+INSERT OR IGNORE INTO faction_characters VALUES(4,2);
+INSERT OR IGNORE INTO faction_characters VALUES(4,3);
 INSERT OR REPLACE INTO locations(id,name,type,status,danger,discovered_in,image,map_x,map_y,explored,reveal_radius,corridor_width,description,notes) VALUES(1,'Nueva Pyra','Asentamiento','Conocido',0,NULL,'',82,44,1,13,42,'Asentamiento principal y punto de partida de las expediciones.','');
+INSERT OR IGNORE INTO location_connections VALUES(1,2);
+INSERT OR IGNORE INTO location_connections VALUES(1,3);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(1,1);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(1,2);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(1,3);
+INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,1);
+INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,2);
+INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,3);
+INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,4);
 INSERT OR REPLACE INTO locations(id,name,type,status,danger,discovered_in,image,map_x,map_y,explored,reveal_radius,corridor_width,description,notes) VALUES(2,'Fortaleza del Bosque Seco','Fortaleza','Ocupada',2,2,'',67,45,1,7,30,'Una antigua fortaleza descubierta en el Bosque Seco.','Un destacamento de Nueva Pyra ha comenzado a ocupar la fortaleza. Durante la primera noche sufrió un ataque masivo de no muertos. Existe evidencia de una entidad desconocida operando desde el bosque cercano.');
+INSERT OR IGNORE INTO location_connections VALUES(2,1);
+INSERT INTO location_discoveries(location_id,discovery) VALUES(2,'Antigua sala élfica');
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,1);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,2);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,3);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,4);
+INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,1);
+INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,4);
+INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,5);
+INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,6);
 INSERT OR REPLACE INTO locations(id,name,type,status,danger,discovered_in,image,map_x,map_y,explored,reveal_radius,corridor_width,description,notes) VALUES(3,'Cantera de los Dientes Rojos','Cantera','Explorada',1,1,'',74,27,1,8,28,'Antigua cantera ahora ocupada por una banda de Kobolds.','');
-
--- === LORE ===
+INSERT OR IGNORE INTO location_connections VALUES(3,1);
+INSERT INTO location_discoveries(location_id,discovery) VALUES(3,'Cantera de los Dientes Rojos');
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(3,1);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(3,2);
+INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(3,3);
+INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(3,2);
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(1,'Sobre el origen de la magia','Libro','Magia','Rolan Artemis','Descubierto','complete','',NULL,NULL,'Tratado del erudito Rolan Artemis acerca de la teoría de la energía interna, según la cual todos los seres vivos mantienen una conexión energética con las profundidades y el núcleo de Elaria.','I. De la energía interna
 
 Entre las numerosas leyendas que pretenden explicar el origen de la magia en Elaria, pocas han despertado tanto mi interés como aquella que los antiguos tratados denominan la energía interna.
@@ -157,6 +328,12 @@ He decidido continuar mis estudios.
 Y esta vez pienso descender personalmente.
 
 Rolan Artemis');
+INSERT OR IGNORE INTO lore_factions VALUES(1,2);
+INSERT INTO lore_tags(lore_id,tag) VALUES(1,'Magia');
+INSERT INTO lore_tags(lore_id,tag) VALUES(1,'Energía interna');
+INSERT INTO lore_tags(lore_id,tag) VALUES(1,'Elaria');
+INSERT INTO lore_tags(lore_id,tag) VALUES(1,'Núcleo del mundo');
+INSERT INTO lore_tags(lore_id,tag) VALUES(1,'Investigación mágica');
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(6,'Fragmento Elfico Traducido','Carta','Historia','Arthuras Dmerith','Descubierto','translated','',2,2,'Carta traducida escrita por Arthuras Dmerith durante una antigua guerra contra los drow. El documento menciona la caída de las Torres del Destino.','Perdóname. Mis investigaciones han progresado con demasiada lentitud.
 
 Los drow ya están asediando nuestra capital después de tomar las dos Torres del Destino. Los últimos informes hablan de un arma capaz de anular la magia por completo. Si algo semejante pudiera utilizarse a gran escala, temo no solo por nuestra casa, sino por el futuro de toda nuestra civilización.
@@ -188,6 +365,15 @@ No envíes a nadie que no pueda aprender de un mapa.
 Y, por favor, destruye esta carta después de leerla.
 
 Arthuras Dmerith');
+INSERT OR IGNORE INTO lore_characters VALUES(6,4);
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Elfos');
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Drow');
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Casa Dmerith');
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Guerra Antigua');
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Torres del Destino');
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Cascadas del Amanecer');
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Enfermedad');
+INSERT INTO lore_tags(lore_id,tag) VALUES(6,'Arma antimagia');
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(3,'Diario desgastado de un explorador','Diario','Exploración','Desconocido','Descubierto','complete','',NULL,NULL,'Diario severamente deteriorado perteneciente a un explorador desconocido. Describe el descubrimiento de una entrada oculta cerca de la unión de las corrientes provenientes de las montañas y una expedición perdida dentro de un enorme complejo subterráneo.','Brotal 23, Mes del Brote
 
 Seguimos el río corriente arriba hasta alcanzar el lugar donde se unen varias de las corrientes que descienden de las montañas y terminan alimentando las aguas cercanas a la colonia.
@@ -301,6 +487,12 @@ Voy a dejar estas notas junto a la orilla.
 Si alguien consigue llegar hasta aquí, quizá pueda...
 
 El resto de la frase queda oculto bajo una gran mancha de tinta. Sobre el papel hay además restos secos de otro líquido oscuro y rojizo.');
+INSERT INTO lore_tags(lore_id,tag) VALUES(3,'Exploradores');
+INSERT INTO lore_tags(lore_id,tag) VALUES(3,'Río del Norte');
+INSERT INTO lore_tags(lore_id,tag) VALUES(3,'Subsuelo');
+INSERT INTO lore_tags(lore_id,tag) VALUES(3,'Calabozo antiguo');
+INSERT INTO lore_tags(lore_id,tag) VALUES(3,'Lago subterráneo');
+INSERT INTO lore_tags(lore_id,tag) VALUES(3,'Arañas');
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(4,'Leandro I derrota a las fuerzas combinadas de la Liga de Elaria','Periódico','Historia','Prensa Imperial','Descubierto','complete','',NULL,NULL,'Artículo propagandístico de la antigua prensa imperial que relata dos victorias atribuidas al emperador Leandro I contra las fuerzas de la Liga de Elaria, incluyendo la defensa de la Fortaleza de Galasar y una posterior batalla en el desierto.','¡Victoria para el Imperio!
 
 Hoy el Imperio celebra.
@@ -370,6 +562,14 @@ Y que nuestros enemigos recuerden Galasar.
 ¡Gloria al Imperio!
 
 ¡Gloria a Leandro I!');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'Imperio');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'Leandro I');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'Liga de Elaria');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'Fénix');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'Fortaleza de Galasar');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'Dragones Rojos');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'Pyra');
+INSERT INTO lore_tags(lore_id,tag) VALUES(4,'La Noche del Primer Emperador');
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(5,'Sobre los Dioses','Tratado','Religión','Decantanos','Descubierto','complete','',NULL,NULL,'Tratado de Decantanos, erudito del Imperio Ignis, acerca de las principales deidades conocidas en Elaria, sus símbolos, dominios, cultos y las contradicciones existentes entre las distintas interpretaciones religiosas.','SOBRE LOS DIOSES
 
 Por Decantanos, erudito del Imperio Ignis
@@ -509,6 +709,19 @@ Sino: ¿Qué son?
 
 Decantanos
 Erudito del Imperio Ignis');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Dioses');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Religión');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Imperio Ignis');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Fénix');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Smorleth');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Ormagon');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Kalara');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'El Ascendido');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Nocturnith');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Avarien');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Velthara');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Morghal');
+INSERT INTO lore_tags(lore_id,tag) VALUES(5,'Sythara');
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(2,'Guía Imperial de Nueva Pyra','Guía','Nueva Pyra','Administración Colonial de Nueva Pyra','Público','complete','',NULL,1,'Documento oficial entregado a colonos, visitantes y expedicionarios. Resume la organización de Nueva Pyra, sus servicios, autoridades, defensas y el papel de los exploradores en la expansión imperial.','GUÍA IMPERIAL DE NUEVA PYRA
 
 Información para colonos, visitantes y miembros del Centro de Exploradores.
@@ -633,6 +846,13 @@ Nueva Pyra necesita exploradores.
 Los mapas necesitan nombres.
 
 Bienvenido al nuevo continente.');
+INSERT INTO lore_tags(lore_id,tag) VALUES(2,'Nueva Pyra');
+INSERT INTO lore_tags(lore_id,tag) VALUES(2,'Imperio Ignis');
+INSERT INTO lore_tags(lore_id,tag) VALUES(2,'Exploración');
+INSERT INTO lore_tags(lore_id,tag) VALUES(2,'Colonia');
+INSERT INTO lore_tags(lore_id,tag) VALUES(2,'Centro de Exploradores');
+INSERT INTO lore_tags(lore_id,tag) VALUES(2,'Casas Nobles');
+INSERT INTO lore_tags(lore_id,tag) VALUES(2,'Leandro II');
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(7,'Sobre el origen de la magia II','Tratado','Magia','Rolan Artemis','Descubierto','complete','',NULL,NULL,'Segundo tratado de Rolan Artemis sobre el origen de la magia. Después de recibir una advertencia de Sythara durante un sueño, Rolan afirma haber sido bendecido por la Dama Arcana y haber adquirido la capacidad de percibir estructuras invisibles relacionadas con la magia. Lejos de abandonar sus investigaciones, interpreta la advertencia como evidencia de que existe una verdad que incluso los dioses prefieren mantener oculta.','SOBRE EL ORIGEN DE LA MAGIA II
 
 Por Rolan Artemis
@@ -832,6 +1052,14 @@ Pero ya he visto los hilos.
 Sería imposible fingir que no existen.
 
 Rolan Artemis');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Magia');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Rolan Artemis');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Sythara');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Dama Arcana');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Energía interna');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Divinidad');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Núcleo del mundo');
+INSERT INTO lore_tags(lore_id,tag) VALUES(7,'Investigación mágica');
 INSERT OR REPLACE INTO lore(id,title,type,category,author,status,knowledge,image,found_in_session,found_at_location,summary,content) VALUES(8,'Guía de Cocina del Explorador','Libro','Supervivencia','Desconocido','Descubierto','complete','',NULL,1,'Una sencilla guía culinaria destinada a exploradores y viajeros. Contiene recetas fáciles de preparar durante expediciones y capaces de proporcionar pequeños beneficios durante el viaje.','GUÍA DE COCINA DEL EXPLORADOR
 
 Una buena comida no reemplaza una espada, una cuerda o un mapa. Sin embargo, cualquier explorador que haya pasado una semana alimentándose únicamente de pan duro entenderá rápidamente su importancia.
@@ -946,292 +1174,25 @@ Una criatura desconocida puede ser peligrosa.
 Una criatura desconocida correctamente preparada puede ser la cena.
 
 Naturalmente, se recomienda identificar correctamente cualquier ingrediente antes de ingerirlo.');
-
--- === RUMORS ===
+INSERT INTO lore_tags(lore_id,tag) VALUES(8,'Cocina');
+INSERT INTO lore_tags(lore_id,tag) VALUES(8,'Supervivencia');
+INSERT INTO lore_tags(lore_id,tag) VALUES(8,'Exploración');
+INSERT INTO lore_tags(lore_id,tag) VALUES(8,'Alimentos');
+INSERT INTO lore_tags(lore_id,tag) VALUES(8,'Nueva Pyra');
+INSERT INTO lore_tags(lore_id,tag) VALUES(8,'Recetas');
 INSERT OR REPLACE INTO rumors(id,title,text,status) VALUES(1,'Ataque de criatura desconocida','La guardia de Nueva Pyra esta alerta debido a ataques nocturnos de una criatura desconocida, ya lleva un saldo de 5 colonos devorados.','Sin investigar');
 INSERT OR REPLACE INTO rumors(id,title,text,status) VALUES(2,'Robos de mercancias en el puerto','Los mercaderes estan furiosos pues una banda de ladrones ha estado hurtando valiosas mercancias cada inicio de mes cuando llegan nuevos barcos a la colonia.','Sin investigar');
 INSERT OR REPLACE INTO rumors(id,title,text,status) VALUES(3,'Peleas clandestinas','Se rumora que alguien hace combates y apuestas ilegales en los tuneles de Nueva Pyra, la guardia de la ciudad niega tal información.','Sin investigar');
 INSERT OR REPLACE INTO rumors(id,title,text,status) VALUES(4,'El amo de los muertos','Durante la defensa de la Fortaleza del Bosque Seco, una entidad desconocida afirmó que los cadáveres del lugar le pertenecían. Los testimonios indican que podría encontrarse en algún lugar del bosque cercano.','Sin investigar');
-
--- === NEWS ===
 INSERT OR REPLACE INTO news(id,type,news_date,title,text,link) VALUES(1,'expedition','2026-11-08','La Segunda Guardia ha regresado','La Fortaleza del Bosque Seco resistió un ataque de numerosos no muertos. La expedición regresó con bajas y noticias de una nueva amenaza.','expedicion.html?id=5');
 INSERT OR REPLACE INTO news(id,type,news_date,title,text,link) VALUES(2,'expedition','2026-11-05','Nueva misión disponible','La Sombra de Nueva Pyra investigará los ataques nocturnos ocurridos en las granjas del sur.','expedicion.html?id=6');
 INSERT OR REPLACE INTO news(id,type,news_date,title,text,link) VALUES(3,'location','2026-11-05','Mapa actualizado','La Fortaleza del Bosque Seco y la Cantera de los Dientes Rojos ya forman parte del atlas de exploración.','mapa.html');
 INSERT OR REPLACE INTO news(id,type,news_date,title,text,link) VALUES(4,'library','2026-11-05','Biblioteca Actualizada','La biblioteca ha recibido nuevos libros de diversos temas.','biblioteca.html');
 INSERT OR REPLACE INTO news(id,type,news_date,title,text,link) VALUES(5,'bestiary','2026-11-08','Bestiario actualizado','Esqueletos reanimados, un ogro zombi y una entidad desconocida han sido añadidos al registro.','bestiario.html');
-
--- === WORLD ===
 INSERT OR REPLACE INTO world_state(id,exploration,discovered_locations,completed_expeditions,artifacts_found) VALUES(1,1,3,3,0);
-
--- === CHARACTER HISTORY / ACHIEVEMENTS ===
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(1,2,'2026-10-03','Fortaleza abandonada del bosque seco','Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica.');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(1,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
-INSERT  INTO character_achievements(character_id,name,description,achievement_date) VALUES(1,'Fundador','Miembro fundador de la campaña','2026-09-26');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(2,2,'2026-10-03','Fortaleza abandonada del bosque seco','Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica.');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(2,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
-INSERT  INTO character_achievements(character_id,name,description,achievement_date) VALUES(2,'Fundador','Miembro fundador de la campaña','2026-09-26');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(3,2,'2026-10-03','Fortaleza abandonada del bosque seco','Participó en la exploración de una fortaleza, combatió contra zombis y ayudó a descubrir una sala élfica.');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(3,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
-INSERT  INTO character_achievements(character_id,name,description,achievement_date) VALUES(3,'Fundador','Miembro fundador de la campaña','2026-09-26');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(4,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(5,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos. Durante el combate sufrió heridas extremadamente graves cuando el cuerpo de un ogro zombi cayó sobre él, provocándole la pérdida de ambas piernas.');
-INSERT  INTO character_history(character_id,session_id,event_date,title,note) VALUES(6,5,'2026-11-08','La Segunda Guardia','Participó en la defensa de la Fortaleza del Bosque Seco contra numerosos no muertos y una entidad desconocida capaz de controlar esqueletos.');
-INSERT  INTO character_achievements(character_id,name,description,achievement_date) VALUES(6,'Bombeado','💣 Fuiste troleado por el goblin Bombo.','2026-11-07');
-
--- === SESSION RELATIONS ===
-INSERT  INTO session_players(session_id,display_name) VALUES(1,'DM:Miguel, Yuvan');
-INSERT  INTO session_players(session_id,display_name) VALUES(1,'Balasar');
-INSERT  INTO session_players(session_id,display_name) VALUES(1,'Bombo');
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(1,1);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(1,2);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(1,3);
-INSERT  INTO session_discoveries(session_id,discovery) VALUES(1,'Cantera de Los Dientes Rojos');
-INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(1,2);
-INSERT OR IGNORE INTO session_factions(session_id,faction_id) VALUES(1,2);
-INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(1,3);
-INSERT  INTO session_players(session_id,display_name) VALUES(2,'DM:Miguel, Yuvan');
-INSERT  INTO session_players(session_id,display_name) VALUES(2,'Balasar');
-INSERT  INTO session_players(session_id,display_name) VALUES(2,'Bombo');
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(2,1);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(2,2);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(2,3);
-INSERT  INTO session_discoveries(session_id,discovery) VALUES(2,'Fortaleza abandonada del Bosque Seco');
-INSERT  INTO session_discoveries(session_id,discovery) VALUES(2,'Antigua sala élfica');
-INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(2,1);
-INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(2,2);
-INSERT  INTO session_players(session_id,display_name) VALUES(3,'DM:Miguel, Yuvan');
-INSERT  INTO session_players(session_id,display_name) VALUES(3,'Balasar');
-INSERT  INTO session_players(session_id,display_name) VALUES(3,'Bombo, Isidro, Alis');
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(3,1);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(3,2);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(3,3);
-INSERT OR IGNORE INTO session_factions(session_id,faction_id) VALUES(3,2);
-INSERT OR IGNORE INTO session_factions(session_id,faction_id) VALUES(3,4);
-INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(3,1);
-INSERT  INTO session_players(session_id,display_name) VALUES(4,'DM: Miguel');
-INSERT  INTO session_players(session_id,display_name) VALUES(4,'Manuel');
-INSERT  INTO session_players(session_id,display_name) VALUES(4,'Jose Luis');
-INSERT  INTO session_players(session_id,display_name) VALUES(4,'Derick');
-INSERT  INTO session_players(session_id,display_name) VALUES(4,'Alejandro');
-INSERT  INTO session_players(session_id,display_name) VALUES(4,'Gris');
-INSERT  INTO session_players(session_id,display_name) VALUES(4,'Isidro, Alis');
-INSERT  INTO session_players(session_id,display_name) VALUES(5,'DM: Miguel');
-INSERT  INTO session_players(session_id,display_name) VALUES(5,'Derick');
-INSERT  INTO session_players(session_id,display_name) VALUES(5,'Alejandro');
-INSERT  INTO session_players(session_id,display_name) VALUES(5,'Manuel');
-INSERT  INTO session_players(session_id,display_name) VALUES(5,'Jose Luis');
-INSERT  INTO session_players(session_id,display_name) VALUES(5,'Dana');
-INSERT  INTO session_players(session_id,display_name) VALUES(5,'Roberto');
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(5,1);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(5,2);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(5,3);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(5,4);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(5,5);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(5,6);
-INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(5,4);
-INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(5,5);
-INSERT OR IGNORE INTO session_creatures(session_id,creature_id) VALUES(5,6);
-INSERT OR IGNORE INTO session_locations(session_id,location_id) VALUES(5,2);
-INSERT  INTO session_players(session_id,display_name) VALUES(6,'DM: Miguel');
-INSERT  INTO session_players(session_id,display_name) VALUES(6,'Derick');
-INSERT  INTO session_players(session_id,display_name) VALUES(6,'MarcusV');
-INSERT  INTO session_players(session_id,display_name) VALUES(6,'Alejandro');
-INSERT  INTO session_players(session_id,display_name) VALUES(6,'Manuel');
-INSERT  INTO session_players(session_id,display_name) VALUES(6,'Jose Luis');
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(6,1);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(6,2);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(6,3);
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(6,4);
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'DM: Miguel');
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'Marcus V');
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'Julieta');
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'DM: Manuel');
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'Caoticka');
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'zondeozx');
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'Jose Luis');
-INSERT  INTO session_players(session_id,display_name) VALUES(7,'Alejandro');
-INSERT  INTO session_players(session_id,display_name) VALUES(8,'DM: Miguel');
-INSERT  INTO session_players(session_id,display_name) VALUES(8,'Derick');
-INSERT OR IGNORE INTO session_characters(session_id,character_id) VALUES(8,3);
-
--- === CHRONICLE RELATIONS ===
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(1,1);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(1,2);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(1,3);
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(1,'Bombo');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(1,'Balasar');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(1,'Yuvan');
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(2,1);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(2,2);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(2,3);
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(2,'Balasar');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(2,'Yuvan');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(2,'Bombo');
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(3,1);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(3,2);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(3,3);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(3,4);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(3,5);
-INSERT OR IGNORE INTO chronicle_characters(chronicle_id,character_id) VALUES(3,6);
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Adrián Voss');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Balasar');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Bombo');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Pulfa');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Yuvan');
-INSERT  INTO chronicle_participants(chronicle_id,display_name) VALUES(3,'Zamaryth');
-
--- === CREATURE RELATIONS ===
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(1,1);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(1,2);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(1,3);
-INSERT  INTO creature_locations_text(creature_id,location_name) VALUES(1,'Fortaleza abandonada del Bosque Seco');
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(2,1);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(2,2);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(2,3);
-INSERT  INTO creature_locations_text(creature_id,location_name) VALUES(2,'Cantera de Los Dientes Rojos');
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(3,1);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(3,2);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(3,3);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(3,4);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(3,5);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(3,6);
-INSERT  INTO creature_locations_text(creature_id,location_name) VALUES(3,'Granjas del oeste');
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(4,1);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(4,2);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(4,3);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(4,4);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(4,5);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(4,6);
-INSERT  INTO creature_locations_text(creature_id,location_name) VALUES(4,'Fortaleza del Bosque Seco');
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(5,1);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(5,2);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(5,3);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(5,4);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(5,5);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(5,6);
-INSERT  INTO creature_locations_text(creature_id,location_name) VALUES(5,'Fortaleza del Bosque Seco');
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(6,1);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(6,2);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(6,3);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(6,4);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(6,5);
-INSERT OR IGNORE INTO creature_characters(creature_id,character_id) VALUES(6,6);
-INSERT  INTO creature_locations_text(creature_id,location_name) VALUES(6,'Fortaleza del Bosque Seco');
-INSERT  INTO creature_locations_text(creature_id,location_name) VALUES(6,'Bosque cercano a la fortaleza');
-
--- === FACTION RELATIONS ===
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(1,1);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(1,2);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(1,3);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(1,4);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(1,5);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(1,6);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(2,1);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(2,2);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(2,3);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(3,1);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(3,2);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(3,3);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(4,1);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(4,2);
-INSERT OR IGNORE INTO faction_characters(faction_id,character_id) VALUES(4,3);
-
--- === LOCATION RELATIONS ===
-INSERT OR IGNORE INTO location_connections(location_id,connected_location_id) VALUES(1,2);
-INSERT OR IGNORE INTO location_connections(location_id,connected_location_id) VALUES(1,3);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(1,1);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(1,2);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(1,3);
-INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,1);
-INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,2);
-INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,3);
-INSERT OR IGNORE INTO location_factions(location_id,faction_id) VALUES(1,4);
-INSERT OR IGNORE INTO location_connections(location_id,connected_location_id) VALUES(2,1);
-INSERT  INTO location_discoveries(location_id,discovery) VALUES(2,'Antigua sala élfica');
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,1);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,2);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,3);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(2,4);
-INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,1);
-INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,4);
-INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,5);
-INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(2,6);
-INSERT OR IGNORE INTO location_connections(location_id,connected_location_id) VALUES(3,1);
-INSERT  INTO location_discoveries(location_id,discovery) VALUES(3,'Cantera de los Dientes Rojos');
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(3,1);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(3,2);
-INSERT OR IGNORE INTO location_characters(location_id,character_id) VALUES(3,3);
-INSERT OR IGNORE INTO location_creatures(location_id,creature_id) VALUES(3,2);
-
--- === LORE RELATIONS ===
-INSERT OR IGNORE INTO lore_factions(lore_id,faction_id) VALUES(1,2);
-INSERT  INTO lore_tags(lore_id,tag) VALUES(1,'Magia');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(1,'Energía interna');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(1,'Elaria');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(1,'Núcleo del mundo');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(1,'Investigación mágica');
-INSERT OR IGNORE INTO lore_characters(lore_id,character_id) VALUES(6,4);
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Elfos');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Drow');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Casa Dmerith');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Guerra Antigua');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Torres del Destino');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Cascadas del Amanecer');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Enfermedad');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(6,'Arma antimagia');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(3,'Exploradores');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(3,'Río del Norte');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(3,'Subsuelo');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(3,'Calabozo antiguo');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(3,'Lago subterráneo');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(3,'Arañas');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'Imperio');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'Leandro I');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'Liga de Elaria');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'Fénix');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'Fortaleza de Galasar');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'Dragones Rojos');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'Pyra');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(4,'La Noche del Primer Emperador');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Dioses');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Religión');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Imperio Ignis');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Fénix');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Smorleth');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Ormagon');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Kalara');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'El Ascendido');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Nocturnith');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Avarien');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Velthara');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Morghal');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(5,'Sythara');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(2,'Nueva Pyra');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(2,'Imperio Ignis');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(2,'Exploración');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(2,'Colonia');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(2,'Centro de Exploradores');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(2,'Casas Nobles');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(2,'Leandro II');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Magia');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Rolan Artemis');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Sythara');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Dama Arcana');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Energía interna');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Divinidad');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Núcleo del mundo');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(7,'Investigación mágica');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(8,'Cocina');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(8,'Supervivencia');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(8,'Exploración');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(8,'Alimentos');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(8,'Nueva Pyra');
-INSERT  INTO lore_tags(lore_id,tag) VALUES(8,'Recetas');
-
--- === WORLD DISCOVERIES ===
-INSERT  INTO world_discoveries(discovery,sort_order) VALUES('El asentamiento inicial ha sido establecido.',0);
-INSERT  INTO world_discoveries(discovery,sort_order) VALUES('Las cantera de los dientes rojos fue liberada del control Kobold',1);
-INSERT  INTO world_discoveries(discovery,sort_order) VALUES('La fortaleza del bosque seco fue liberada del control No muerto',2);
-INSERT  INTO world_discoveries(discovery,sort_order) VALUES('Se celebro La Noche del Primer Emperador en la colonia de Nueva Pyra, alguien robo documentos importantes durante la celebración.',3);
-INSERT  INTO world_discoveries(discovery,sort_order) VALUES('Una entidad desconocida parece controlar no muertos cerca de la Fortaleza del Bosque Seco.',4);
-INSERT  INTO world_discoveries(discovery,sort_order) VALUES('Nueva Pyra tiene control total sobre la Fortaleza del Bosque Seco.',5);
+INSERT INTO world_discoveries(discovery,sort_order) VALUES('El asentamiento inicial ha sido establecido.',0);
+INSERT INTO world_discoveries(discovery,sort_order) VALUES('Las cantera de los dientes rojos fue liberada del control Kobold',1);
+INSERT INTO world_discoveries(discovery,sort_order) VALUES('La fortaleza del bosque seco fue liberada del control No muerto',2);
+INSERT INTO world_discoveries(discovery,sort_order) VALUES('Se celebro La Noche del Primer Emperador en la colonia de Nueva Pyra, alguien robo documentos importantes durante la celebración.',3);
+INSERT INTO world_discoveries(discovery,sort_order) VALUES('Una entidad desconocida parece controlar no muertos cerca de la Fortaleza del Bosque Seco.',4);
+INSERT INTO world_discoveries(discovery,sort_order) VALUES('Nueva Pyra tiene control total sobre la Fortaleza del Bosque Seco.',5);
