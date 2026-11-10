@@ -884,3 +884,41 @@ button { font: inherit; }
 
 /* ===== REGISTRO AUTOMATICO DE EXPEDICIONES ===== */
 .registration-panel{margin-top:18px;padding-top:16px;border-top:1px solid #354156}.registration-summary{display:flex;justify-content:space-between;gap:12px;align-items:center}.registration-count{color:var(--gold-bright);font-size:.88rem}.registration-availability{font-size:.74rem;font-weight:800}.registration-availability.open{color:#83cc8f}.registration-availability.full{color:#d9b866}.registration-availability.warning{color:#dd7a70}.registration-list{margin-top:12px;padding:12px;border:1px solid #354156;border-radius:8px;background:rgba(3,8,15,.24);color:var(--muted);font-size:.8rem}.registration-list strong{color:var(--cream)}.registration-list ul{margin:8px 0 0;padding-left:20px}.registration-list li{margin:4px 0}.registration-list li span{color:var(--muted)}.registration-actions{display:grid;grid-template-columns:minmax(180px,1fr) auto auto;gap:8px;align-items:end;margin-top:12px}.registration-actions label{display:grid;gap:5px}.registration-actions label span{color:var(--muted);font-size:.7rem;font-weight:800}.registration-character-select{width:100%;min-height:36px;padding:8px 10px;border:1px solid #435169;border-radius:7px;background:#0a1423;color:var(--cream)}.registration-join-button,.registration-cancel-button{min-height:36px;padding:8px 12px;border:1px solid #4b5870;border-radius:7px;background:#101c2e;color:var(--cream);cursor:pointer;font-weight:800}.registration-join-button{border-color:#8b6e31;color:var(--gold-bright)}.registration-cancel-button{color:#d7c9b3}.registration-join-button:hover:not(:disabled),.registration-cancel-button:hover:not(:disabled){background:#172943}.registration-actions button:disabled{opacity:.45;cursor:not-allowed}.registration-feedback{min-height:18px;margin:9px 0 0;color:#83cc8f;font-size:.74rem}.registration-feedback.error{color:#e58a81}.registration-closed{color:var(--muted)}.registration-panel.is-busy{opacity:.76}@media(max-width:720px){.registration-actions{grid-template-columns:1fr}.registration-summary{align-items:flex-start;flex-direction:column;gap:4px}}
+
+/* ===== AJUSTES VISUALES REGISTRO DE EXPEDICIONES ===== */
+
+#active-expeditions {
+    grid-template-columns: repeat(2, minmax(360px, 1fr));
+}
+
+.registration-actions {
+    grid-template-columns: minmax(190px, 1fr) auto;
+}
+
+.registration-cancel-button {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+.registration-join-button,
+.registration-cancel-button {
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    #active-expeditions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .registration-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-join-button,
+    .registration-cancel-button {
+        width: 100%;
+        justify-self: stretch;
+    }
+}
