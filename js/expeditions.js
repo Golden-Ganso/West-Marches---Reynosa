@@ -46,8 +46,6 @@ function buildSessionCard(session) {
       <div><span>Nivel</span><strong>${escapeHtml(session.level || "Abierto")}</strong></div>
       <div><span>Participantes</span><strong>${occupied}</strong></div>
     </div>
-    <div class="slots-row"><div class="slots-bar"><div class="slots-fill" style="width:${percentage}%"></div></div><span class="slots-text">${occupied} / ${slots}</span></div>
-    <div class="players-preview"><strong>Participantes:</strong> ${escapeHtml(players.length ? players.join(", ") : "Sin aventureros registrados")}</div>
     <a href="expedicion.html?id=${encodeURIComponent(session.id)}" class="chronicle-link">Ver expedición</a>
     ${registrationPanel}
   </article>`;
