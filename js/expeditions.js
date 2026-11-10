@@ -44,7 +44,6 @@ function buildSessionCard(session) {
       <div><span>Fecha</span><strong>${formatDate(session.date)}</strong></div>
       <div><span>Hora</span><strong>${escapeHtml(session.time || "Por definir")}</strong></div>
       <div><span>Nivel</span><strong>${escapeHtml(session.level || "Abierto")}</strong></div>
-      <div><span>Participantes</span><strong>${occupied}</strong></div>
     </div>
     <a href="expedicion.html?id=${encodeURIComponent(session.id)}" class="chronicle-link">Ver expedición</a>
     ${registrationPanel}
