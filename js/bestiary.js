@@ -1,1 +1,17 @@
-document.addEventListener("DOMContentLoaded",async()=>{const c=document.getElementById("bestiary-page")||document.getElementById("bestiary-grid");try{const r=await fetch("/api/data?entity=creatures",{cache:"no-store"});if(!r.ok)throw 0;const a=await r.json();c.innerHTML=a.map(x=>`<article class="card detail-panel"><p class="section-kicker">${esc(x.type||"Desconocido")}</p><h2>${esc(x.name)}</h2><p>${esc(x.description||"")}</p><div class="meta-list"><div><span>Peligro</span><strong>${Number(x.danger||0)}</strong></div><div><span>Primera vez</span><strong>${x.firstSeen?`Expedición #${x.firstSeen}`:"Desconocida"}</strong></div></div></article>`).join("")}catch(e){if(c)c.innerHTML='<div class="card loading-card">No fue posible cargar el bestiario.</div>'}});function esc(v){return String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;")}
+document.addEventListener("DOMContentLoaded", async () => {
+  const container = document.getElementById("bestiary-page") || document.getElementById("bestiary-grid");
+  if (!container) return;
+  try {
+    const response = await fetch("/api/data?entity=creatures", { cache:"no-store" });
+    if (!response.ok) throw new Error("No fue posible cargar el bestiario.");
+    const creatures = await response.json();
+    container.innerHTML = creatures.length ? creatures.map(creature => `
+      <article class="card detail-panel">
+        <div class="card-topline"><div><p class="section-kicker">${escapeHtml(creature.type || "Desconocido")}</p><h2>${escapeHtml(creature.name || "Criatura")}</h2></div><span class="status-badge status-open">Peligro ${Number(creature.danger || 0)}</span></div>
+        <p>${escapeHtml(creature.description || "Sin descripción.")}</p>
+        <div class="meta-list"><div><span>Estado</span><strong>${escapeHtml(creature.status || "Desconocido")}</strong></div><div><span>Primera aparición</span><strong>${creature.firstSeen ? `Expedición #${creature.firstSeen}` : "Desconocida"}</strong></div></div>
+        <a class="chronicle-link" href="criatura.html?id=${encodeURIComponent(creature.id)}">Ver ficha</a>
+      </article>`).join("") : `<div class="card loading-card">No hay criaturas registradas.</div>`;
+  } catch (error) { console.error(error); container.innerHTML = `<div class="card loading-card">No fue posible cargar el bestiario.</div>`; }
+});
+function escapeHtml(value){return String(value??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;");}
