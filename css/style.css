@@ -503,7 +503,7 @@ button { font: inherit; }
   border-radius: 10px;
   background-image:
     linear-gradient(rgba(5, 11, 20, .12), rgba(5, 11, 20, .28)),
-    url("../assets/images/maps/world-map.png");
+    url("../assets/images/maps/world-map.webp");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
