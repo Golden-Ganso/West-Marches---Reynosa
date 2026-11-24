@@ -7,53 +7,53 @@ const houseOffsetY = 2;
 const rooms = [
 
 {
-    name: "Dormitorio A",
-    x: 0,
-    y: 0,
-    w: 10,
-    h: 4
+    name:"Dormitorio A",
+    x:0,
+    y:0,
+    w:10,
+    h:4
 },
 
 {
-    name: "Dormitorio B",
-    x: 10,
-    y: 0,
-    w: 10,
-    h: 4
+    name:"Dormitorio B",
+    x:10,
+    y:0,
+    w:10,
+    h:4
 },
 
 {
-    name: "Baño",
-    x: 0,
-    y: 4,
-    w: 4,
-    h: 4
+    name:"Baño",
+    x:0,
+    y:4,
+    w:4,
+    h:3
 },
 
 {
-    name: "Cuarto Libre",
-    x: 0,
-    y: 8,
-    w: 6,
-    h: 5
+    name:"Cuarto Libre",
+    x:0,
+    y:7,
+    w:4,
+    h:6
 },
 
 {
-    name: "Sala Principal",
-    type: "hall",
-    x: 6,
-    y: 5,
-    w: 14,
-    h: 8
+    name:"Sala Principal",
+    type:"hall",
+    x:4,
+    y:4,
+    w:16,
+    h:9
 },
 
 {
-    name: "Entrada",
-    type: "entry",
-    x: 0,
-    y: 13,
-    w: 20,
-    h: 3
+    name:"Entrada",
+    type:"entry",
+    x:0,
+    y:13,
+    w:20,
+    h:3
 }
 
 ];
