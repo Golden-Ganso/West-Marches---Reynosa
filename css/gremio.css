@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+.guild-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr 320px;
+    height: 100vh;
+}
+
+.catalog {
+    border-right: 1px solid #333;
+    padding: 10px;
+}
+
+.properties {
+    border-left: 1px solid #333;
+    padding: 10px;
+}
+
+.catalog button {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+#guild-grid {
+    position: relative;
+
+    width: 800px;
+    height: 600px;
+
+    background-color: #1b1b1b;
+
+    background-image:
+        linear-gradient(#303030 1px, transparent 1px),
+        linear-gradient(90deg, #303030 1px, transparent 1px);
+
+    background-size: 40px 40px;
+}
+
+.room {
+    position: absolute;
+
+    border: 2px solid #808080;
+    background-color: rgba(60,60,60,0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.object {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    background: #2a7fff;
+
+    border: 1px solid white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
