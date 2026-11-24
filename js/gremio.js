@@ -36,6 +36,7 @@ const rooms = [
 
 {
     name:"Sala Principal",
+    type:"hall",
     x:6,
     y:3,
     w:14,
@@ -55,9 +56,10 @@ const objects = [
 
     owner:"Pulfa",
 
-    description:"Cama personalizada.",
+    description:"Cama personalizada con manta negra.",
 
     x:2,
+
     y:1,
 
     container:false
@@ -75,6 +77,7 @@ const objects = [
     description:"Objetos personales.",
 
     x:10,
+
     y:2,
 
     container:true,
@@ -89,14 +92,30 @@ const objects = [
 
 ];
 
+const icons = {
+
+    bed:"🛏",
+
+    chest:"📦",
+
+    bookshelf:"📚",
+
+    chair:"🪑",
+
+    desk:"🗄",
+
+    table:"🪵"
+};
+
 const grid = document.getElementById("guild-grid");
 
 renderRooms();
 renderObjects();
+renderDoors();
 
 function renderRooms(){
 
-    rooms.forEach(room => {
+    rooms.forEach(room=>{
 
         const div = document.createElement("div");
 
@@ -108,26 +127,62 @@ function renderRooms(){
         div.style.width = `${room.w * cellSize}px`;
         div.style.height = `${room.h * cellSize}px`;
 
-        div.innerText = room.name;
+        if(room.type === "hall"){
+
+            div.style.background =
+                "rgba(180,140,60,.15)";
+        }
+
+        div.textContent = room.name;
 
         grid.appendChild(div);
-
     });
+}
 
+function renderDoors(){
+
+    const doors = [
+
+        {x:7,y:4},
+        {x:4,y:5},
+        {x:5,y:8}
+
+    ];
+
+    doors.forEach(d=>{
+
+        const div = document.createElement("div");
+
+        div.className = "door";
+
+        div.style.left =
+            `${d.x * cellSize}px`;
+
+        div.style.top =
+            `${d.y * cellSize}px`;
+
+        grid.appendChild(div);
+    });
 }
 
 function renderObjects(){
 
-    objects.forEach(obj => {
+    objects.forEach(obj=>{
 
         const div = document.createElement("div");
 
-        div.className="object";
+        div.className = "object";
 
-        div.style.left=`${obj.x * cellSize}px`;
-        div.style.top=`${obj.y * cellSize}px`;
+        div.style.left =
+            `${obj.x * cellSize}px`;
 
-        div.innerText=obj.type;
+        div.style.top =
+            `${obj.y * cellSize}px`;
+
+        div.textContent =
+            icons[obj.type] ?? "❓";
+
+        div.title = obj.name;
 
         div.addEventListener("click",()=>{
 
@@ -136,43 +191,67 @@ function renderObjects(){
         });
 
         grid.appendChild(div);
-
     });
-
 }
 
 function showProperties(obj){
 
     let html = `
+
+    <div class="property-card">
+
         <h3>${obj.name}</h3>
 
         <p>
-            <b>Propietario:</b>
+
+            <strong>Propietario:</strong>
             ${obj.owner ?? "Nadie"}
+
         </p>
 
         <p>
+
             ${obj.description ?? ""}
+
         </p>
     `;
 
     if(obj.container){
 
-        html += "<h4>Contenido</h4>";
+        html += `
+        <h4>Contenido</h4>
+        `;
 
-        obj.items.forEach(item => {
+        obj.items.forEach(item=>{
 
             html += `
-                <p>
-                    ${item.name}
-                    x${item.quantity}
-                </p>
-            `;
 
+            <div class="inventory-item">
+
+                ${item.name}
+                x${item.quantity}
+
+            </div>
+            `;
         });
 
+        html += `
+
+        <div class="inventory-actions">
+
+            <button>
+                Agregar Objeto
+            </button>
+
+        </div>
+        `;
     }
 
-    document.getElementById("selected-object").innerHTML = html;
+    html += `
+    </div>
+    `;
 
+    document
+        .getElementById("selected-object")
+        .innerHTML = html;
 }
