@@ -1,55 +1,55 @@
-const cellSize = 32;
+const cellSize = 40;
 
 const rooms = [
 
 {
-    name:"Dormitorio A",
-    x:0,
-    y:0,
-    w:8,
-    h:4
+    name: "Dormitorio A",
+    x: 0,
+    y: 0,
+    w: 8,
+    h: 4
 },
 
 {
-    name:"Dormitorio B",
-    x:8,
-    y:0,
-    w:12,
-    h:4
+    name: "Dormitorio B",
+    x: 8,
+    y: 0,
+    w: 12,
+    h: 4
 },
 
 {
-    name:"Baño",
-    x:0,
-    y:4,
-    w:4,
-    h:4
+    name: "Baño",
+    x: 0,
+    y: 4,
+    w: 4,
+    h: 3
 },
 
 {
-    name:"Biblioteca / Almacén",
-    x:4,
-    y:4,
-    w:6,
-    h:4
+    name: "Cuarto Libre",
+    x: 0,
+    y: 7,
+    w: 6,
+    h: 5
 },
 
 {
-    name:"Sala Principal",
-    type:"hall",
-    x:0,
-    y:8,
-    w:20,
-    h:5
+    name: "Sala Principal",
+    type: "hall",
+    x: 6,
+    y: 3,
+    w: 14,
+    h: 9
 },
 
 {
-    name:"Entrada",
-    type:"entry",
-    x:0,
-    y:13,
-    w:20,
-    h:2
+    name: "Entrada",
+    type: "entry",
+    x: 0,
+    y: 12,
+    w: 20,
+    h: 3
 }
 
 ];
@@ -57,44 +57,42 @@ const rooms = [
 const objects = [
 
 {
-    id:1,
+    id: 1,
 
-    type:"bed",
+    type: "bed",
 
-    name:"Cama de Pulfa",
+    name: "Cama de Pulfa",
 
-    owner:"Pulfa",
+    owner: "Pulfa",
 
-    description:"Cama personalizada con manta negra.",
+    description: "Cama personalizada con manta negra.",
 
-    x:2,
+    x: 2,
+    y: 1,
 
-    y:1,
-
-    container:false
+    container: false
 },
 
 {
-    id:2,
+    id: 2,
 
-    type:"chest",
+    type: "chest",
 
-    name:"Baúl de Vesper",
+    name: "Baúl de Vesper",
 
-    owner:"Vesper",
+    owner: "Vesper",
 
-    description:"Objetos personales.",
+    description: "Objetos personales.",
 
-    x:11,
+    x: 11,
+    y: 2,
 
-    y:2,
+    container: true,
 
-    container:true,
-
-    items:[
+    items: [
         {
-            name:"Escama Negra",
-            quantity:2
+            name: "Escama Negra",
+            quantity: 2
         }
     ]
 }
@@ -103,17 +101,17 @@ const objects = [
 
 const icons = {
 
-    bed:"🛏",
+    bed: "🛏",
 
-    chest:"📦",
+    chest: "📦",
 
-    bookshelf:"📚",
+    bookshelf: "📚",
 
-    chair:"🪑",
+    chair: "🪑",
 
-    desk:"🗄",
+    desk: "🗄",
 
-    table:"🪵"
+    table: "🪵"
 
 };
 
@@ -123,36 +121,30 @@ renderRooms();
 renderDoors();
 renderObjects();
 
-function renderRooms(){
+function renderRooms() {
 
-    rooms.forEach(room=>{
+    rooms.forEach(room => {
 
         const div = document.createElement("div");
 
         div.className = "room";
 
-        div.style.left =
-            `${room.x * cellSize}px`;
+        div.style.left = `${room.x * cellSize}px`;
+        div.style.top = `${room.y * cellSize}px`;
 
-        div.style.top =
-            `${room.y * cellSize}px`;
+        div.style.width = `${room.w * cellSize}px`;
+        div.style.height = `${room.h * cellSize}px`;
 
-        div.style.width =
-            `${room.w * cellSize}px`;
-
-        div.style.height =
-            `${room.h * cellSize}px`;
-
-        if(room.type === "hall"){
+        if (room.type === "hall") {
 
             div.style.background =
-                "rgba(180,140,60,.18)";
+                "rgba(180,140,60,.25)";
         }
 
-        if(room.type === "entry"){
+        if (room.type === "entry") {
 
             div.style.background =
-                "rgba(70,120,180,.18)";
+                "rgba(54,90,145,.10)";
         }
 
         div.textContent = room.name;
@@ -160,76 +152,72 @@ function renderRooms(){
         grid.appendChild(div);
 
     });
+
 }
 
-function renderDoors(){
+function renderDoors() {
 
     const doors = [
 
         // Dormitorio A -> Sala
-
         {
-            x:4,
-            y:8,
-            horizontal:true
+            x: 7,
+            y: 4,
+            horizontal: true
         },
 
         // Dormitorio B -> Sala
-
         {
-            x:14,
-            y:8,
-            horizontal:true
+            x: 14,
+            y: 4,
+            horizontal: true
         },
 
         // Baño -> Sala
-
         {
-            x:4,
-            y:6,
-            horizontal:false
+            x: 4,
+            y: 5,
+            horizontal: false
         },
 
-        // Biblioteca -> Sala
-
+        // Cuarto Libre -> Sala
         {
-            x:10,
-            y:6,
-            horizontal:false
+            x: 6,
+            y: 8,
+            horizontal: false
         },
 
-        // Entrada -> Sala
-
+        // Entrada Principal
         {
-            x:10,
-            y:13,
-            horizontal:true
+            x: 10,
+            y: 12,
+            horizontal: true
         }
 
     ];
 
-    doors.forEach(door=>{
+    doors.forEach(door => {
 
         const div = document.createElement("div");
 
         div.className = "door";
 
-        if(door.horizontal){
+        if (door.horizontal) {
 
-            div.style.width = "32px";
-            div.style.height = "6px";
-        }
-        else{
+            div.style.width = "40px";
+            div.style.height = "8px";
 
-            div.style.width = "6px";
-            div.style.height = "32px";
+        } else {
+
+            div.style.width = "8px";
+            div.style.height = "40px";
         }
 
         div.style.left =
-            `${door.x * cellSize - 3}px`;
+            `${door.x * cellSize - 4}px`;
 
         div.style.top =
-            `${door.y * cellSize - 3}px`;
+            `${door.y * cellSize - 4}px`;
 
         grid.appendChild(div);
 
@@ -237,9 +225,9 @@ function renderDoors(){
 
 }
 
-function renderObjects(){
+function renderObjects() {
 
-    objects.forEach(obj=>{
+    objects.forEach(obj => {
 
         const div = document.createElement("div");
 
@@ -254,16 +242,12 @@ function renderObjects(){
         div.title = obj.name;
 
         div.innerHTML = `
-
             <div>
-
                 ${icons[obj.type] ?? "❓"}
-
             </div>
-
         `;
 
-        div.addEventListener("click",()=>{
+        div.addEventListener("click", () => {
 
             showProperties(obj);
 
@@ -275,76 +259,54 @@ function renderObjects(){
 
 }
 
-function showProperties(obj){
+function showProperties(obj) {
 
     let html = `
-
     <div class="property-card">
 
         <h3>${obj.name}</h3>
 
         <p>
-
             <strong>Propietario:</strong>
-
             ${obj.owner ?? "Nadie"}
-
         </p>
 
         <p>
-
             ${obj.description ?? ""}
-
         </p>
-
     `;
 
-    if(obj.container){
+    if (obj.container) {
 
         html += `
-
-        <h4>Contenido</h4>
-
+            <h4>Contenido</h4>
         `;
 
-        obj.items.forEach(item=>{
+        obj.items.forEach(item => {
 
             html += `
-
-            <div class="inventory-item">
-
-                ${item.name}
-
-                x${item.quantity}
-
-            </div>
-
+                <div class="inventory-item">
+                    ${item.name} x${item.quantity}
+                </div>
             `;
 
         });
 
         html += `
-
-        <div class="inventory-actions">
-
-            <button>
-
-                Agregar Objeto
-
-            </button>
-
-        </div>
-
+            <div class="inventory-actions">
+                <button>
+                    Agregar Objeto
+                </button>
+            </div>
         `;
     }
 
     html += `
-
     </div>
-
     `;
 
     document
         .getElementById("selected-object")
         .innerHTML = html;
+
 }
