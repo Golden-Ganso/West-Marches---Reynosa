@@ -1,20 +1,24 @@
 const cellSize = 40;
 
+// Posiciona toda la casa dentro del terreno
+const houseOffsetX = 6;
+const houseOffsetY = 2;
+
 const rooms = [
 
 {
     name: "Dormitorio A",
     x: 0,
     y: 0,
-    w: 8,
+    w: 10,
     h: 4
 },
 
 {
     name: "Dormitorio B",
-    x: 8,
+    x: 10,
     y: 0,
-    w: 12,
+    w: 10,
     h: 4
 },
 
@@ -23,13 +27,13 @@ const rooms = [
     x: 0,
     y: 4,
     w: 4,
-    h: 3
+    h: 4
 },
 
 {
     name: "Cuarto Libre",
     x: 0,
-    y: 7,
+    y: 8,
     w: 6,
     h: 5
 },
@@ -38,16 +42,16 @@ const rooms = [
     name: "Sala Principal",
     type: "hall",
     x: 6,
-    y: 3,
+    y: 5,
     w: 14,
-    h: 9
+    h: 8
 },
 
 {
     name: "Entrada",
     type: "entry",
     x: 0,
-    y: 12,
+    y: 13,
     w: 20,
     h: 3
 }
@@ -84,7 +88,7 @@ const objects = [
 
     description: "Objetos personales.",
 
-    x: 11,
+    x: 12,
     y: 2,
 
     container: true,
@@ -112,13 +116,11 @@ const icons = {
     desk: "🗄",
 
     table: "🪵"
-
 };
 
 const grid = document.getElementById("guild-grid");
 
 renderRooms();
-renderDoors();
 renderObjects();
 
 function renderRooms() {
@@ -129,16 +131,22 @@ function renderRooms() {
 
         div.className = "room";
 
-        div.style.left = `${room.x * cellSize}px`;
-        div.style.top = `${room.y * cellSize}px`;
+        div.style.left =
+            `${(room.x + houseOffsetX) * cellSize}px`;
 
-        div.style.width = `${room.w * cellSize}px`;
-        div.style.height = `${room.h * cellSize}px`;
+        div.style.top =
+            `${(room.y + houseOffsetY) * cellSize}px`;
+
+        div.style.width =
+            `${room.w * cellSize}px`;
+
+        div.style.height =
+            `${room.h * cellSize}px`;
 
         if (room.type === "hall") {
 
             div.style.background =
-                "rgba(180,140,60,.25)";
+                "rgba(180,140,60,.18)";
         }
 
         if (room.type === "entry") {
@@ -155,76 +163,6 @@ function renderRooms() {
 
 }
 
-function renderDoors() {
-
-    const doors = [
-
-        // Dormitorio A -> Sala
-        {
-            x: 7,
-            y: 4,
-            horizontal: true
-        },
-
-        // Dormitorio B -> Sala
-        {
-            x: 14,
-            y: 4,
-            horizontal: true
-        },
-
-        // Baño -> Sala
-        {
-            x: 4,
-            y: 5,
-            horizontal: false
-        },
-
-        // Cuarto Libre -> Sala
-        {
-            x: 6,
-            y: 8,
-            horizontal: false
-        },
-
-        // Entrada Principal
-        {
-            x: 10,
-            y: 12,
-            horizontal: true
-        }
-
-    ];
-
-    doors.forEach(door => {
-
-        const div = document.createElement("div");
-
-        div.className = "door";
-
-        if (door.horizontal) {
-
-            div.style.width = "40px";
-            div.style.height = "8px";
-
-        } else {
-
-            div.style.width = "8px";
-            div.style.height = "40px";
-        }
-
-        div.style.left =
-            `${door.x * cellSize - 4}px`;
-
-        div.style.top =
-            `${door.y * cellSize - 4}px`;
-
-        grid.appendChild(div);
-
-    });
-
-}
-
 function renderObjects() {
 
     objects.forEach(obj => {
@@ -234,10 +172,10 @@ function renderObjects() {
         div.className = "object";
 
         div.style.left =
-            `${obj.x * cellSize}px`;
+            `${(obj.x + houseOffsetX) * cellSize}px`;
 
         div.style.top =
-            `${obj.y * cellSize}px`;
+            `${(obj.y + houseOffsetY) * cellSize}px`;
 
         div.title = obj.name;
 
@@ -262,17 +200,22 @@ function renderObjects() {
 function showProperties(obj) {
 
     let html = `
+
     <div class="property-card">
 
         <h3>${obj.name}</h3>
 
         <p>
+
             <strong>Propietario:</strong>
             ${obj.owner ?? "Nadie"}
+
         </p>
 
         <p>
+
             ${obj.description ?? ""}
+
         </p>
     `;
 
@@ -294,7 +237,7 @@ function showProperties(obj) {
 
         html += `
             <div class="inventory-actions">
-                <button>
+                <button id="add-item-btn">
                     Agregar Objeto
                 </button>
             </div>
@@ -305,8 +248,8 @@ function showProperties(obj) {
     </div>
     `;
 
-    document
-        .getElementById("selected-object")
-        .innerHTML = html;
+    document.getElementById(
+        "selected-object"
+    ).innerHTML = html;
 
 }
